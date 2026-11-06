@@ -133,6 +133,7 @@ export default function Home() {
   const [heroHovered, setHeroHovered] = useState(false);
   const [hexDraft, setHexDraft] = useState("#A493AE");
   const [hexError, setHexError] = useState("");
+  const [studioVisit, setStudioVisit] = useState(0);
   const modalRef = useRef<HTMLDivElement>(null);
   const headerRef = useRef<HTMLElement>(null);
   const story = stories[storyIndex];
@@ -174,6 +175,18 @@ export default function Home() {
     return () => { clearTimeout(timer); document.body.style.overflow = previousOverflow; document.removeEventListener("keydown", onKey); previous?.focus(); };
   }, [modal, mobileMenu]);
 
+  useEffect(() => {
+    if (!studioVisit) return;
+    const heading = document.querySelector<HTMLElement>("#colour-studio .section-heading");
+    if (!heading) return;
+    const headerHeight = headerRef.current?.getBoundingClientRect().height ?? 0;
+    // Run after any colour dialog closes, and skip the section's decorative top padding.
+    window.scrollTo({
+      top: window.scrollY + heading.getBoundingClientRect().top - headerHeight - 8,
+      behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth",
+    });
+  }, [studioVisit]);
+
   function saveShade(shade: Shade) {
     setFavorites((current) => {
       const exists = current.some((s) => s.hex.toUpperCase() === shade.hex.toUpperCase());
@@ -183,7 +196,7 @@ export default function Home() {
       return next;
     });
   }
-  function showShade(shade: Shade) { setSelected(shade); setBefore(false); setModal(null); setNavOpen(false); setHexDraft(shade.hex); document.getElementById("colour-studio")?.scrollIntoView({ behavior: "smooth", block: "start" }); }
+  function showShade(shade: Shade) { setSelected(shade); setBefore(false); setModal(null); setNavOpen(false); setHexDraft(shade.hex); setStudioVisit((visit) => visit + 1); }
   function browseFamily(name: string) { setFamily(name); setNavOpen(false); setMobileMenu(false); document.getElementById("colours")?.scrollIntoView({ behavior: "smooth" }); }
   function openProduct(p: Product) { setProduct(p); setModal("product"); setNavOpen(false); }
   function openBrief() { setBriefSaved(false); setModal("brief"); setMobileMenu(false); setNavOpen(false); }
