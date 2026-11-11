@@ -72,6 +72,7 @@
 .home-site .product-open { width: 44px; height: 44px; }
 .home-site .product-caption h3 button { padding: 0; text-align: left; background: none; }
 .home-site .product-collection-action { margin-top: 38px; }
+.home-site .product-collection-action > .button:disabled { background: #706378; color: #fff; cursor: not-allowed; transform: none; }
 
 .home-site .brand-confidence { display: grid; grid-template-columns: 1fr 1.05fr; gap: 100px; background: var(--home-warm); padding-top: 70px; padding-bottom: 70px; margin-bottom: 80px; }
 .home-site .confidence-intro h2 { font-size: clamp(38px, 3.6vw, 55px); letter-spacing: -.045em; line-height: 1.1; margin: 22px 0 26px; }

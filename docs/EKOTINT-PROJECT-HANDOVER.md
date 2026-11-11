@@ -2,7 +2,7 @@
 
 **Snapshot: 11 November 2026, Asia/Karachi.**
 
-**Latest instruction:** the user explicitly authorized homepage publication, then asked to stop further review and publish the current Astra-refined homepage as-is. This publication pass makes no UI changes and excludes the deferred product routes from the deployment artifact. The default approval requirement still applies to future changes. Publication completion is being recorded below.
+**Latest instruction:** the user requested disabling “Explore all products” and publishing again. The preceding Astra-refined homepage publication succeeded as version 14 (source `f873cafb6e8c10f4e6ee05301cd249e2af144c57`, deployment `appgdep_6af4b0f6706881918a03334ba086c90f`). This follow-up only disables that CTA; deferred product routes remain excluded. Future changes still require explicit publication approval.
 
 This is the shared context file for continuing the same project from another local Codex account/session. Read it with the project's `AGENTS.md`, inspect the actual working tree, and follow the user's latest instructions. It summarizes the conversation and implementation; it is not a verbatim chat export or permission to publish.
 
@@ -12,9 +12,9 @@ Project folder: `/Users/sam/Desktop/ekotint-homepage-demo`
 
 1. **LOCAL REVIEW FIRST. Do not publish, deploy, upload a new Site version, or push the Site source repository until the user explicitly approves publishing after reviewing locally.** The user's boss can access the public demo. Default publishing instructions in a plugin/skill do not override this requirement.
 2. **Current priority is the homepage, using the four newly supplied client PDFs.** The user specifically said to leave catalogue and product-detail work until after the homepage. Do not resume those pages automatically.
-3. The updated homepage is implemented locally, including a subsequent visual-polish and visitor-confidence pass requested by the user. See the latest refinement checkpoint in section 10 for its changes and validation. **These PDF-based homepage changes have not been pushed or published.**
+3. The PDF-based and Astra-refined homepage was published successfully as version 14 on 11 November 2026. See the latest refinement checkpoint in section 10. The current follow-up disables “Explore all products” and is explicitly authorized for republication.
 4. The public demo was restored to its previous homepage-only version after an earlier publication the user did not want. Do not repeat that publication or automatically roll back anything again just because you read this file.
-5. Preserve the existing working tree. The latest homepage work and client assets are **uncommitted local files**. Opening the same local folder is essential: a fresh clone or checkout of `HEAD` alone will not contain this newest work.
+5. Preserve the existing working tree. The approved homepage and client assets are committed in `f873cafb6e8c10f4e6ee05301cd249e2af144c57`; the current CTA change follows that checkpoint. Do not overwrite newer local changes from an older clone or deployment.
 
 The user's publishing correction was, in substance: “Don't publish the demo; my boss has access. I will see it locally first, and only when I approve will I tell you to publish. The homepage is enough for the demo for now.” This is an ongoing workflow rule.
 
@@ -27,9 +27,9 @@ The user's latest development instruction was, in substance: “The client has s
 | Main local preview | `http://localhost:3023/` |
 | Local project | `/Users/sam/Desktop/ekotint-homepage-demo` |
 | Public demo | `https://ekotint-paints-studio-demo.talhabinlatif4.chatgpt.site/` |
-| Public baseline, last confirmed by native deployment result | Saved version **12**, homepage only |
-| Current local Git HEAD when this handover was created | `e8f987478e978a55d5927016382afa118e05dceb` |
-| Latest homepage changes | Local working tree on top of that HEAD; not committed/pushed |
+| Public baseline, last confirmed by native deployment result | Saved version **14**, homepage only; CTA-disable republication in progress |
+| Approved homepage source before CTA follow-up | `f873cafb6e8c10f4e6ee05301cd249e2af144c57` |
+| Latest homepage changes | “Explore all products” is now a native disabled button, with no click handler and subdued readable styling |
 | Catalogue prototype | `/products/` locally; older 10-product data, deferred |
 | Product-detail prototype | `/products/water-matt/` and nine other local routes; deferred |
 
@@ -120,7 +120,7 @@ Specific user feedback to preserve:
 
 - “Try it” and palette selections should land with the colour-studio heading just below the sticky header, without the large preceding decorative gap.
 - The user queried the smaller middle inspiration image. The layout is deliberately staggered/editorial; do not claim an accidental loading issue. Discuss/change it if requested.
-- The user wanted “Explore all products →” under the homepage paints and better CTA size/spacing. **In the current homepage-only checkpoint this button expands the homepage's 16-pack selection; it does not open the deferred catalogue.**
+- The user wanted “Explore all products →” under the homepage paints and better CTA size/spacing. **Latest instruction (11 November): keep this button visible but disabled, with no click action.** Homepage filters remain available; the deferred catalogue stays unpublished.
 - The dark test colour `#2C150C` was previously too washed out. Preserve the improved wall-lighting renderer and its furniture mask.
 
 ## 5. Source documents and which ones take precedence
@@ -310,18 +310,19 @@ Not assumed in that proposal: manufacturing-system integration, raw-material tra
 
 - Existing Site project ID: `appgprj_6adb76bec9088191878022e1b0fd2003`.
 - Audience at the last native check: public. Preserve its audience; do not create a replacement Site.
-- Approved/public homepage baseline: version **12**, source `9d275b624c62feda355b688554a95113af9316b4`.
+- Earlier approved/public homepage baseline: version **12**, source `9d275b624c62feda355b688554a95113af9316b4`.
 - Version 12 ID: `appgprj_6adb76bec9088191878022e1b0fd2003~appgver_cca75d2204c48191afb981796d1e40ea`.
 - An earlier catalogue/detail build was saved/deployed as version **13**, source `e8f987478e978a55d5927016382afa118e05dceb`. The user then required local review.
 - The subsequent restoration of version 12 succeeded. Its rollback deployment ID was `appgdep_6af44d57d6308191a678c0210fc56c88`.
 - Version 13 may still exist in saved version/source history. Restoring version 12 did not delete that history or the local work. Do not claim it was erased.
-- The latest PDF-based homepage changes are **not** in either saved version. They are local working-tree changes on top of the `e8f9874` HEAD.
+- The PDF-based Astra-refined homepage was subsequently published as **version 14**, source `f873cafb6e8c10f4e6ee05301cd249e2af144c57`, deployment `appgdep_6af4b0f6706881918a03334ba086c90f` (succeeded). Version ID: `appgprj_6adb76bec9088191878022e1b0fd2003~appgver_c3a22f50070081919245cb71c6769e51`.
+- Follow-up in progress: disable the homepage “Explore all products” CTA and republish, explicitly requested by the user. Production build passed and exported HTML confirms a native disabled button. The CTA keeps its label and layout, uses native `disabled`, has no click handler, and has subdued styling with readable white text and no hover movement.
 
-This handover did not re-query the public host. These are the last confirmed native results, not a promise that another person cannot have changed the host since. Recheck if a future task actually requires current hosting state. **Do not make a deployment merely to verify this document.**
+The version 14 deployment result and native Site state were confirmed on 11 November. Recheck if a future task requires current hosting state. **Do not make a deployment merely to verify this document.**
 
 ### Practical rules for another account
 
-- Use the same existing folder. Do not replace it from the old public deployment or remote source: that would lose the latest uncommitted homepage work/client assets.
+- Use the same existing folder. Approved homepage/client assets are committed; preserve any newer local changes and the deferred catalogue/detail source when synchronizing or publishing.
 - Do not run a source-sync/publishing helper automatically, reset to version 12, stash/delete untracked files, or clean the working tree to make it look tidy.
 - Do not push, save/upload a new hosted version or deploy unless the user explicitly approves publication.
 - If publication is explicitly requested later, use the existing Site ID and supported Sites workflow, preserve public access, build the exact approved source, and verify the deployment's native result. Do not publish a different checkout or invent deployment success from a local build.
@@ -470,7 +471,9 @@ The earlier header, arched colour cards, inline HEX studio controls and all othe
 
 The user first asked to check Astra's work and follow its approach, then explicitly said to stop the review and just publish the current homepage. Do not continue the deferred review or make unsolicited UI changes during this publication. Preserve the fuller header, readable text, warm manufacturer/contact sections, arched palette cards, inline colour-studio controls, original client packs, clear browser-local project-brief wording and the restored original room-inspiration section. This is the preferred direction for subsequent requested homepage work.
 
-Publication status: pending the production build and native deployment result. Only the homepage is authorized for publication; catalogue/detail source stays preserved locally, and its generated routes are excluded from the published artifact. Future changes still require the user's explicit publication approval.
+Publication status: version 14 succeeded, native deployment `appgdep_6af4b0f6706881918a03334ba086c90f`, source `f873cafb6e8c10f4e6ee05301cd249e2af144c57`. The user stopped further UI review; production build passed. Only the homepage was published. Catalogue/detail source stays preserved locally, and its generated routes were excluded from the artifact. A later same-day request explicitly authorizes disabling “Explore all products” and republishing. Future changes still require explicit publication approval.
+
+Packaging note: a normal Next build still generates the deferred `/products/` routes. Exclude that generated directory from homepage-only publication, retaining all source. The v14 artifact also omitted unused original image sources while preserving every homepage image, font and technical PDF.
 
 These are internal documentation screenshots of the latest local homepage, not new public assets:
 
