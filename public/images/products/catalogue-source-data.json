@@ -1,0 +1,1356 @@
+{
+  "schemaVersion": 1,
+  "preparedOn": "2026-11-11",
+  "sourceFeedUrl": "https://ekotintpaint.com/wp-json/wc/store/v1/products?per_page=100",
+  "sourceLocalSnapshot": "/private/tmp/ekotint-public-products-nov11.json",
+  "sourceSnapshotSha256": "061770772995662fbacadca14100423ce5caab91cc6b894472f6834b7675911e",
+  "productCount": 10,
+  "evidenceScope": "The supplied November 11 public WooCommerce Store API snapshot and visual inspection of the ten linked original pack images. Product-page FAQs, technical data sheets, authenticated information and physical paint samples were not inspected for this asset task.",
+  "interpretationRules": [
+    "Descriptions and benefits are source brand claims, not independent performance certification.",
+    "Series is taken from the explicit series category, not the word premium appearing in marketing copy.",
+    "A finish is recorded only when explicitly mentioned in that product description; names alone do not establish specifications.",
+    "Missing pack sizes, numeric coverage, attributes and variations must remain unspecified.",
+    "Do not use zero feed prices as actual public selling prices.",
+    "Approximate bounds describe artwork position inside the original image, not physical pack dimensions.",
+    "No AI redraw, resampling, background extraction, retouch or change to printed labels or colors was applied."
+  ],
+  "products": [
+    {
+      "id": 12494,
+      "name": "Weather Paint",
+      "slug": "weather-paint",
+      "productUrl": "https://ekotintpaint.com/product/weather-paint/",
+      "series": {
+        "id": 157,
+        "name": "Premium Series",
+        "slug": "premium-series",
+        "source": "explicit_feed_category"
+      },
+      "categories": [
+        {
+          "id": 44,
+          "name": "Common & Brand Colors",
+          "slug": "common-brand-colors",
+          "link": "https://ekotintpaint.com/product-category/essentials-assez-series/common-brand-colors/"
+        },
+        {
+          "id": 160,
+          "name": "Exterior Finishes (Premium)",
+          "slug": "exterior-finishes-premium-series",
+          "link": "https://ekotintpaint.com/product-category/premium-series/exterior-finishes-premium-series/"
+        },
+        {
+          "id": 157,
+          "name": "Premium Series",
+          "slug": "premium-series",
+          "link": "https://ekotintpaint.com/product-category/premium-series/"
+        }
+      ],
+      "shortDescriptionHtml": "<div class=\"vgblk-rw-wrapper limit-wrapper\">A premium exterior-grade paint formulated to withstand harsh weather. Delivers excellent protection against UV rays, rain, and dirt, keeping walls fresh and vibrant year-round.</div>\n<p><!-- .vgblk-rw-wrapper --></p>",
+      "shortDescription": "A premium exterior-grade paint formulated to withstand harsh weather. Delivers excellent protection against UV rays, rain, and dirt, keeping walls fresh and vibrant year-round.",
+      "descriptionHtml": "",
+      "description": "",
+      "displayDescription": "A premium exterior-grade paint formulated to withstand harsh weather. Delivers excellent protection against UV rays, rain, and dirt, keeping walls fresh and vibrant year-round.",
+      "suppliedSpecifications": {
+        "packSizes": {
+          "status": "not_supplied",
+          "values": []
+        },
+        "numericalCoverage": {
+          "status": "not_supplied",
+          "value": null,
+          "unit": null
+        },
+        "qualitativeCoverageClaim": null,
+        "finish": {
+          "status": "not_supplied",
+          "value": null,
+          "sourceField": null
+        },
+        "intendedUse": {
+          "status": "supplied_in_description",
+          "value": "exterior-grade paint",
+          "sourceField": "short_description"
+        },
+        "attributes": {
+          "status": "empty_in_source",
+          "values": []
+        },
+        "variations": {
+          "status": "empty_in_source",
+          "values": []
+        },
+        "weight": {
+          "status": "not_supplied",
+          "value": null
+        },
+        "physicalDimensions": {
+          "status": "not_supplied",
+          "sourceValues": {
+            "length": "",
+            "width": "",
+            "height": ""
+          }
+        },
+        "sku": {
+          "status": "not_supplied",
+          "value": null
+        }
+      },
+      "sourceCommerce": {
+        "isPurchasable": false,
+        "isInStock": true,
+        "hasOptions": false,
+        "rawPrices": {
+          "price": "0",
+          "regular_price": "0",
+          "sale_price": "0",
+          "price_range": null,
+          "currency_code": "USD",
+          "currency_symbol": "$",
+          "currency_minor_unit": 2,
+          "currency_decimal_separator": ".",
+          "currency_thousand_separator": ",",
+          "currency_prefix": "$",
+          "currency_suffix": ""
+        },
+        "priceHtml": "",
+        "displayAsActualPrice": false,
+        "priceNote": "Zero USD feed value with empty price_html and is_purchasable=false; no public selling price established.",
+        "averageRating": "0",
+        "reviewCount": 0
+      },
+      "image": {
+        "localPath": "/images/products/weather-paint.png",
+        "width": 920,
+        "height": 1100,
+        "format": "png",
+        "hasAlpha": false,
+        "bytes": 159287,
+        "sha256": "68c33e7e300f0978744988f871f02cf859c19d80237e0839ac8a169e4dc7d22a",
+        "backgroundRgb": [
+          246,
+          246,
+          244
+        ],
+        "sourceUrl": "https://ekotintpaint.com/wp-content/uploads/2025/10/1-1.png",
+        "sourceImageId": 12483,
+        "sourceAlt": "",
+        "existingProjectAsset": false,
+        "downloadedUnmodified": true,
+        "visuallyInspectedOn": "2026-11-11",
+        "approximatePackBounds": {
+          "x": 208,
+          "y": 252,
+          "width": 505,
+          "height": 598,
+          "units": "original_image_pixels",
+          "method": "visually_estimated_conservative_rectangle",
+          "precision": "approximate_layout_guide_not_a_segmentation_mask"
+        },
+        "packAppearance": "black bucket with original gradient Ekotint artwork",
+        "finePrint": "Source is inherently soft; small print has not been transcribed or reconstructed."
+      },
+      "notes": [
+        "Also assigned to Common & Brand Colors, whose source category URL is under Essentials Assez; the explicit series category is Premium Series. Preserve source mapping; do not infer a second series."
+      ]
+    },
+    {
+      "id": 12492,
+      "name": "Wall Putty",
+      "slug": "wall-putty-2",
+      "productUrl": "https://ekotintpaint.com/product/wall-putty-2/",
+      "series": {
+        "id": 157,
+        "name": "Premium Series",
+        "slug": "premium-series",
+        "source": "explicit_feed_category"
+      },
+      "categories": [
+        {
+          "id": 157,
+          "name": "Premium Series",
+          "slug": "premium-series",
+          "link": "https://ekotintpaint.com/product-category/premium-series/"
+        },
+        {
+          "id": 161,
+          "name": "Wall Putty & Primers (Premium)",
+          "slug": "wall-putty-primers-premium",
+          "link": "https://ekotintpaint.com/product-category/premium-series/wall-putty-primers-premium/"
+        }
+      ],
+      "shortDescriptionHtml": "<div class=\"vgblk-rw-wrapper limit-wrapper\">High-quality putty that smooths wall surfaces and fills imperfections. Provides an even base, improving paint adhesion and ensuring a seamless finish.</div>\n<p><!-- .vgblk-rw-wrapper --></p>",
+      "shortDescription": "High-quality putty that smooths wall surfaces and fills imperfections. Provides an even base, improving paint adhesion and ensuring a seamless finish.",
+      "descriptionHtml": "",
+      "description": "",
+      "displayDescription": "High-quality putty that smooths wall surfaces and fills imperfections. Provides an even base, improving paint adhesion and ensuring a seamless finish.",
+      "suppliedSpecifications": {
+        "packSizes": {
+          "status": "not_supplied",
+          "values": []
+        },
+        "numericalCoverage": {
+          "status": "not_supplied",
+          "value": null,
+          "unit": null
+        },
+        "qualitativeCoverageClaim": null,
+        "finish": {
+          "status": "not_supplied",
+          "value": null,
+          "sourceField": null
+        },
+        "intendedUse": {
+          "status": "supplied_in_description",
+          "value": "smooths wall surfaces and fills imperfections",
+          "sourceField": "short_description"
+        },
+        "attributes": {
+          "status": "empty_in_source",
+          "values": []
+        },
+        "variations": {
+          "status": "empty_in_source",
+          "values": []
+        },
+        "weight": {
+          "status": "not_supplied",
+          "value": null
+        },
+        "physicalDimensions": {
+          "status": "not_supplied",
+          "sourceValues": {
+            "length": "",
+            "width": "",
+            "height": ""
+          }
+        },
+        "sku": {
+          "status": "not_supplied",
+          "value": null
+        }
+      },
+      "sourceCommerce": {
+        "isPurchasable": false,
+        "isInStock": true,
+        "hasOptions": false,
+        "rawPrices": {
+          "price": "0",
+          "regular_price": "0",
+          "sale_price": "0",
+          "price_range": null,
+          "currency_code": "USD",
+          "currency_symbol": "$",
+          "currency_minor_unit": 2,
+          "currency_decimal_separator": ".",
+          "currency_thousand_separator": ",",
+          "currency_prefix": "$",
+          "currency_suffix": ""
+        },
+        "priceHtml": "",
+        "displayAsActualPrice": false,
+        "priceNote": "Zero USD feed value with empty price_html and is_purchasable=false; no public selling price established.",
+        "averageRating": "0",
+        "reviewCount": 0
+      },
+      "image": {
+        "localPath": "/images/products/wall-putty-2.png",
+        "width": 920,
+        "height": 1100,
+        "format": "png",
+        "hasAlpha": false,
+        "bytes": 160178,
+        "sha256": "7033472649cf1b548134f9e928f0b3f0634e34e7329f8ea61e801b7e11d2ccab",
+        "backgroundRgb": [
+          246,
+          246,
+          244
+        ],
+        "sourceUrl": "https://ekotintpaint.com/wp-content/uploads/2025/10/2-1.png",
+        "sourceImageId": 12484,
+        "sourceAlt": "",
+        "existingProjectAsset": false,
+        "downloadedUnmodified": true,
+        "visuallyInspectedOn": "2026-11-11",
+        "approximatePackBounds": {
+          "x": 208,
+          "y": 253,
+          "width": 505,
+          "height": 598,
+          "units": "original_image_pixels",
+          "method": "visually_estimated_conservative_rectangle",
+          "precision": "approximate_layout_guide_not_a_segmentation_mask"
+        },
+        "packAppearance": "black bucket with original gradient Ekotint artwork",
+        "finePrint": "Source is inherently soft; small print has not been transcribed or reconstructed."
+      },
+      "notes": [
+        "A separate listing in the other series shares this display name. Preserve product ID and slug."
+      ]
+    },
+    {
+      "id": 12490,
+      "name": "Primer Emulsion",
+      "slug": "primer-emulsion",
+      "productUrl": "https://ekotintpaint.com/product/primer-emulsion/",
+      "series": {
+        "id": 157,
+        "name": "Premium Series",
+        "slug": "premium-series",
+        "source": "explicit_feed_category"
+      },
+      "categories": [
+        {
+          "id": 157,
+          "name": "Premium Series",
+          "slug": "premium-series",
+          "link": "https://ekotintpaint.com/product-category/premium-series/"
+        },
+        {
+          "id": 161,
+          "name": "Wall Putty & Primers (Premium)",
+          "slug": "wall-putty-primers-premium",
+          "link": "https://ekotintpaint.com/product-category/premium-series/wall-putty-primers-premium/"
+        }
+      ],
+      "shortDescriptionHtml": "<div class=\"vgblk-rw-wrapper limit-wrapper\">An advanced undercoat that ensures strong adhesion and a flawless topcoat finish. Enhances paint longevity and provides a perfect base for all wall types.</div>\n<p><!-- .vgblk-rw-wrapper --></p>",
+      "shortDescription": "An advanced undercoat that ensures strong adhesion and a flawless topcoat finish. Enhances paint longevity and provides a perfect base for all wall types.",
+      "descriptionHtml": "",
+      "description": "",
+      "displayDescription": "An advanced undercoat that ensures strong adhesion and a flawless topcoat finish. Enhances paint longevity and provides a perfect base for all wall types.",
+      "suppliedSpecifications": {
+        "packSizes": {
+          "status": "not_supplied",
+          "values": []
+        },
+        "numericalCoverage": {
+          "status": "not_supplied",
+          "value": null,
+          "unit": null
+        },
+        "qualitativeCoverageClaim": null,
+        "finish": {
+          "status": "not_supplied",
+          "value": null,
+          "sourceField": null
+        },
+        "intendedUse": {
+          "status": "supplied_in_description",
+          "value": "undercoat",
+          "sourceField": "short_description"
+        },
+        "attributes": {
+          "status": "empty_in_source",
+          "values": []
+        },
+        "variations": {
+          "status": "empty_in_source",
+          "values": []
+        },
+        "weight": {
+          "status": "not_supplied",
+          "value": null
+        },
+        "physicalDimensions": {
+          "status": "not_supplied",
+          "sourceValues": {
+            "length": "",
+            "width": "",
+            "height": ""
+          }
+        },
+        "sku": {
+          "status": "not_supplied",
+          "value": null
+        }
+      },
+      "sourceCommerce": {
+        "isPurchasable": false,
+        "isInStock": true,
+        "hasOptions": false,
+        "rawPrices": {
+          "price": "0",
+          "regular_price": "0",
+          "sale_price": "0",
+          "price_range": null,
+          "currency_code": "USD",
+          "currency_symbol": "$",
+          "currency_minor_unit": 2,
+          "currency_decimal_separator": ".",
+          "currency_thousand_separator": ",",
+          "currency_prefix": "$",
+          "currency_suffix": ""
+        },
+        "priceHtml": "",
+        "displayAsActualPrice": false,
+        "priceNote": "Zero USD feed value with empty price_html and is_purchasable=false; no public selling price established.",
+        "averageRating": "0",
+        "reviewCount": 0
+      },
+      "image": {
+        "localPath": "/images/products/primer-emulsion.png",
+        "width": 920,
+        "height": 1100,
+        "format": "png",
+        "hasAlpha": false,
+        "bytes": 160791,
+        "sha256": "eabcfae83e67e6db99c7bd8bfd74f9a3588f672a78dd0c2cfe1a93d608570729",
+        "backgroundRgb": [
+          246,
+          246,
+          244
+        ],
+        "sourceUrl": "https://ekotintpaint.com/wp-content/uploads/2025/10/3-1.png",
+        "sourceImageId": 12487,
+        "sourceAlt": "",
+        "existingProjectAsset": false,
+        "downloadedUnmodified": true,
+        "visuallyInspectedOn": "2026-11-11",
+        "approximatePackBounds": {
+          "x": 212,
+          "y": 257,
+          "width": 498,
+          "height": 594,
+          "units": "original_image_pixels",
+          "method": "visually_estimated_conservative_rectangle",
+          "precision": "approximate_layout_guide_not_a_segmentation_mask"
+        },
+        "packAppearance": "black bucket with original gradient Ekotint artwork",
+        "finePrint": "Source is inherently soft; small print has not been transcribed or reconstructed."
+      },
+      "notes": []
+    },
+    {
+      "id": 12486,
+      "name": "Semi Plastic Emulsion",
+      "slug": "semi-plastic-emulsion-2",
+      "productUrl": "https://ekotintpaint.com/product/semi-plastic-emulsion-2/",
+      "series": {
+        "id": 157,
+        "name": "Premium Series",
+        "slug": "premium-series",
+        "source": "explicit_feed_category"
+      },
+      "categories": [
+        {
+          "id": 158,
+          "name": "Interior Emulsions (Premium)",
+          "slug": "interior-emulsions-premium",
+          "link": "https://ekotintpaint.com/product-category/premium-series/interior-emulsions-premium/"
+        },
+        {
+          "id": 157,
+          "name": "Premium Series",
+          "slug": "premium-series",
+          "link": "https://ekotintpaint.com/product-category/premium-series/"
+        }
+      ],
+      "shortDescriptionHtml": "<div class=\"vgblk-rw-wrapper limit-wrapper\">A versatile and washable interior paint offering a gentle sheen and excellent coverage. Perfect for modern homes seeking color vibrancy with a touch of elegance.</div>\n<p><!-- .vgblk-rw-wrapper --></p>",
+      "shortDescription": "A versatile and washable interior paint offering a gentle sheen and excellent coverage. Perfect for modern homes seeking color vibrancy with a touch of elegance.",
+      "descriptionHtml": "",
+      "description": "",
+      "displayDescription": "A versatile and washable interior paint offering a gentle sheen and excellent coverage. Perfect for modern homes seeking color vibrancy with a touch of elegance.",
+      "suppliedSpecifications": {
+        "packSizes": {
+          "status": "not_supplied",
+          "values": []
+        },
+        "numericalCoverage": {
+          "status": "not_supplied",
+          "value": null,
+          "unit": null
+        },
+        "qualitativeCoverageClaim": "excellent coverage",
+        "finish": {
+          "status": "supplied_in_description",
+          "value": "gentle sheen",
+          "sourceField": "short_description"
+        },
+        "intendedUse": {
+          "status": "supplied_in_description",
+          "value": "interior paint",
+          "sourceField": "short_description"
+        },
+        "attributes": {
+          "status": "empty_in_source",
+          "values": []
+        },
+        "variations": {
+          "status": "empty_in_source",
+          "values": []
+        },
+        "weight": {
+          "status": "not_supplied",
+          "value": null
+        },
+        "physicalDimensions": {
+          "status": "not_supplied",
+          "sourceValues": {
+            "length": "",
+            "width": "",
+            "height": ""
+          }
+        },
+        "sku": {
+          "status": "not_supplied",
+          "value": null
+        }
+      },
+      "sourceCommerce": {
+        "isPurchasable": false,
+        "isInStock": true,
+        "hasOptions": false,
+        "rawPrices": {
+          "price": "0",
+          "regular_price": "0",
+          "sale_price": "0",
+          "price_range": null,
+          "currency_code": "USD",
+          "currency_symbol": "$",
+          "currency_minor_unit": 2,
+          "currency_decimal_separator": ".",
+          "currency_thousand_separator": ",",
+          "currency_prefix": "$",
+          "currency_suffix": ""
+        },
+        "priceHtml": "",
+        "displayAsActualPrice": false,
+        "priceNote": "Zero USD feed value with empty price_html and is_purchasable=false; no public selling price established.",
+        "averageRating": "0",
+        "reviewCount": 0
+      },
+      "image": {
+        "localPath": "/images/products/semi-plastic-emulsion-2.png",
+        "width": 920,
+        "height": 1100,
+        "format": "png",
+        "hasAlpha": false,
+        "bytes": 160422,
+        "sha256": "bf9781d34278105abdf28d07e4ed549afe3bf87cf0bd2fcea49531310c8d386d",
+        "backgroundRgb": [
+          246,
+          246,
+          244
+        ],
+        "sourceUrl": "https://ekotintpaint.com/wp-content/uploads/2025/10/4-1.png",
+        "sourceImageId": 12488,
+        "sourceAlt": "",
+        "existingProjectAsset": false,
+        "downloadedUnmodified": true,
+        "visuallyInspectedOn": "2026-11-11",
+        "approximatePackBounds": {
+          "x": 219,
+          "y": 258,
+          "width": 498,
+          "height": 593,
+          "units": "original_image_pixels",
+          "method": "visually_estimated_conservative_rectangle",
+          "precision": "approximate_layout_guide_not_a_segmentation_mask"
+        },
+        "packAppearance": "black bucket with original gradient Ekotint artwork",
+        "finePrint": "Source is inherently soft; small print has not been transcribed or reconstructed."
+      },
+      "notes": [
+        "A separate listing in the other series shares this display name. Preserve product ID and slug."
+      ]
+    },
+    {
+      "id": 12482,
+      "name": "Water Matt",
+      "slug": "water-matt",
+      "productUrl": "https://ekotintpaint.com/product/water-matt/",
+      "series": {
+        "id": 157,
+        "name": "Premium Series",
+        "slug": "premium-series",
+        "source": "explicit_feed_category"
+      },
+      "categories": [
+        {
+          "id": 157,
+          "name": "Premium Series",
+          "slug": "premium-series",
+          "link": "https://ekotintpaint.com/product-category/premium-series/"
+        },
+        {
+          "id": 159,
+          "name": "Water Matt (Premium)",
+          "slug": "water-matt",
+          "link": "https://ekotintpaint.com/product-category/premium-series/water-matt/"
+        }
+      ],
+      "shortDescriptionHtml": "<div class=\"vgblk-rw-wrapper limit-wrapper\">A smooth, elegant matt-finish paint designed for superior coverage and a soft, luxurious look. Ideal for interiors, it provides durability, easy cleaning, and long-lasting beauty.</div>\n<p><!-- .vgblk-rw-wrapper --></p>",
+      "shortDescription": "A smooth, elegant matt-finish paint designed for superior coverage and a soft, luxurious look. Ideal for interiors, it provides durability, easy cleaning, and long-lasting beauty.",
+      "descriptionHtml": "",
+      "description": "",
+      "displayDescription": "A smooth, elegant matt-finish paint designed for superior coverage and a soft, luxurious look. Ideal for interiors, it provides durability, easy cleaning, and long-lasting beauty.",
+      "suppliedSpecifications": {
+        "packSizes": {
+          "status": "not_supplied",
+          "values": []
+        },
+        "numericalCoverage": {
+          "status": "not_supplied",
+          "value": null,
+          "unit": null
+        },
+        "qualitativeCoverageClaim": "superior coverage",
+        "finish": {
+          "status": "supplied_in_description",
+          "value": "matt-finish",
+          "sourceField": "short_description"
+        },
+        "intendedUse": {
+          "status": "supplied_in_description",
+          "value": "Ideal for interiors",
+          "sourceField": "short_description"
+        },
+        "attributes": {
+          "status": "empty_in_source",
+          "values": []
+        },
+        "variations": {
+          "status": "empty_in_source",
+          "values": []
+        },
+        "weight": {
+          "status": "not_supplied",
+          "value": null
+        },
+        "physicalDimensions": {
+          "status": "not_supplied",
+          "sourceValues": {
+            "length": "",
+            "width": "",
+            "height": ""
+          }
+        },
+        "sku": {
+          "status": "not_supplied",
+          "value": null
+        }
+      },
+      "sourceCommerce": {
+        "isPurchasable": false,
+        "isInStock": true,
+        "hasOptions": false,
+        "rawPrices": {
+          "price": "0",
+          "regular_price": "0",
+          "sale_price": "0",
+          "price_range": null,
+          "currency_code": "USD",
+          "currency_symbol": "$",
+          "currency_minor_unit": 2,
+          "currency_decimal_separator": ".",
+          "currency_thousand_separator": ",",
+          "currency_prefix": "$",
+          "currency_suffix": ""
+        },
+        "priceHtml": "",
+        "displayAsActualPrice": false,
+        "priceNote": "Zero USD feed value with empty price_html and is_purchasable=false; no public selling price established.",
+        "averageRating": "0",
+        "reviewCount": 0
+      },
+      "image": {
+        "localPath": "/images/water-matt.png",
+        "width": 920,
+        "height": 1100,
+        "format": "png",
+        "hasAlpha": false,
+        "bytes": 140108,
+        "sha256": "cce872fb6b75f3a55d47c8c35260fce97725e5cf52560fa19c3529fbfd9a688f",
+        "backgroundRgb": [
+          246,
+          246,
+          244
+        ],
+        "sourceUrl": "https://ekotintpaint.com/wp-content/uploads/2024/04/Untitled-920-x-1100-px.png",
+        "sourceImageId": 12477,
+        "sourceAlt": "",
+        "existingProjectAsset": true,
+        "downloadedUnmodified": true,
+        "visuallyInspectedOn": "2026-11-11",
+        "approximatePackBounds": {
+          "x": 218,
+          "y": 267,
+          "width": 486,
+          "height": 579,
+          "units": "original_image_pixels",
+          "method": "visually_estimated_conservative_rectangle",
+          "precision": "approximate_layout_guide_not_a_segmentation_mask"
+        },
+        "packAppearance": "black bucket with original gradient Ekotint artwork",
+        "finePrint": "Source is inherently soft; small print has not been transcribed or reconstructed."
+      },
+      "notes": []
+    },
+    {
+      "id": 12305,
+      "name": "Clima Shield",
+      "slug": "clima-shield",
+      "productUrl": "https://ekotintpaint.com/product/clima-shield/",
+      "series": {
+        "id": 156,
+        "name": "Essentials Assez Series",
+        "slug": "essentials-assez-series",
+        "source": "explicit_feed_category"
+      },
+      "categories": [
+        {
+          "id": 156,
+          "name": "Essentials Assez Series",
+          "slug": "essentials-assez-series",
+          "link": "https://ekotintpaint.com/product-category/essentials-assez-series/"
+        },
+        {
+          "id": 108,
+          "name": "Exterior Finishes",
+          "slug": "exterior-finishes",
+          "link": "https://ekotintpaint.com/product-category/essentials-assez-series/exterior-finishes/"
+        }
+      ],
+      "shortDescriptionHtml": "",
+      "shortDescription": "",
+      "descriptionHtml": "<div class=\"vgblk-rw-wrapper limit-wrapper\">A premium <strong data-start=\"84\" data-end=\"118\">exterior 100% acrylic emulsion</strong> engineered for Pakistan’s climate. Delivers a <strong data-start=\"165\" data-end=\"189\">durable matte finish</strong> with <strong data-start=\"195\" data-end=\"244\">UV, algae/fungus, and dirt-pick-up resistance</strong> to keep façades fresher for longer. Low-odor, breathable, and ideal for cement plaster, concrete, and fiber cement surfaces.</div>\n<p><!-- .vgblk-rw-wrapper --></p>",
+      "description": "A premium exterior 100% acrylic emulsion engineered for Pakistan’s climate. Delivers a durable matte finish with UV, algae/fungus, and dirt-pick-up resistance to keep façades fresher for longer. Low-odor, breathable, and ideal for cement plaster, concrete, and fiber cement surfaces.",
+      "displayDescription": "A premium exterior 100% acrylic emulsion engineered for Pakistan’s climate. Delivers a durable matte finish with UV, algae/fungus, and dirt-pick-up resistance to keep façades fresher for longer. Low-odor, breathable, and ideal for cement plaster, concrete, and fiber cement surfaces.",
+      "suppliedSpecifications": {
+        "packSizes": {
+          "status": "not_supplied",
+          "values": []
+        },
+        "numericalCoverage": {
+          "status": "not_supplied",
+          "value": null,
+          "unit": null
+        },
+        "qualitativeCoverageClaim": null,
+        "finish": {
+          "status": "supplied_in_description",
+          "value": "durable matte finish",
+          "sourceField": "description"
+        },
+        "intendedUse": {
+          "status": "supplied_in_description",
+          "value": "exterior 100% acrylic emulsion",
+          "sourceField": "description"
+        },
+        "attributes": {
+          "status": "empty_in_source",
+          "values": []
+        },
+        "variations": {
+          "status": "empty_in_source",
+          "values": []
+        },
+        "weight": {
+          "status": "not_supplied",
+          "value": null
+        },
+        "physicalDimensions": {
+          "status": "not_supplied",
+          "sourceValues": {
+            "length": "",
+            "width": "",
+            "height": ""
+          }
+        },
+        "sku": {
+          "status": "not_supplied",
+          "value": null
+        }
+      },
+      "sourceCommerce": {
+        "isPurchasable": false,
+        "isInStock": true,
+        "hasOptions": false,
+        "rawPrices": {
+          "price": "0",
+          "regular_price": "0",
+          "sale_price": "0",
+          "price_range": null,
+          "currency_code": "USD",
+          "currency_symbol": "$",
+          "currency_minor_unit": 2,
+          "currency_decimal_separator": ".",
+          "currency_thousand_separator": ",",
+          "currency_prefix": "$",
+          "currency_suffix": ""
+        },
+        "priceHtml": "",
+        "displayAsActualPrice": false,
+        "priceNote": "Zero USD feed value with empty price_html and is_purchasable=false; no public selling price established.",
+        "averageRating": "0",
+        "reviewCount": 0
+      },
+      "image": {
+        "localPath": "/images/clima-shield.png",
+        "width": 920,
+        "height": 1100,
+        "format": "png",
+        "hasAlpha": false,
+        "bytes": 168154,
+        "sha256": "f7d8d50cf9fa0526f35038109021e26cb703c288439d6a9da95b6ff325f011a3",
+        "backgroundRgb": [
+          246,
+          246,
+          244
+        ],
+        "sourceUrl": "https://ekotintpaint.com/wp-content/uploads/2025/10/4.png",
+        "sourceImageId": 12307,
+        "sourceAlt": "",
+        "existingProjectAsset": true,
+        "downloadedUnmodified": true,
+        "visuallyInspectedOn": "2026-11-11",
+        "approximatePackBounds": {
+          "x": 217,
+          "y": 262,
+          "width": 488,
+          "height": 585,
+          "units": "original_image_pixels",
+          "method": "visually_estimated_conservative_rectangle",
+          "precision": "approximate_layout_guide_not_a_segmentation_mask"
+        },
+        "packAppearance": "white bucket with original blue ASSEZ series band",
+        "finePrint": "Source is inherently soft; small print has not been transcribed or reconstructed."
+      },
+      "notes": []
+    },
+    {
+      "id": 12299,
+      "name": "Gloss Enamel",
+      "slug": "gloss-enamel",
+      "productUrl": "https://ekotintpaint.com/product/gloss-enamel/",
+      "series": {
+        "id": 156,
+        "name": "Essentials Assez Series",
+        "slug": "essentials-assez-series",
+        "source": "explicit_feed_category"
+      },
+      "categories": [
+        {
+          "id": 156,
+          "name": "Essentials Assez Series",
+          "slug": "essentials-assez-series",
+          "link": "https://ekotintpaint.com/product-category/essentials-assez-series/"
+        },
+        {
+          "id": 99,
+          "name": "Gloss Enamels",
+          "slug": "gloss-enamels",
+          "link": "https://ekotintpaint.com/product-category/essentials-assez-series/gloss-enamels/"
+        }
+      ],
+      "shortDescriptionHtml": "",
+      "shortDescription": "",
+      "descriptionHtml": "<div class=\"vgblk-rw-wrapper limit-wrapper\">An oil-based, high-gloss paint ideal for wood, metal, and trim surfaces. It gives a rich, durable shine while protecting against rust, moisture, and daily wear.</div>\n<p><!-- .vgblk-rw-wrapper --></p>",
+      "description": "An oil-based, high-gloss paint ideal for wood, metal, and trim surfaces. It gives a rich, durable shine while protecting against rust, moisture, and daily wear.",
+      "displayDescription": "An oil-based, high-gloss paint ideal for wood, metal, and trim surfaces. It gives a rich, durable shine while protecting against rust, moisture, and daily wear.",
+      "suppliedSpecifications": {
+        "packSizes": {
+          "status": "not_supplied",
+          "values": []
+        },
+        "numericalCoverage": {
+          "status": "not_supplied",
+          "value": null,
+          "unit": null
+        },
+        "qualitativeCoverageClaim": null,
+        "finish": {
+          "status": "supplied_in_description",
+          "value": "high-gloss",
+          "sourceField": "description"
+        },
+        "intendedUse": {
+          "status": "supplied_in_description",
+          "value": "wood, metal, and trim surfaces",
+          "sourceField": "description"
+        },
+        "attributes": {
+          "status": "empty_in_source",
+          "values": []
+        },
+        "variations": {
+          "status": "empty_in_source",
+          "values": []
+        },
+        "weight": {
+          "status": "not_supplied",
+          "value": null
+        },
+        "physicalDimensions": {
+          "status": "not_supplied",
+          "sourceValues": {
+            "length": "",
+            "width": "",
+            "height": ""
+          }
+        },
+        "sku": {
+          "status": "not_supplied",
+          "value": null
+        }
+      },
+      "sourceCommerce": {
+        "isPurchasable": false,
+        "isInStock": true,
+        "hasOptions": false,
+        "rawPrices": {
+          "price": "0",
+          "regular_price": "0",
+          "sale_price": "0",
+          "price_range": null,
+          "currency_code": "USD",
+          "currency_symbol": "$",
+          "currency_minor_unit": 2,
+          "currency_decimal_separator": ".",
+          "currency_thousand_separator": ",",
+          "currency_prefix": "$",
+          "currency_suffix": ""
+        },
+        "priceHtml": "",
+        "displayAsActualPrice": false,
+        "priceNote": "Zero USD feed value with empty price_html and is_purchasable=false; no public selling price established.",
+        "averageRating": "0",
+        "reviewCount": 0
+      },
+      "image": {
+        "localPath": "/images/products/gloss-enamel.png",
+        "width": 920,
+        "height": 1100,
+        "format": "png",
+        "hasAlpha": false,
+        "bytes": 170393,
+        "sha256": "bb46ae743018fdfd3fcd0be9401370aa31c136c33311793679b42c62ea418ac4",
+        "backgroundRgb": [
+          246,
+          246,
+          244
+        ],
+        "sourceUrl": "https://ekotintpaint.com/wp-content/uploads/2025/10/5.png",
+        "sourceImageId": 12303,
+        "sourceAlt": "",
+        "existingProjectAsset": false,
+        "downloadedUnmodified": true,
+        "visuallyInspectedOn": "2026-11-11",
+        "approximatePackBounds": {
+          "x": 226,
+          "y": 266,
+          "width": 479,
+          "height": 568,
+          "units": "original_image_pixels",
+          "method": "visually_estimated_conservative_rectangle",
+          "precision": "approximate_layout_guide_not_a_segmentation_mask"
+        },
+        "packAppearance": "white bucket with original blue ASSEZ series band",
+        "finePrint": "Source is inherently soft; small print has not been transcribed or reconstructed."
+      },
+      "notes": []
+    },
+    {
+      "id": 12296,
+      "name": "Hydra-Matt",
+      "slug": "hydra-matt",
+      "productUrl": "https://ekotintpaint.com/product/hydra-matt/",
+      "series": {
+        "id": 156,
+        "name": "Essentials Assez Series",
+        "slug": "essentials-assez-series",
+        "source": "explicit_feed_category"
+      },
+      "categories": [
+        {
+          "id": 156,
+          "name": "Essentials Assez Series",
+          "slug": "essentials-assez-series",
+          "link": "https://ekotintpaint.com/product-category/essentials-assez-series/"
+        },
+        {
+          "id": 126,
+          "name": "Hydra-Matt Series",
+          "slug": "hydra-matt-series",
+          "link": "https://ekotintpaint.com/product-category/essentials-assez-series/hydra-matt-series/"
+        }
+      ],
+      "shortDescriptionHtml": "",
+      "shortDescription": "",
+      "descriptionHtml": "<div class=\"vgblk-rw-wrapper limit-wrapper\">A luxurious matt finish paint designed for a velvety, elegant appearance. Hydra-Matt offers strong opacity, anti-fungal protection, and long-lasting color stability.</div>\n<p><!-- .vgblk-rw-wrapper --></p>",
+      "description": "A luxurious matt finish paint designed for a velvety, elegant appearance. Hydra-Matt offers strong opacity, anti-fungal protection, and long-lasting color stability.",
+      "displayDescription": "A luxurious matt finish paint designed for a velvety, elegant appearance. Hydra-Matt offers strong opacity, anti-fungal protection, and long-lasting color stability.",
+      "suppliedSpecifications": {
+        "packSizes": {
+          "status": "not_supplied",
+          "values": []
+        },
+        "numericalCoverage": {
+          "status": "not_supplied",
+          "value": null,
+          "unit": null
+        },
+        "qualitativeCoverageClaim": null,
+        "finish": {
+          "status": "supplied_in_description",
+          "value": "matt finish",
+          "sourceField": "description"
+        },
+        "intendedUse": {
+          "status": "not_supplied",
+          "value": null,
+          "sourceField": null
+        },
+        "attributes": {
+          "status": "empty_in_source",
+          "values": []
+        },
+        "variations": {
+          "status": "empty_in_source",
+          "values": []
+        },
+        "weight": {
+          "status": "not_supplied",
+          "value": null
+        },
+        "physicalDimensions": {
+          "status": "not_supplied",
+          "sourceValues": {
+            "length": "",
+            "width": "",
+            "height": ""
+          }
+        },
+        "sku": {
+          "status": "not_supplied",
+          "value": null
+        }
+      },
+      "sourceCommerce": {
+        "isPurchasable": false,
+        "isInStock": true,
+        "hasOptions": false,
+        "rawPrices": {
+          "price": "0",
+          "regular_price": "0",
+          "sale_price": "0",
+          "price_range": null,
+          "currency_code": "USD",
+          "currency_symbol": "$",
+          "currency_minor_unit": 2,
+          "currency_decimal_separator": ".",
+          "currency_thousand_separator": ",",
+          "currency_prefix": "$",
+          "currency_suffix": ""
+        },
+        "priceHtml": "",
+        "displayAsActualPrice": false,
+        "priceNote": "Zero USD feed value with empty price_html and is_purchasable=false; no public selling price established.",
+        "averageRating": "0",
+        "reviewCount": 0
+      },
+      "image": {
+        "localPath": "/images/hydra-matt.png",
+        "width": 920,
+        "height": 1100,
+        "format": "png",
+        "hasAlpha": false,
+        "bytes": 167488,
+        "sha256": "c1807b820b6c55a5542b4e01c7a0bf72deb3517da91dbe0340af80a498205d41",
+        "backgroundRgb": [
+          246,
+          246,
+          244
+        ],
+        "sourceUrl": "https://ekotintpaint.com/wp-content/uploads/2025/10/3.png",
+        "sourceImageId": 12297,
+        "sourceAlt": "",
+        "existingProjectAsset": true,
+        "downloadedUnmodified": true,
+        "visuallyInspectedOn": "2026-11-11",
+        "approximatePackBounds": {
+          "x": 218,
+          "y": 257,
+          "width": 489,
+          "height": 585,
+          "units": "original_image_pixels",
+          "method": "visually_estimated_conservative_rectangle",
+          "precision": "approximate_layout_guide_not_a_segmentation_mask"
+        },
+        "packAppearance": "white bucket with original blue ASSEZ series band",
+        "finePrint": "Source is inherently soft; small print has not been transcribed or reconstructed."
+      },
+      "notes": []
+    },
+    {
+      "id": 12293,
+      "name": "Semi Plastic Emulsion",
+      "slug": "semi-plastic-emulsion",
+      "productUrl": "https://ekotintpaint.com/product/semi-plastic-emulsion/",
+      "series": {
+        "id": 156,
+        "name": "Essentials Assez Series",
+        "slug": "essentials-assez-series",
+        "source": "explicit_feed_category"
+      },
+      "categories": [
+        {
+          "id": 156,
+          "name": "Essentials Assez Series",
+          "slug": "essentials-assez-series",
+          "link": "https://ekotintpaint.com/product-category/essentials-assez-series/"
+        },
+        {
+          "id": 122,
+          "name": "Interior Emulsions",
+          "slug": "interior-emulsions",
+          "link": "https://ekotintpaint.com/product-category/essentials-assez-series/interior-emulsions/"
+        }
+      ],
+      "shortDescriptionHtml": "",
+      "shortDescription": "",
+      "descriptionHtml": "<div class=\"vgblk-rw-wrapper limit-wrapper\">\n<p data-start=\"690\" data-end=\"859\">A premium interior coating offering soft sheen and excellent coverage. Resistant to mild stains and easy to clean, it’s perfect for living rooms, bedrooms, and hallways.</p>\n</div>\n<p><!-- .vgblk-rw-wrapper --></p>",
+      "description": "A premium interior coating offering soft sheen and excellent coverage. Resistant to mild stains and easy to clean, it’s perfect for living rooms, bedrooms, and hallways.",
+      "displayDescription": "A premium interior coating offering soft sheen and excellent coverage. Resistant to mild stains and easy to clean, it’s perfect for living rooms, bedrooms, and hallways.",
+      "suppliedSpecifications": {
+        "packSizes": {
+          "status": "not_supplied",
+          "values": []
+        },
+        "numericalCoverage": {
+          "status": "not_supplied",
+          "value": null,
+          "unit": null
+        },
+        "qualitativeCoverageClaim": "excellent coverage",
+        "finish": {
+          "status": "supplied_in_description",
+          "value": "soft sheen",
+          "sourceField": "description"
+        },
+        "intendedUse": {
+          "status": "supplied_in_description",
+          "value": "living rooms, bedrooms, and hallways",
+          "sourceField": "description"
+        },
+        "attributes": {
+          "status": "empty_in_source",
+          "values": []
+        },
+        "variations": {
+          "status": "empty_in_source",
+          "values": []
+        },
+        "weight": {
+          "status": "not_supplied",
+          "value": null
+        },
+        "physicalDimensions": {
+          "status": "not_supplied",
+          "sourceValues": {
+            "length": "",
+            "width": "",
+            "height": ""
+          }
+        },
+        "sku": {
+          "status": "not_supplied",
+          "value": null
+        }
+      },
+      "sourceCommerce": {
+        "isPurchasable": false,
+        "isInStock": true,
+        "hasOptions": false,
+        "rawPrices": {
+          "price": "0",
+          "regular_price": "0",
+          "sale_price": "0",
+          "price_range": null,
+          "currency_code": "USD",
+          "currency_symbol": "$",
+          "currency_minor_unit": 2,
+          "currency_decimal_separator": ".",
+          "currency_thousand_separator": ",",
+          "currency_prefix": "$",
+          "currency_suffix": ""
+        },
+        "priceHtml": "",
+        "displayAsActualPrice": false,
+        "priceNote": "Zero USD feed value with empty price_html and is_purchasable=false; no public selling price established.",
+        "averageRating": "0",
+        "reviewCount": 0
+      },
+      "image": {
+        "localPath": "/images/products/semi-plastic-emulsion.png",
+        "width": 920,
+        "height": 1100,
+        "format": "png",
+        "hasAlpha": false,
+        "bytes": 175075,
+        "sha256": "b23139c71e8edd143c9e89be9b57725d88d7e13280c2297a8130887bea6a250e",
+        "backgroundRgb": [
+          246,
+          246,
+          244
+        ],
+        "sourceUrl": "https://ekotintpaint.com/wp-content/uploads/2025/10/2.png",
+        "sourceImageId": 12294,
+        "sourceAlt": "",
+        "existingProjectAsset": false,
+        "downloadedUnmodified": true,
+        "visuallyInspectedOn": "2026-11-11",
+        "approximatePackBounds": {
+          "x": 215,
+          "y": 265,
+          "width": 494,
+          "height": 584,
+          "units": "original_image_pixels",
+          "method": "visually_estimated_conservative_rectangle",
+          "precision": "approximate_layout_guide_not_a_segmentation_mask"
+        },
+        "packAppearance": "white bucket with original blue ASSEZ series band",
+        "finePrint": "Source is inherently soft; small print has not been transcribed or reconstructed."
+      },
+      "notes": [
+        "A separate listing in the other series shares this display name. Preserve product ID and slug."
+      ]
+    },
+    {
+      "id": 12290,
+      "name": "Wall Putty",
+      "slug": "wall-putty",
+      "productUrl": "https://ekotintpaint.com/product/wall-putty/",
+      "series": {
+        "id": 156,
+        "name": "Essentials Assez Series",
+        "slug": "essentials-assez-series",
+        "source": "explicit_feed_category"
+      },
+      "categories": [
+        {
+          "id": 156,
+          "name": "Essentials Assez Series",
+          "slug": "essentials-assez-series",
+          "link": "https://ekotintpaint.com/product-category/essentials-assez-series/"
+        },
+        {
+          "id": 104,
+          "name": "Wall Putty & Primers",
+          "slug": "wall-putty-primers",
+          "link": "https://ekotintpaint.com/product-category/essentials-assez-series/wall-putty-primers/"
+        }
+      ],
+      "shortDescriptionHtml": "",
+      "shortDescription": "",
+      "descriptionHtml": "<div class=\"vgblk-rw-wrapper limit-wrapper\">\n<p data-start=\"403\" data-end=\"593\">A high-quality undercoat used to level and smooth wall surfaces before painting. It enhances paint adhesion, provides an even base, and increases paint durability.</p>\n</div>\n<p><!-- .vgblk-rw-wrapper --></p>",
+      "description": "A high-quality undercoat used to level and smooth wall surfaces before painting. It enhances paint adhesion, provides an even base, and increases paint durability.",
+      "displayDescription": "A high-quality undercoat used to level and smooth wall surfaces before painting. It enhances paint adhesion, provides an even base, and increases paint durability.",
+      "suppliedSpecifications": {
+        "packSizes": {
+          "status": "not_supplied",
+          "values": []
+        },
+        "numericalCoverage": {
+          "status": "not_supplied",
+          "value": null,
+          "unit": null
+        },
+        "qualitativeCoverageClaim": null,
+        "finish": {
+          "status": "not_supplied",
+          "value": null,
+          "sourceField": null
+        },
+        "intendedUse": {
+          "status": "supplied_in_description",
+          "value": "wall surfaces before painting",
+          "sourceField": "description"
+        },
+        "attributes": {
+          "status": "empty_in_source",
+          "values": []
+        },
+        "variations": {
+          "status": "empty_in_source",
+          "values": []
+        },
+        "weight": {
+          "status": "not_supplied",
+          "value": null
+        },
+        "physicalDimensions": {
+          "status": "not_supplied",
+          "sourceValues": {
+            "length": "",
+            "width": "",
+            "height": ""
+          }
+        },
+        "sku": {
+          "status": "not_supplied",
+          "value": null
+        }
+      },
+      "sourceCommerce": {
+        "isPurchasable": false,
+        "isInStock": true,
+        "hasOptions": false,
+        "rawPrices": {
+          "price": "0",
+          "regular_price": "0",
+          "sale_price": "0",
+          "price_range": null,
+          "currency_code": "USD",
+          "currency_symbol": "$",
+          "currency_minor_unit": 2,
+          "currency_decimal_separator": ".",
+          "currency_thousand_separator": ",",
+          "currency_prefix": "$",
+          "currency_suffix": ""
+        },
+        "priceHtml": "",
+        "displayAsActualPrice": false,
+        "priceNote": "Zero USD feed value with empty price_html and is_purchasable=false; no public selling price established.",
+        "averageRating": "0",
+        "reviewCount": 0
+      },
+      "image": {
+        "localPath": "/images/products/wall-putty.png",
+        "width": 920,
+        "height": 1100,
+        "format": "png",
+        "hasAlpha": false,
+        "bytes": 163602,
+        "sha256": "cb2a7c5694a743171ebe78888c1b8ab2ca64f5d686f21bb687265e9d37202604",
+        "backgroundRgb": [
+          246,
+          246,
+          244
+        ],
+        "sourceUrl": "https://ekotintpaint.com/wp-content/uploads/2025/10/1.png",
+        "sourceImageId": 12291,
+        "sourceAlt": "",
+        "existingProjectAsset": false,
+        "downloadedUnmodified": true,
+        "visuallyInspectedOn": "2026-11-11",
+        "approximatePackBounds": {
+          "x": 226,
+          "y": 262,
+          "width": 479,
+          "height": 571,
+          "units": "original_image_pixels",
+          "method": "visually_estimated_conservative_rectangle",
+          "precision": "approximate_layout_guide_not_a_segmentation_mask"
+        },
+        "packAppearance": "white bucket with original blue ASSEZ series band",
+        "finePrint": "Source is inherently soft; small print has not been transcribed or reconstructed."
+      },
+      "notes": [
+        "A separate listing in the other series shares this display name. Preserve product ID and slug."
+      ]
+    }
+  ]
+}
