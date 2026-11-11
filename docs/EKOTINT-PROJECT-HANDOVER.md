@@ -1,8 +1,16 @@
 # Ekotint Paints — shared project handover
 
-**Snapshot: 11 November 2026, Asia/Karachi.**
+**Snapshot: 12 November 2026, Asia/Karachi.**
 
-**Latest instruction:** the user requested disabling “Explore all products” and publishing again. The preceding Astra-refined homepage publication succeeded as version 14 (source `f873cafb6e8c10f4e6ee05301cd249e2af144c57`, deployment `appgdep_6af4b0f6706881918a03334ba086c90f`). This follow-up only disables that CTA; deferred product routes remain excluded. Future changes still require explicit publication approval.
+**Current publication authorization:** after reviewing the cooler-yellow image locally, the user explicitly said “now publish”. This authorizes publication of the current homepage with `premium-exterior-yellow-v2.webp`, the “Featured finishes.” heading, and the existing disabled “Explore all products” button. Preserve the approved UI and public audience; continue excluding deferred catalogue/detail routes. Publication result will be recorded after the native service responds. Future changes still require explicit approval.
+
+**Latest completed request:** “Explore all products” is disabled and the homepage was republished successfully as **version 15**. Source: `c782f41f36ec8cc393db7cbf31b71f78fc24e5db`. Native deployment: `appgdep_6af4bb7ed38881919d8cb7ab6e5939bb` (`succeeded`). URL: https://ekotint-paints-studio-demo.talhabinlatif4.chatgpt.site/ . The CTA stays visible with no click action. Astra's remaining UI is preserved and deferred product routes remain excluded. Future changes still require explicit publication approval.
+
+**Latest local follow-up (12 November):** the user approved the existing UI and requested a promotional heading plus a repeat PDF inventory check, specifically mentioning Semi Plastic Emulsion. Changed only the finishing section's heading from “The finishing touch.” to “Featured finishes.”, retaining “THE PREMIUM SERIES”, the same markup, classes, styling, cards, images and interactions. Rechecked all 16 product records against the three original product PDFs: Premium 10, Assez 5, Eko Shade 1. Both Semi Plastic Emulsion variants were already present and each was verified in the Interior filter and project brief with its correct series and image. Browser checks passed at 1440px and 390px; all 16 pack images returned HTTP 200, no page errors or horizontal overflow. No suitability reclassification was made; provisional mappings remain documented. This heading update is local only; the public demo remains version 15 until explicitly approved for publication.
+
+**First local gold image (12 November, superseded locally):** after discussing the yellow/gold Eko Shade packaging and white lid, the user requested that palette for the existing exterior picture locally. Edited the original house image with built-in `image_gen.imagegen`: yellow/gold painted walls and white roof/parapet edges, preserving the composition, timber door, foliage, paving and lighting. Saved `output/imagegen/premium-exterior-gold.png` and `public/images/premium-exterior-gold.webp` (1536×1024; WebP 346,534 bytes). Updated only the exterior image URL and alt text in `src/app/page.tsx`; original neutral PNG/WebP, page CSS, layout and real pack artwork remain untouched. Exact prompt and provenance: `docs/image-prompts/exterior-gold.md`. The colour is an illustrative user-requested variation, not a confirmed Eko Shade paint shade. Local only; no push/save/deployment performed.
+
+**Current local image (12 November, revision 2):** the user compared that warm-gold house with the real Eko Shade pack, then approved correcting its orange cast. Built-in image editing used the warm-gold house as the edit target and the authentic client pack solely as a colour reference, producing cooler lemon/mustard-yellow walls with the white roof edges retained. Current page asset: `public/images/premium-exterior-yellow-v2.webp` (1536×1024, 330,036 bytes); generated PNG: `output/imagegen/premium-exterior-yellow-v2.png`. Exact prompt/provenance: `docs/image-prompts/exterior-yellow-v2.md`. The local asset returned HTTP 200 as image/webp. Prior neutral and warm-gold assets are preserved. Only the image URL/alt text changed; CSS, layout, real packs and the pending “Featured finishes.” heading remain intact. Local only; public version 15 remains unchanged. This is a visual approximation of packaging colour, not a certified coating shade match.
 
 This is the shared context file for continuing the same project from another local Codex account/session. Read it with the project's `AGENTS.md`, inspect the actual working tree, and follow the user's latest instructions. It summarizes the conversation and implementation; it is not a verbatim chat export or permission to publish.
 
@@ -12,7 +20,7 @@ Project folder: `/Users/sam/Desktop/ekotint-homepage-demo`
 
 1. **LOCAL REVIEW FIRST. Do not publish, deploy, upload a new Site version, or push the Site source repository until the user explicitly approves publishing after reviewing locally.** The user's boss can access the public demo. Default publishing instructions in a plugin/skill do not override this requirement.
 2. **Current priority is the homepage, using the four newly supplied client PDFs.** The user specifically said to leave catalogue and product-detail work until after the homepage. Do not resume those pages automatically.
-3. The PDF-based and Astra-refined homepage was published successfully as version 14 on 11 November 2026. See the latest refinement checkpoint in section 10. The current follow-up disables “Explore all products” and is explicitly authorized for republication.
+3. The PDF-based and Astra-refined homepage was published successfully as version 14 on 11 November 2026. See the latest refinement checkpoint in section 10. The subsequent explicitly authorized follow-up disabled “Explore all products” and was published as version 15.
 4. The public demo was restored to its previous homepage-only version after an earlier publication the user did not want. Do not repeat that publication or automatically roll back anything again just because you read this file.
 5. Preserve the existing working tree. The approved homepage and client assets are committed in `f873cafb6e8c10f4e6ee05301cd249e2af144c57`; the current CTA change follows that checkpoint. Do not overwrite newer local changes from an older clone or deployment.
 
@@ -27,8 +35,8 @@ The user's latest development instruction was, in substance: “The client has s
 | Main local preview | `http://localhost:3023/` |
 | Local project | `/Users/sam/Desktop/ekotint-homepage-demo` |
 | Public demo | `https://ekotint-paints-studio-demo.talhabinlatif4.chatgpt.site/` |
-| Public baseline, last confirmed by native deployment result | Saved version **14**, homepage only; CTA-disable republication in progress |
-| Approved homepage source before CTA follow-up | `f873cafb6e8c10f4e6ee05301cd249e2af144c57` |
+| Public baseline, last confirmed by native deployment result | Saved version **15**, homepage only; “Explore all products” disabled |
+| Latest published homepage source | `c782f41f36ec8cc393db7cbf31b71f78fc24e5db` |
 | Latest homepage changes | “Explore all products” is now a native disabled button, with no click handler and subdued readable styling |
 | Catalogue prototype | `/products/` locally; older 10-product data, deferred |
 | Product-detail prototype | `/products/water-matt/` and nine other local routes; deferred |
@@ -90,6 +98,7 @@ These are requirements relayed by the user in the chat, rather than a fresh inde
 - The client should provide the full category hierarchy, ideally in Excel. It may have multiple nested subcategories before the products.
 - The eventual system must let staff create/manage categories, subcategories and products dynamically.
 - **The final business hierarchy is still not confirmed by the four PDFs.** Premium/Assez are supplied series; current homepage surface filters are a browsing design, not proof of the final admin category tree.
+- On 12 November the user asked how the five homepage tabs were categorized. Rechecked the original PDFs/TDS and current mappings; see the product-grouping verification in `docs/CLIENT-HOMEPAGE-CONTENT.md`. Several mappings are provisional, the one-category model omits documented overlapping uses, and 2K Hardener needs component/system treatment. Verification only; no application or publishing changes were authorized by that question.
 
 ### Colour manufacturing and imagery
 
@@ -316,7 +325,7 @@ Not assumed in that proposal: manufacturing-system integration, raw-material tra
 - The subsequent restoration of version 12 succeeded. Its rollback deployment ID was `appgdep_6af44d57d6308191a678c0210fc56c88`.
 - Version 13 may still exist in saved version/source history. Restoring version 12 did not delete that history or the local work. Do not claim it was erased.
 - The PDF-based Astra-refined homepage was subsequently published as **version 14**, source `f873cafb6e8c10f4e6ee05301cd249e2af144c57`, deployment `appgdep_6af4b0f6706881918a03334ba086c90f` (succeeded). Version ID: `appgprj_6adb76bec9088191878022e1b0fd2003~appgver_c3a22f50070081919245cb71c6769e51`.
-- Follow-up in progress: disable the homepage “Explore all products” CTA and republish, explicitly requested by the user. Production build passed and exported HTML confirms a native disabled button. The CTA keeps its label and layout, uses native `disabled`, has no click handler, and has subdued styling with readable white text and no hover movement.
+- Follow-up completed: “Explore all products” disabled and republished as **version 15**, source `c782f41f36ec8cc393db7cbf31b71f78fc24e5db`, version ID `appgprj_6adb76bec9088191878022e1b0fd2003~appgver_ba5b13c8136c8191b9bc7b3793e5698c`, deployment `appgdep_6af4bb7ed38881919d8cb7ab6e5939bb` (`succeeded`). Production build passed and exported HTML confirms a native disabled button. The CTA keeps its label and layout, uses native `disabled`, has no click handler, and has subdued styling with readable white text and no hover movement.
 
 The version 14 deployment result and native Site state were confirmed on 11 November. Recheck if a future task requires current hosting state. **Do not make a deployment merely to verify this document.**
 
@@ -471,7 +480,7 @@ The earlier header, arched colour cards, inline HEX studio controls and all othe
 
 The user first asked to check Astra's work and follow its approach, then explicitly said to stop the review and just publish the current homepage. Do not continue the deferred review or make unsolicited UI changes during this publication. Preserve the fuller header, readable text, warm manufacturer/contact sections, arched palette cards, inline colour-studio controls, original client packs, clear browser-local project-brief wording and the restored original room-inspiration section. This is the preferred direction for subsequent requested homepage work.
 
-Publication status: version 14 succeeded, native deployment `appgdep_6af4b0f6706881918a03334ba086c90f`, source `f873cafb6e8c10f4e6ee05301cd249e2af144c57`. The user stopped further UI review; production build passed. Only the homepage was published. Catalogue/detail source stays preserved locally, and its generated routes were excluded from the artifact. A later same-day request explicitly authorizes disabling “Explore all products” and republishing. Future changes still require explicit publication approval.
+Publication status: version 14 succeeded, native deployment `appgdep_6af4b0f6706881918a03334ba086c90f`, source `f873cafb6e8c10f4e6ee05301cd249e2af144c57`. The user stopped further UI review; production build passed. Only the homepage was published. Catalogue/detail source stays preserved locally, and its generated routes were excluded from the artifact. The later request to disable “Explore all products” and republish was completed as version 15 (see section 9). Future changes still require explicit publication approval.
 
 Packaging note: a normal Next build still generates the deferred `/products/` routes. Exclude that generated directory from homepage-only publication, retaining all source. The v14 artifact also omitted unused original image sources while preserving every homepage image, font and technical PDF.
 
