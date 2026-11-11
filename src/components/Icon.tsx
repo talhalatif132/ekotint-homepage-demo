@@ -1,6 +1,10 @@
-export type IconName = "arrow" | "search" | "heart" | "menu" | "close" | "check" | "plus" | "minus" | "sun" | "home" | "layers" | "spark" | "download" | "pause" | "play" | "chevron" | "filter" | "zoom" | "grid" | "back";
+export type IconName = "arrow" | "search" | "heart" | "menu" | "close" | "check" | "plus" | "minus" | "sun" | "home" | "layers" | "spark" | "download" | "pause" | "play" | "chevron" | "filter" | "zoom" | "grid" | "back" | "phone" | "pin" | "document" | "mail";
 export default function Icon({ name, size = 22, ...props }: { name: IconName; size?: number } & React.SVGProps<SVGSVGElement>) {
   const paths: Record<IconName, React.ReactNode> = {
+    mail: <><rect x="3" y="5" width="18" height="14" rx="1.5" /><path d="m3 6 9 7 9-7" /></>,
+    phone: <path d="M7 3H4a1 1 0 0 0-1 1c0 9.4 7.6 17 17 17a1 1 0 0 0 1-1v-3l-5-2-2 2a13 13 0 0 1-7-7l2-2-2-5Z" />,
+    pin: <><path d="M19 10c0 5-7 11-7 11S5 15 5 10a7 7 0 1 1 14 0Z" /><circle cx="12" cy="10" r="2.5" /></>,
+    document: <><path d="M14 3H5v18h14V8l-5-5Z" /><path d="M14 3v5h5M8 12h8M8 16h6" /></>,
     filter: <><path d="M4 7h16M4 17h16" /><circle cx="8" cy="7" r="2" fill="white" /><circle cx="16" cy="17" r="2" fill="white" /></>,
     zoom: <><circle cx="10.5" cy="10.5" r="6.5" /><path d="m16 16 5 5M7.5 10.5h6M10.5 7.5v6" /></>,
     grid: <><rect x="3" y="3" width="7" height="7" /><rect x="14" y="3" width="7" height="7" /><rect x="3" y="14" width="7" height="7" /><rect x="14" y="14" width="7" height="7" /></>,

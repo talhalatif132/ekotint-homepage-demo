@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Ekotint Paints — Your space. Your colour. Your story.",
-  description: "Explore original room inspiration, discover Ekotint paints, and picture your own colour story. An interactive homepage design preview.",
+  title: "Ekotint Paints — The Perfect Chemistry",
+  description: "Discover Ekotint Premium and Assez paints, roof coatings and protective finishes. Explore colour ideas and plan your next project.",
   robots: { index: false, follow: false },
   icons: { icon: "/favicon.svg" },
 };

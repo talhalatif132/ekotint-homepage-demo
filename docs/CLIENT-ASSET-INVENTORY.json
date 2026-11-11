@@ -1,0 +1,246 @@
+{
+  "received": "2026-11-11",
+  "assetCount": 16,
+  "assets": [
+    {
+      "name": "water-matt",
+      "source": "Ekotint premium Product.pdf",
+      "page": 1,
+      "embeddedImage": "premium-1-1-Im1",
+      "originalSize": [
+        1761,
+        1981
+      ],
+      "exportSize": [
+        1342,
+        1600
+      ],
+      "bytes": 436488
+    },
+    {
+      "name": "clima-shield",
+      "source": "Ekotint Details.pdf",
+      "page": 5,
+      "embeddedImage": "details-5-Im0",
+      "originalSize": [
+        1894,
+        1996
+      ],
+      "exportSize": [
+        1342,
+        1600
+      ],
+      "bytes": 926276
+    },
+    {
+      "name": "hydra-matt",
+      "source": "Ekotint Details.pdf",
+      "page": 4,
+      "embeddedImage": "details-4-Im0",
+      "originalSize": [
+        1946,
+        2363
+      ],
+      "exportSize": [
+        1342,
+        1600
+      ],
+      "bytes": 901154
+    },
+    {
+      "name": "epoxy",
+      "source": "Ekotint premium Product File2.pdf",
+      "page": 1,
+      "embeddedImage": "premium-2-1-Im0",
+      "originalSize": [
+        1031,
+        1181
+      ],
+      "exportSize": [
+        800,
+        950
+      ],
+      "bytes": 239676
+    },
+    {
+      "name": "eko-shade",
+      "source": "Ekotint Details.pdf",
+      "page": 7,
+      "embeddedImage": "details-7-Im0",
+      "originalSize": [
+        5460,
+        3642
+      ],
+      "exportSize": [
+        1342,
+        1600
+      ],
+      "bytes": 645354
+    },
+    {
+      "name": "eko-gleam",
+      "source": "Ekotint premium Product File2.pdf",
+      "page": 5,
+      "embeddedImage": "premium-2-5-Im0",
+      "originalSize": [
+        889,
+        1090
+      ],
+      "exportSize": [
+        800,
+        950
+      ],
+      "bytes": 243764
+    },
+    {
+      "name": "synthetic-varnish",
+      "source": "Ekotint premium Product File2.pdf",
+      "page": 4,
+      "embeddedImage": "premium-2-4-Im0",
+      "originalSize": [
+        918,
+        1085
+      ],
+      "exportSize": [
+        800,
+        950
+      ],
+      "bytes": 249514
+    },
+    {
+      "name": "primer-emulsion",
+      "source": "Ekotint premium Product.pdf",
+      "page": 3,
+      "embeddedImage": "premium-1-3-Im0",
+      "originalSize": [
+        1798,
+        2023
+      ],
+      "exportSize": [
+        1342,
+        1600
+      ],
+      "bytes": 456684
+    },
+    {
+      "name": "wall-putty",
+      "source": "Ekotint premium Product.pdf",
+      "page": 4,
+      "embeddedImage": "premium-1-4-Im0",
+      "originalSize": [
+        1803,
+        2015
+      ],
+      "exportSize": [
+        1342,
+        1600
+      ],
+      "bytes": 447936
+    },
+    {
+      "name": "weather-paint",
+      "source": "Ekotint premium Product.pdf",
+      "page": 5,
+      "embeddedImage": "premium-1-5-Im0",
+      "originalSize": [
+        1798,
+        2009
+      ],
+      "exportSize": [
+        1342,
+        1600
+      ],
+      "bytes": 447766
+    },
+    {
+      "name": "semi-plastic-emulsion",
+      "source": "Ekotint Details.pdf",
+      "page": 3,
+      "embeddedImage": "details-3-Im0",
+      "originalSize": [
+        1971,
+        2253
+      ],
+      "exportSize": [
+        1342,
+        1600
+      ],
+      "bytes": 942450
+    },
+    {
+      "name": "eko-prime-oxide",
+      "source": "Ekotint premium Product File2.pdf",
+      "page": 2,
+      "embeddedImage": "premium-2-2-Im0",
+      "originalSize": [
+        915,
+        1104
+      ],
+      "exportSize": [
+        800,
+        950
+      ],
+      "bytes": 247100
+    },
+    {
+      "name": "hardener",
+      "source": "Ekotint premium Product File2.pdf",
+      "page": 3,
+      "embeddedImage": "premium-2-3-Im0",
+      "originalSize": [
+        914,
+        1123
+      ],
+      "exportSize": [
+        800,
+        950
+      ],
+      "bytes": 247368
+    },
+    {
+      "name": "premium-semi-plastic",
+      "source": "Ekotint premium Product.pdf",
+      "page": 2,
+      "embeddedImage": "premium-1-2-Im0",
+      "originalSize": [
+        1729,
+        2013
+      ],
+      "exportSize": [
+        1342,
+        1600
+      ],
+      "bytes": 452696
+    },
+    {
+      "name": "assez-wall-putty",
+      "source": "Ekotint Details.pdf",
+      "page": 2,
+      "embeddedImage": "details-2-Im0",
+      "originalSize": [
+        1966,
+        2233
+      ],
+      "exportSize": [
+        1342,
+        1600
+      ],
+      "bytes": 922502
+    },
+    {
+      "name": "assez-gloss-enamel",
+      "source": "Ekotint Details.pdf",
+      "page": 6,
+      "embeddedImage": "details-6-Im1",
+      "originalSize": [
+        1776,
+        2030
+      ],
+      "exportSize": [
+        1342,
+        1600
+      ],
+      "bytes": 915484
+    }
+  ]
+}
