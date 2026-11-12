@@ -24,6 +24,10 @@ Brand swatches sampled from the supplied palette are blue `#2D56A4`, purple `#81
 - The supplied brand palette is a corporate identity palette, not an official named paint shade card. Existing room colour names/HEX examples remain illustrative, and custom colour selection remains available.
 - Catalogue and product-detail routes are left for the later phase. Homepage calls to action stay within the homepage, the local project brief, the supplied technical guide or the phone contact.
 
+## Pricing/review UI follow-up — 12 November 2026
+
+The user authorized clearly labelled example prices for homepage UI review. `homeExamplePrices` holds these arbitrary layout examples; they are not client-supplied prices or confirmed pack offers. No genuine reviews were supplied, so `homeCustomerReviews` remains empty and the UI states that no customer reviews are published here yet. The user accepted current contact values with “this is ok”; direct client confirmation was not performed. Validation is delegated to Sol as requested; see `SOL-PRICING-TRUST-HANDOFF.md`.
+
 ## Header contact addition — 11 November 2026
 
 The user supplied utility-bar references and requested a fuller header. Added `support@ekotintpaints.com` as a `mailto:` link, matching the email published on [Ekotint’s contact page](https://ekotintpaint.com/contact-us/) and homepage when reviewed in this session. This confirms the published address, not email delivery. The client TDS phone `021-35121487` and Karachi address retain precedence over the older website’s different phone number. No social profiles, store-locator data or translated pages were supplied by this change.

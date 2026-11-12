@@ -1,0 +1,798 @@
+{
+  "received": "2026-11-13",
+  "sourceDirectory": "/Users/sam/Downloads/Ekotint Product Images",
+  "assetCount": 15,
+  "allOriginalPngsCopiedVerbatim": true,
+  "missingProductIds": [
+    "hydra-matt"
+  ],
+  "assets": [
+    {
+      "id": "semi-plastic-emulsion",
+      "source": "/Users/sam/Downloads/Ekotint Product Images/Ekotint Details-08.png",
+      "destination": "public/images/client/hd-semi-plastic-emulsion-v1.png",
+      "url": "/images/client/hd-semi-plastic-emulsion-v1.png",
+      "name": "Ekotint Details-08.png",
+      "width": 1753,
+      "height": 2068,
+      "hasAlpha": true,
+      "bytes": 3521957,
+      "alpha": {
+        "min": 0,
+        "max": 255,
+        "fullyTransparentPercent": 20.59,
+        "bounds": {
+          "left": 33,
+          "top": 27,
+          "width": 1681,
+          "height": 2006
+        }
+      },
+      "sha256": "d72394aa884fcfd982b94015e605708c0ef65e47293919501334e042d38f1325",
+      "copyMatchesOriginal": true,
+      "currentAsset": {
+        "path": "public/images/client/semi-plastic-emulsion.webp",
+        "width": 1342,
+        "height": 1600,
+        "bytes": 942450,
+        "hasAlpha": true
+      },
+      "losslessWebp": {
+        "path": "public/images/client/hd-semi-plastic-emulsion-v1.webp",
+        "url": "/images/client/hd-semi-plastic-emulsion-v1.webp",
+        "width": 1753,
+        "height": 2068,
+        "bytes": 2258008,
+        "hasAlpha": true,
+        "encoding": {
+          "lossless": true,
+          "alphaQuality": 100,
+          "effort": 6
+        },
+        "decodedComparison": {
+          "sameDimensions": true,
+          "visiblePixels": 2878698,
+          "visiblePixelsDiffer": 0,
+          "alphaPixelsDiffer": 0,
+          "invisibleRgbPixelsDiffer": 746128,
+          "exactVisibleRgba": true
+        }
+      }
+    },
+    {
+      "id": "assez-wall-putty",
+      "source": "/Users/sam/Downloads/Ekotint Product Images/Ekotint Details-09.png",
+      "destination": "public/images/client/hd-assez-wall-putty-v1.png",
+      "url": "/images/client/hd-assez-wall-putty-v1.png",
+      "name": "Ekotint Details-09.png",
+      "width": 1753,
+      "height": 2068,
+      "hasAlpha": true,
+      "bytes": 3499564,
+      "alpha": {
+        "min": 0,
+        "max": 255,
+        "fullyTransparentPercent": 20.61,
+        "bounds": {
+          "left": 39,
+          "top": 47,
+          "width": 1681,
+          "height": 2005
+        }
+      },
+      "sha256": "ff643bdacb20e3fa52ff05e25aa32958126a6f8ea0c0f6ad5e13870867328908",
+      "copyMatchesOriginal": true,
+      "currentAsset": {
+        "path": "public/images/client/assez-wall-putty.webp",
+        "width": 1342,
+        "height": 1600,
+        "bytes": 922502,
+        "hasAlpha": true
+      },
+      "losslessWebp": {
+        "path": "public/images/client/hd-assez-wall-putty-v1.webp",
+        "url": "/images/client/hd-assez-wall-putty-v1.webp",
+        "width": 1753,
+        "height": 2068,
+        "bytes": 2240322,
+        "hasAlpha": true,
+        "encoding": {
+          "lossless": true,
+          "alphaQuality": 100,
+          "effort": 6
+        },
+        "decodedComparison": {
+          "sameDimensions": true,
+          "visiblePixels": 2877879,
+          "visiblePixelsDiffer": 0,
+          "alphaPixelsDiffer": 0,
+          "invisibleRgbPixelsDiffer": 729086,
+          "exactVisibleRgba": true
+        }
+      }
+    },
+    {
+      "id": "clima-shield",
+      "source": "/Users/sam/Downloads/Ekotint Product Images/Ekotint Details-10.png",
+      "destination": "public/images/client/hd-clima-shield-v1.png",
+      "url": "/images/client/hd-clima-shield-v1.png",
+      "name": "Ekotint Details-10.png",
+      "width": 1753,
+      "height": 2068,
+      "hasAlpha": true,
+      "bytes": 3503332,
+      "alpha": {
+        "min": 0,
+        "max": 255,
+        "fullyTransparentPercent": 20.75,
+        "bounds": {
+          "left": 29,
+          "top": 27,
+          "width": 1679,
+          "height": 2004
+        }
+      },
+      "sha256": "7d178a0ce5e292bbdbc88ffeda134e192848a8bb460591d8997d7027bec8c566",
+      "copyMatchesOriginal": true,
+      "currentAsset": {
+        "path": "public/images/client/clima-shield.webp",
+        "width": 1342,
+        "height": 1600,
+        "bytes": 926276,
+        "hasAlpha": true
+      },
+      "losslessWebp": {
+        "path": "public/images/client/hd-clima-shield-v1.webp",
+        "url": "/images/client/hd-clima-shield-v1.webp",
+        "width": 1753,
+        "height": 2068,
+        "bytes": 2234118,
+        "hasAlpha": true,
+        "encoding": {
+          "lossless": true,
+          "alphaQuality": 100,
+          "effort": 6
+        },
+        "decodedComparison": {
+          "sameDimensions": true,
+          "visiblePixels": 2872967,
+          "visiblePixelsDiffer": 0,
+          "alphaPixelsDiffer": 0,
+          "invisibleRgbPixelsDiffer": 752164,
+          "exactVisibleRgba": true
+        }
+      }
+    },
+    {
+      "id": "assez-gloss-enamel",
+      "source": "/Users/sam/Downloads/Ekotint Product Images/Ekotint Details-11.png",
+      "destination": "public/images/client/hd-assez-gloss-enamel-v1.png",
+      "url": "/images/client/hd-assez-gloss-enamel-v1.png",
+      "name": "Ekotint Details-11.png",
+      "width": 1753,
+      "height": 2068,
+      "hasAlpha": true,
+      "bytes": 3515362,
+      "alpha": {
+        "min": 0,
+        "max": 255,
+        "fullyTransparentPercent": 20.85,
+        "bounds": {
+          "left": 32,
+          "top": 34,
+          "width": 1678,
+          "height": 2002
+        }
+      },
+      "sha256": "647071a18be3d425495874d6c40b45e8e80190f1b9f836a99243e63ec61dd876",
+      "copyMatchesOriginal": true,
+      "currentAsset": {
+        "path": "public/images/client/assez-gloss-enamel.webp",
+        "width": 1342,
+        "height": 1600,
+        "bytes": 915484,
+        "hasAlpha": true
+      },
+      "losslessWebp": {
+        "path": "public/images/client/hd-assez-gloss-enamel-v1.webp",
+        "url": "/images/client/hd-assez-gloss-enamel-v1.webp",
+        "width": 1753,
+        "height": 2068,
+        "bytes": 2236072,
+        "hasAlpha": true,
+        "encoding": {
+          "lossless": true,
+          "alphaQuality": 100,
+          "effort": 6
+        },
+        "decodedComparison": {
+          "sameDimensions": true,
+          "visiblePixels": 2869467,
+          "visiblePixelsDiffer": 0,
+          "alphaPixelsDiffer": 0,
+          "invisibleRgbPixelsDiffer": 755555,
+          "exactVisibleRgba": true
+        }
+      }
+    },
+    {
+      "id": "eko-shade",
+      "source": "/Users/sam/Downloads/Ekotint Product Images/Ekotint Details-12.png",
+      "destination": "public/images/client/hd-eko-shade-v1.png",
+      "url": "/images/client/hd-eko-shade-v1.png",
+      "name": "Ekotint Details-12.png",
+      "width": 1753,
+      "height": 2068,
+      "hasAlpha": true,
+      "bytes": 2891902,
+      "alpha": {
+        "min": 0,
+        "max": 255,
+        "fullyTransparentPercent": 21.62,
+        "bounds": {
+          "left": 47,
+          "top": 37,
+          "width": 1670,
+          "height": 1993
+        }
+      },
+      "sha256": "60b97e4e35ba41f2a73c84d60b0eddf942e191a6b17c14bcf6323da199bb2fe7",
+      "copyMatchesOriginal": true,
+      "currentAsset": {
+        "path": "public/images/client/eko-shade.webp",
+        "width": 1342,
+        "height": 1600,
+        "bytes": 645354,
+        "hasAlpha": true
+      },
+      "losslessWebp": {
+        "path": "public/images/client/hd-eko-shade-v1.webp",
+        "url": "/images/client/hd-eko-shade-v1.webp",
+        "width": 1753,
+        "height": 2068,
+        "bytes": 1906898,
+        "hasAlpha": true,
+        "encoding": {
+          "lossless": true,
+          "alphaQuality": 100,
+          "effort": 6
+        },
+        "decodedComparison": {
+          "sameDimensions": true,
+          "visiblePixels": 2841355,
+          "visiblePixelsDiffer": 0,
+          "alphaPixelsDiffer": 0,
+          "invisibleRgbPixelsDiffer": 783526,
+          "exactVisibleRgba": true
+        }
+      }
+    },
+    {
+      "id": "epoxy",
+      "source": "/Users/sam/Downloads/Ekotint Product Images/Ekotint Details-13.png",
+      "destination": "public/images/client/hd-epoxy-v1.png",
+      "url": "/images/client/hd-epoxy-v1.png",
+      "name": "Ekotint Details-13.png",
+      "width": 1753,
+      "height": 2068,
+      "hasAlpha": true,
+      "bytes": 1143799,
+      "alpha": {
+        "min": 0,
+        "max": 255,
+        "fullyTransparentPercent": 14.69,
+        "bounds": {
+          "left": 46,
+          "top": 77,
+          "width": 1636,
+          "height": 1945
+        }
+      },
+      "sha256": "6d4b041f03b2bf52d32dd52a8183db6291ce07cf137d8307ca5cd46821683e80",
+      "copyMatchesOriginal": true,
+      "currentAsset": {
+        "path": "public/images/client/epoxy.webp",
+        "width": 800,
+        "height": 950,
+        "bytes": 239676,
+        "hasAlpha": true
+      },
+      "losslessWebp": {
+        "path": "public/images/client/hd-epoxy-v1.webp",
+        "url": "/images/client/hd-epoxy-v1.webp",
+        "width": 1753,
+        "height": 2068,
+        "bytes": 729308,
+        "hasAlpha": true,
+        "encoding": {
+          "lossless": true,
+          "alphaQuality": 100,
+          "effort": 6
+        },
+        "decodedComparison": {
+          "sameDimensions": true,
+          "visiblePixels": 3092596,
+          "visiblePixelsDiffer": 0,
+          "alphaPixelsDiffer": 0,
+          "invisibleRgbPixelsDiffer": 532608,
+          "exactVisibleRgba": true
+        }
+      }
+    },
+    {
+      "id": "eko-prime-oxide",
+      "source": "/Users/sam/Downloads/Ekotint Product Images/Ekotint Details-14.png",
+      "destination": "public/images/client/hd-eko-prime-oxide-v1.png",
+      "url": "/images/client/hd-eko-prime-oxide-v1.png",
+      "name": "Ekotint Details-14.png",
+      "width": 1753,
+      "height": 2068,
+      "hasAlpha": true,
+      "bytes": 1185944,
+      "alpha": {
+        "min": 0,
+        "max": 255,
+        "fullyTransparentPercent": 10.42,
+        "bounds": {
+          "left": 32,
+          "top": 44,
+          "width": 1676,
+          "height": 1994
+        }
+      },
+      "sha256": "bf9a15e934bd7c46823250037ea0c4feef48cd9d71e09ab84a3f74198e0aa169",
+      "copyMatchesOriginal": true,
+      "currentAsset": {
+        "path": "public/images/client/eko-prime-oxide.webp",
+        "width": 800,
+        "height": 950,
+        "bytes": 247100,
+        "hasAlpha": true
+      },
+      "losslessWebp": {
+        "path": "public/images/client/hd-eko-prime-oxide-v1.webp",
+        "url": "/images/client/hd-eko-prime-oxide-v1.webp",
+        "width": 1753,
+        "height": 2068,
+        "bytes": 746712,
+        "hasAlpha": true,
+        "encoding": {
+          "lossless": true,
+          "alphaQuality": 100,
+          "effort": 6
+        },
+        "decodedComparison": {
+          "sameDimensions": true,
+          "visiblePixels": 3247332,
+          "visiblePixelsDiffer": 0,
+          "alphaPixelsDiffer": 0,
+          "invisibleRgbPixelsDiffer": 377872,
+          "exactVisibleRgba": true
+        }
+      }
+    },
+    {
+      "id": "hardener",
+      "source": "/Users/sam/Downloads/Ekotint Product Images/Ekotint Details-15.png",
+      "destination": "public/images/client/hd-hardener-v1.png",
+      "url": "/images/client/hd-hardener-v1.png",
+      "name": "Ekotint Details-15.png",
+      "width": 1753,
+      "height": 2068,
+      "hasAlpha": true,
+      "bytes": 1182790,
+      "alpha": {
+        "min": 0,
+        "max": 255,
+        "fullyTransparentPercent": 9.87,
+        "bounds": {
+          "left": 27,
+          "top": 46,
+          "width": 1681,
+          "height": 1999
+        }
+      },
+      "sha256": "a062946e21e745dfb2b75e27f43c00f2785e79603540a1d11072b166e710db9b",
+      "copyMatchesOriginal": true,
+      "currentAsset": {
+        "path": "public/images/client/hardener.webp",
+        "width": 800,
+        "height": 950,
+        "bytes": 247368,
+        "hasAlpha": true
+      },
+      "losslessWebp": {
+        "path": "public/images/client/hd-hardener-v1.webp",
+        "url": "/images/client/hd-hardener-v1.webp",
+        "width": 1753,
+        "height": 2068,
+        "bytes": 744840,
+        "hasAlpha": true,
+        "encoding": {
+          "lossless": true,
+          "alphaQuality": 100,
+          "effort": 6
+        },
+        "decodedComparison": {
+          "sameDimensions": true,
+          "visiblePixels": 3267394,
+          "visiblePixelsDiffer": 0,
+          "alphaPixelsDiffer": 0,
+          "invisibleRgbPixelsDiffer": 357810,
+          "exactVisibleRgba": true
+        }
+      }
+    },
+    {
+      "id": "synthetic-varnish",
+      "source": "/Users/sam/Downloads/Ekotint Product Images/Ekotint Details-16.png",
+      "destination": "public/images/client/hd-synthetic-varnish-v1.png",
+      "url": "/images/client/hd-synthetic-varnish-v1.png",
+      "name": "Ekotint Details-16.png",
+      "width": 1753,
+      "height": 2068,
+      "hasAlpha": true,
+      "bytes": 1160845,
+      "alpha": {
+        "min": 0,
+        "max": 255,
+        "fullyTransparentPercent": 13.74,
+        "bounds": {
+          "left": 40,
+          "top": 60,
+          "width": 1644,
+          "height": 1956
+        }
+      },
+      "sha256": "19194be07974cace6fae591c82bc0adbed4b504590a9ec0a0f313e4ed3a2aac2",
+      "copyMatchesOriginal": true,
+      "currentAsset": {
+        "path": "public/images/client/synthetic-varnish.webp",
+        "width": 800,
+        "height": 950,
+        "bytes": 249514,
+        "hasAlpha": true
+      },
+      "losslessWebp": {
+        "path": "public/images/client/hd-synthetic-varnish-v1.webp",
+        "url": "/images/client/hd-synthetic-varnish-v1.webp",
+        "width": 1753,
+        "height": 2068,
+        "bytes": 735750,
+        "hasAlpha": true,
+        "encoding": {
+          "lossless": true,
+          "alphaQuality": 100,
+          "effort": 6
+        },
+        "decodedComparison": {
+          "sameDimensions": true,
+          "visiblePixels": 3127275,
+          "visiblePixelsDiffer": 0,
+          "alphaPixelsDiffer": 0,
+          "invisibleRgbPixelsDiffer": 497929,
+          "exactVisibleRgba": true
+        }
+      }
+    },
+    {
+      "id": "eko-gleam",
+      "source": "/Users/sam/Downloads/Ekotint Product Images/Ekotint Details-17.png",
+      "destination": "public/images/client/hd-eko-gleam-v1.png",
+      "url": "/images/client/hd-eko-gleam-v1.png",
+      "name": "Ekotint Details-17.png",
+      "width": 1753,
+      "height": 2068,
+      "hasAlpha": true,
+      "bytes": 1166195,
+      "alpha": {
+        "min": 0,
+        "max": 255,
+        "fullyTransparentPercent": 12.32,
+        "bounds": {
+          "left": 46,
+          "top": 58,
+          "width": 1658,
+          "height": 1972
+        }
+      },
+      "sha256": "28fccda113c70631f7ebdf458ba854f51f36b73e20520acc8f152cbd99d737c1",
+      "copyMatchesOriginal": true,
+      "currentAsset": {
+        "path": "public/images/client/eko-gleam.webp",
+        "width": 800,
+        "height": 950,
+        "bytes": 243764,
+        "hasAlpha": true
+      },
+      "losslessWebp": {
+        "path": "public/images/client/hd-eko-gleam-v1.webp",
+        "url": "/images/client/hd-eko-gleam-v1.webp",
+        "width": 1753,
+        "height": 2068,
+        "bytes": 740382,
+        "hasAlpha": true,
+        "encoding": {
+          "lossless": true,
+          "alphaQuality": 100,
+          "effort": 6
+        },
+        "decodedComparison": {
+          "sameDimensions": true,
+          "visiblePixels": 3178617,
+          "visiblePixelsDiffer": 0,
+          "alphaPixelsDiffer": 0,
+          "invisibleRgbPixelsDiffer": 446587,
+          "exactVisibleRgba": true
+        }
+      }
+    },
+    {
+      "id": "water-matt",
+      "source": "/Users/sam/Downloads/Ekotint Product Images/Ekotint Details-18.png",
+      "destination": "public/images/client/hd-water-matt-v1.png",
+      "url": "/images/client/hd-water-matt-v1.png",
+      "name": "Ekotint Details-18.png",
+      "width": 1753,
+      "height": 2068,
+      "hasAlpha": true,
+      "bytes": 2311318,
+      "alpha": {
+        "min": 0,
+        "max": 255,
+        "fullyTransparentPercent": 22.84,
+        "bounds": {
+          "left": 53,
+          "top": 38,
+          "width": 1657,
+          "height": 1977
+        }
+      },
+      "sha256": "c113cc55ab577b094be7f0307fb1fdba25a7f247b933b0dee871b60c9e182002",
+      "copyMatchesOriginal": true,
+      "currentAsset": {
+        "path": "public/images/client/water-matt.webp",
+        "width": 1342,
+        "height": 1600,
+        "bytes": 436488,
+        "hasAlpha": true
+      },
+      "losslessWebp": {
+        "path": "public/images/client/hd-water-matt-v1.webp",
+        "url": "/images/client/hd-water-matt-v1.webp",
+        "width": 1753,
+        "height": 2068,
+        "bytes": 1423214,
+        "hasAlpha": true,
+        "encoding": {
+          "lossless": true,
+          "alphaQuality": 100,
+          "effort": 6
+        },
+        "decodedComparison": {
+          "sameDimensions": true,
+          "visiblePixels": 2797054,
+          "visiblePixelsDiffer": 0,
+          "alphaPixelsDiffer": 0,
+          "invisibleRgbPixelsDiffer": 827691,
+          "exactVisibleRgba": true
+        }
+      }
+    },
+    {
+      "id": "premium-semi-plastic",
+      "source": "/Users/sam/Downloads/Ekotint Product Images/Ekotint Details-19.png",
+      "destination": "public/images/client/hd-premium-semi-plastic-v1.png",
+      "url": "/images/client/hd-premium-semi-plastic-v1.png",
+      "name": "Ekotint Details-19.png",
+      "width": 1753,
+      "height": 2068,
+      "hasAlpha": true,
+      "bytes": 2379726,
+      "alpha": {
+        "min": 0,
+        "max": 255,
+        "fullyTransparentPercent": 21.61,
+        "bounds": {
+          "left": 57,
+          "top": 45,
+          "width": 1670,
+          "height": 1993
+        }
+      },
+      "sha256": "be42af999f8ae97ad3c10404888198768cc30209c613987209fbbcd8c6930271",
+      "copyMatchesOriginal": true,
+      "currentAsset": {
+        "path": "public/images/client/premium-semi-plastic.webp",
+        "width": 1342,
+        "height": 1600,
+        "bytes": 452696,
+        "hasAlpha": true
+      },
+      "losslessWebp": {
+        "path": "public/images/client/hd-premium-semi-plastic-v1.webp",
+        "url": "/images/client/hd-premium-semi-plastic-v1.webp",
+        "width": 1753,
+        "height": 2068,
+        "bytes": 1501150,
+        "hasAlpha": true,
+        "encoding": {
+          "lossless": true,
+          "alphaQuality": 100,
+          "effort": 6
+        },
+        "decodedComparison": {
+          "sameDimensions": true,
+          "visiblePixels": 2841803,
+          "visiblePixelsDiffer": 0,
+          "alphaPixelsDiffer": 0,
+          "invisibleRgbPixelsDiffer": 783401,
+          "exactVisibleRgba": true
+        }
+      }
+    },
+    {
+      "id": "primer-emulsion",
+      "source": "/Users/sam/Downloads/Ekotint Product Images/Ekotint Details-20.png",
+      "destination": "public/images/client/hd-primer-emulsion-v1.png",
+      "url": "/images/client/hd-primer-emulsion-v1.png",
+      "name": "Ekotint Details-20.png",
+      "width": 1753,
+      "height": 2068,
+      "hasAlpha": true,
+      "bytes": 2372705,
+      "alpha": {
+        "min": 0,
+        "max": 255,
+        "fullyTransparentPercent": 22.98,
+        "bounds": {
+          "left": 53,
+          "top": 55,
+          "width": 1655,
+          "height": 1975
+        }
+      },
+      "sha256": "cd90b05e2a86c7177c48c7454071901623de54df651a2179d9aa408be95fe03e",
+      "copyMatchesOriginal": true,
+      "currentAsset": {
+        "path": "public/images/client/primer-emulsion.webp",
+        "width": 1342,
+        "height": 1600,
+        "bytes": 456684,
+        "hasAlpha": true
+      },
+      "losslessWebp": {
+        "path": "public/images/client/hd-primer-emulsion-v1.webp",
+        "url": "/images/client/hd-primer-emulsion-v1.webp",
+        "width": 1753,
+        "height": 2068,
+        "bytes": 1493304,
+        "hasAlpha": true,
+        "encoding": {
+          "lossless": true,
+          "alphaQuality": 100,
+          "effort": 6
+        },
+        "decodedComparison": {
+          "sameDimensions": true,
+          "visiblePixels": 2792074,
+          "visiblePixelsDiffer": 0,
+          "alphaPixelsDiffer": 0,
+          "invisibleRgbPixelsDiffer": 832967,
+          "exactVisibleRgba": true
+        }
+      }
+    },
+    {
+      "id": "wall-putty",
+      "source": "/Users/sam/Downloads/Ekotint Product Images/Ekotint Details-21.png",
+      "destination": "public/images/client/hd-wall-putty-v1.png",
+      "url": "/images/client/hd-wall-putty-v1.png",
+      "name": "Ekotint Details-21.png",
+      "width": 1753,
+      "height": 2068,
+      "hasAlpha": true,
+      "bytes": 2361896,
+      "alpha": {
+        "min": 0,
+        "max": 255,
+        "fullyTransparentPercent": 22.89,
+        "bounds": {
+          "left": 55,
+          "top": 61,
+          "width": 1656,
+          "height": 1976
+        }
+      },
+      "sha256": "dc9b443974fd8cedf2808bfb88723b24069161f63e54b171a9390dd908cf97c0",
+      "copyMatchesOriginal": true,
+      "currentAsset": {
+        "path": "public/images/client/wall-putty.webp",
+        "width": 1342,
+        "height": 1600,
+        "bytes": 447936,
+        "hasAlpha": true
+      },
+      "losslessWebp": {
+        "path": "public/images/client/hd-wall-putty-v1.webp",
+        "url": "/images/client/hd-wall-putty-v1.webp",
+        "width": 1753,
+        "height": 2068,
+        "bytes": 1485766,
+        "hasAlpha": true,
+        "encoding": {
+          "lossless": true,
+          "alphaQuality": 100,
+          "effort": 6
+        },
+        "decodedComparison": {
+          "sameDimensions": true,
+          "visiblePixels": 2795571,
+          "visiblePixelsDiffer": 0,
+          "alphaPixelsDiffer": 0,
+          "invisibleRgbPixelsDiffer": 829627,
+          "exactVisibleRgba": true
+        }
+      }
+    },
+    {
+      "id": "weather-paint",
+      "source": "/Users/sam/Downloads/Ekotint Product Images/Ekotint Details-22.png",
+      "destination": "public/images/client/hd-weather-paint-v1.png",
+      "url": "/images/client/hd-weather-paint-v1.png",
+      "name": "Ekotint Details-22.png",
+      "width": 1753,
+      "height": 2068,
+      "hasAlpha": true,
+      "bytes": 2374265,
+      "alpha": {
+        "min": 0,
+        "max": 255,
+        "fullyTransparentPercent": 21.34,
+        "bounds": {
+          "left": 55,
+          "top": 29,
+          "width": 1673,
+          "height": 1996
+        }
+      },
+      "sha256": "2d6505aeef904930b6fbf65f1650814e8504bf4995e84e74102c1ff0775a1f3a",
+      "copyMatchesOriginal": true,
+      "currentAsset": {
+        "path": "public/images/client/weather-paint.webp",
+        "width": 1342,
+        "height": 1600,
+        "bytes": 447766,
+        "hasAlpha": true
+      },
+      "losslessWebp": {
+        "path": "public/images/client/hd-weather-paint-v1.webp",
+        "url": "/images/client/hd-weather-paint-v1.webp",
+        "width": 1753,
+        "height": 2068,
+        "bytes": 1500006,
+        "hasAlpha": true,
+        "encoding": {
+          "lossless": true,
+          "alphaQuality": 100,
+          "effort": 6
+        },
+        "decodedComparison": {
+          "sameDimensions": true,
+          "visiblePixels": 2851448,
+          "visiblePixelsDiffer": 0,
+          "alphaPixelsDiffer": 0,
+          "invisibleRgbPixelsDiffer": 773752,
+          "exactVisibleRgba": true
+        }
+      }
+    }
+  ],
+  "losslessWebpSummary": {
+    "assetCount": 15,
+    "totalBytes": 21975850,
+    "pngTotalBytes": 34571600,
+    "allExactVisibleRgba": true,
+    "notes": "No resizing, cropping, sharpening or repainting. Fully transparent RGB may be canonicalized by WebP; alpha and visible RGBA compared after decoding."
+  }
+}

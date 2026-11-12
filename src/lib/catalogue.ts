@@ -40,5 +40,12 @@ export const colourIdeas = [
   { name: "Blue Hour", hex: "#788C9C" }, { name: "Plum Velvet", hex: "#705579" },
 ];
 export const collectionName = (id: Collection) => collections.find((item) => item.id === id)!.name;
-export const productHref = (product: Pick<PaintProduct, "id">) => `/products/${product.id}/`;
+// Preserve legacy catalogue variants when linking to the current client records.
+const currentProductIds: Record<string, string> = {
+  "wall-putty": "assez-wall-putty",
+  "wall-putty-2": "wall-putty",
+  "semi-plastic-emulsion-2": "premium-semi-plastic",
+  "gloss-enamel": "assez-gloss-enamel",
+};
+export const productHref = (product: Pick<PaintProduct, "id">) => `/products/${currentProductIds[product.id] || product.id}/`;
 export const getProduct = (id: string) => catalogue.find((product) => product.id === id);

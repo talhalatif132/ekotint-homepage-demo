@@ -1,0 +1,80 @@
+/* 13 November: image-led opening, following the user's latest CEO feedback. */
+html:has(.home-site) { scroll-padding-top: calc(var(--home-header-height, 84px) + 8px); }
+.home-site { --home-utility-height: 44px; }
+.home-site .site-header { height: 84px; padding-inline: 5.5%; gap: 30px; }
+.home-site .desktop-nav { justify-content: center; gap: clamp(18px, 2.1vw, 32px); margin: 0 auto; }
+.home-site .header-actions { gap: 8px; }
+.home-site .brand, .home-site .brand img { width: 148px; }
+.home-site .desktop-nav > :is(a, button) { font-size: 13px; font-weight: 500; }
+.home-site.typography-refined .desktop-nav > :is(a, button) { font-size: 13px; }
+.home-site .new-dot { display: none; }
+
+.home-site .immersive-hero {
+  position: relative;
+  width: 100%;
+  height: calc(100svh - var(--home-header-height, 84px) - var(--home-utility-height));
+  min-height: 480px;
+  isolation: isolate;
+  overflow: hidden;
+  background: #342839;
+  color: #fff;
+}
+.home-site .immersive-hero-picture { position: absolute; inset: 0; display: block; z-index: -2; }
+.home-site .immersive-hero-image { display: block; width: 100%; height: 100%; object-fit: cover; object-position: var(--hero-image-position, center); animation: immersive-image-enter .55s ease both; }
+.home-site .immersive-hero::after { content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none; background: linear-gradient(90deg, #130d1b5c, #130d1b14 55%, transparent 78%), linear-gradient(0deg, #130d1b66, transparent 42%); }
+.home-site .immersive-hero-content { position: absolute; top: 48%; left: 5.5%; right: 5.5%; transform: translateY(-50%); pointer-events: none; }
+.home-site .immersive-hero-content h1 { max-width: 700px; margin: 0; color: #fff; font-family: var(--body); font-size: clamp(38px, 4vw, 62px); font-style: normal; font-weight: 500; line-height: 1.15; letter-spacing: -.04em; text-wrap: balance; text-shadow: 0 2px 20px #130d1b20; }
+.home-site .immersive-hero-action { display: inline-flex; align-items: center; justify-content: space-between; gap: 30px; min-height: 52px; margin-top: 25px; padding: 14px 22px; border: 1px solid #fff; border-radius: 3px; background: #fff; color: #41254e; font-size: 14px; font-weight: 600; line-height: 1.5; pointer-events: auto; transition: background .2s, color .2s; }
+.home-site .immersive-hero-action:hover { background: #f0e8f5; border-color: #f0e8f5; }
+.home-site .immersive-hero-controls { position: absolute; right: 5.5%; bottom: 30px; display: flex; align-items: center; gap: 5px; padding: 5px; border: 1px solid #ffffff38; border-radius: 5px; background: #25182e45; color: #fff; backdrop-filter: blur(10px); }
+.home-site .immersive-hero-control { display: grid; place-items: center; width: 44px; height: 44px; flex-shrink: 0; border-radius: 3px; background: none; color: #fff; }
+.home-site .immersive-hero-control:hover { background: #ffffff1f; }
+.home-site .immersive-hero-control:disabled { opacity: .55; cursor: default; }
+.home-site .immersive-hero-control:disabled:hover { background: none; }
+.home-site .immersive-hero-control.previous > svg { transform: rotate(180deg); }
+.home-site .immersive-hero-dots { display: flex; gap: 1px; padding-inline: 4px; }
+.home-site .immersive-hero-dots > button { display: grid; place-items: center; width: 24px; height: 44px; padding: 0; background: none; color: #fff; }
+.home-site .immersive-hero-dots > button > span { display: block; width: 15px; height: 2px; border-radius: 2px; background: #ffffff66; transition: background .2s, height .2s; }
+.home-site .immersive-hero-dots > button[aria-current="true"] > span { height: 3px; background: #fff; }
+.home-site .immersive-hero :is(a, button):focus-visible { outline: 2px solid #fff; outline-offset: 4px; }
+.home-site .contact-email { display: inline-flex; align-items: center; gap: 9px; margin-top: 16px; color: #56316b; font-size: 14px; line-height: 1.7; }
+.home-site .contact-email > span { overflow-wrap: anywhere; }
+.home-site .contact-email > svg { flex-shrink: 0; }
+.home-site .contact-email:hover { text-decoration: underline; text-underline-offset: 4px; }
+
+/* Keep the local typography review available without an overlay on the website. */
+.home-site .typography-comparison { position: static; width: fit-content; max-width: calc(100% - 32px); margin: 20px auto; box-shadow: none; z-index: auto; }
+
+@keyframes immersive-image-enter { from { opacity: .45; } to { opacity: 1; } }
+@media (max-width: 1100px) {
+  .home-site .site-header { gap: 20px; }
+  .home-site .desktop-nav { gap: 18px; }
+  .home-site .desktop-nav > :is(a, button), .home-site.typography-refined .desktop-nav > :is(a, button) { font-size: 12px; }
+}
+@media (max-width: 1000px) {
+  .home-site .desktop-nav { display: none; }
+  .home-site .mobile-menu-button { display: inline-flex; }
+}
+@media (max-width: 800px) {
+  html:has(.home-site) { scroll-padding-top: calc(var(--home-header-height, 72px) + 8px); }
+  .home-site { --home-utility-height: 40px; }
+  .home-site .site-header { height: 72px; padding-inline: 6%; }
+  .home-site .brand, .home-site .brand img { width: 135px; }
+  .home-site .header-actions { gap: 2px; }
+  .home-site .immersive-hero { height: calc(100svh - var(--home-header-height, 72px) - var(--home-utility-height)); }
+  .home-site .immersive-hero-image { object-position: var(--hero-mobile-position, center); }
+  .home-site .immersive-hero-content { top: auto; bottom: 126px; left: 6%; right: 6%; transform: none; }
+  .home-site .immersive-hero-content h1 { max-width: 430px; font-size: clamp(34px, 8vw, 44px); }
+  .home-site .immersive-hero-action { margin-top: 22px; }
+  .home-site .immersive-hero-controls { left: 6%; right: auto; bottom: 24px; }
+  .home-site .immersive-hero::after { background: linear-gradient(0deg, #130d1b99, #130d1b1f 58%, transparent 85%); }
+}
+@media (max-height: 600px) { .home-site .immersive-hero { min-height: 360px; } }
+@media (max-width: 380px) {
+  .home-site .site-header { gap: 10px; }
+  .home-site .brand, .home-site .brand img { width: 124px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .home-site .immersive-hero-image { animation: none; }
+  .home-site .immersive-hero :is(a, button, span) { transition: none; }
+}

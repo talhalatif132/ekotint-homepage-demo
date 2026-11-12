@@ -8,7 +8,7 @@ Created 12 November 2026 with built-in `image_gen.imagegen` (edit mode).
 - Final web asset: `public/images/premium-exterior-yellow-v2.webp` (1536×1024).
 - The user approved reducing the orange cast after comparing the first warm-gold version with the cooler yellow packaging. White roof edges, architecture, setting and UI are preserved. Both earlier image versions remain available locally.
 - This is an illustrative colour match to packaging, not confirmation of a manufactured roof-coating shade.
-- Local only; public version 15 remains unchanged.
+- Subsequently approved and published as part of homepage version 16 on 12 November 2026; deployment `appgdep_6af4d1eb98ec8191a7fe000d53fff3b1` succeeded.
 
 ## Exact generation prompt
 

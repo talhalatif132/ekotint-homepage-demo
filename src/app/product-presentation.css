@@ -1,0 +1,287 @@
+/* Product presentation follows the client's supplied cutouts and current review.
+   Keep this scoped so the saved catalogue prototype retains its own layout. */
+.home-site .client-paints { padding-top: 44px; padding-bottom: 44px; }
+.home-site .client-paints .product-section-heading {
+  max-width: 760px;
+  margin: 0 auto 28px;
+  text-align: center;
+}
+.home-site .client-paints .product-section-heading h2 {
+  font-family: var(--body);
+  font-size: clamp(28px, 2.7vw, 38px);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -.035em;
+}
+.home-site .client-paints .product-section-heading p {
+  margin-top: 10px;
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--muted);
+}
+.home-site .paint-colour-context {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: -8px auto 18px;
+  font-size: 12px;
+  line-height: 1.7;
+  color: var(--brand-text);
+}
+.home-site .paint-colour-context > span { width: 24px; height: 24px; border: 1px solid #30202e20; border-radius: 50%; flex-shrink: 0; }
+.home-site .paint-colour-context > button { display: grid; place-items: center; width: 36px; height: 36px; flex-shrink: 0; background: none; color: inherit; }
+.home-dialog .search-results > a { display: flex; align-items: center; gap: 13px; width: 100%; min-height: 59px; text-align: left; padding: 9px 0; border-bottom: 1px solid var(--line); font-size: 13px; }
+.home-dialog .search-results > a > span { flex: 1; }
+.home-dialog .search-results > a > svg { margin-left: auto; color: var(--brand-text); }
+.home-site .client-paints .product-toolbar {
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  margin-bottom: 26px;
+  border-bottom: 0;
+}
+.home-site .client-paints .product-tabs {
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px 56px;
+  overflow: visible;
+}
+.home-site .client-paints .product-tabs > button {
+  min-height: 44px;
+  padding: 11px 0;
+  font-size: 14px;
+  line-height: 1.5;
+}
+.home-site .client-paints .product-tabs > button.active::after {
+  bottom: 1px;
+}
+.home-site .client-paints .product-grid {
+  column-gap: clamp(24px, 4vw, 64px);
+}
+/* All products in the chosen category share one compact row on desktop.
+   Cap the row width for short categories rather than stretching two packs apart. */
+.home-site #home-product-grid:not(.single-product) {
+  grid-template-columns: repeat(var(--visible-products), minmax(0, 1fr));
+  max-width: calc(var(--visible-products) * 230px + (var(--visible-products) - 1) * 24px);
+  margin-inline: auto;
+  min-height: 0;
+  gap: 0 24px;
+}
+.home-site #home-product-grid:not(.single-product) .product-photo {
+  height: 220px;
+  padding: 8px 12px 12px;
+}
+.home-site #home-product-grid:not(.single-product) .product-photo::before {
+  bottom: 7px;
+  left: 26%;
+  right: 26%;
+  height: 9px;
+  filter: blur(7px);
+}
+.home-site #home-product-grid:not(.single-product) .client-product-art {
+  max-width: 190px;
+}
+.home-site #home-product-grid:not(.single-product) .product-caption {
+  display: block;
+  flex: initial;
+  padding-top: 12px;
+}
+.home-site #home-product-grid:not(.single-product) .product-description {
+  flex: initial;
+}
+.home-site #home-product-grid:not(.single-product) .product-caption h3 {
+  font-size: 18px;
+  line-height: 1.4;
+  letter-spacing: -.02em;
+}
+.home-site #home-product-grid:not(.single-product) .product-series {
+  font-size: 9px;
+  margin-bottom: 5px;
+}
+.home-site #home-product-grid:not(.single-product) .product-price-action {
+  margin-top: 10px;
+  padding: 0;
+}
+.home-site #home-product-grid:not(.single-product) .home-price-line > strong {
+  font-size: 18px;
+}
+.home-site .client-paints .product-collection-action { margin-top: 20px; }
+.home-site .client-paints .product-collection-action > .button { min-height: 44px; padding-block: 11px; font-size: 12px; }
+.home-site .client-paints .product-card,
+.home-site .client-paints .single-product > .product-card {
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+}
+.home-site .client-paints .product-photo {
+  display: grid;
+  place-items: center;
+  isolation: isolate;
+  height: clamp(290px, 26vw, 390px);
+  padding: 12px 18px 20px;
+  overflow: visible;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+}
+/* A shallow floor shadow gives the actual pack depth without a coloured tile. */
+.home-site .client-paints .product-photo::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  left: 23%;
+  right: 23%;
+  bottom: 14px;
+  height: 12px;
+  border-radius: 50%;
+  background: #241d2926;
+  filter: blur(9px);
+  pointer-events: none;
+}
+.home-site .client-paints .product-photo > .client-product-art {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  max-width: 310px;
+  position: relative;
+  transform: none;
+  filter: drop-shadow(0 6px 5px #241d2912);
+  transition: transform 240ms ease;
+}
+.home-site .client-paints .product-photo:hover > .client-product-art {
+  transform: none;
+}
+.home-site .client-paints .product-caption {
+  padding-top: 20px;
+  text-align: center;
+}
+.home-site .client-paints .product-caption h3,
+.home-site.typography-refined .client-paints .product-caption h3 {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.35;
+  letter-spacing: -.03em;
+}
+.home-site .client-paints .product-caption h3 > :is(button, a) {
+  text-align: inherit;
+}
+.home-site .client-paints .product-caption p,
+.home-site.typography-refined .client-paints .product-caption p {
+  max-width: 330px;
+  margin: 7px auto 0;
+  font-size: 14px;
+  line-height: 1.7;
+}
+.home-site .client-paints .product-series,
+.home-site.typography-refined .client-paints .product-series {
+  margin-bottom: 6px;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: .09em;
+}
+.home-site .client-paints .product-price-action {
+  position: relative;
+  justify-content: center;
+  margin-top: 15px;
+  padding: 0 50px;
+  border: 0;
+}
+.home-site .client-paints .home-price-line {
+  justify-content: center;
+}
+.home-site .client-paints .home-example-price > small,
+.home-site.typography-refined .client-paints .home-example-price > small {
+  font-size: 11px;
+  line-height: 1.7;
+}
+.home-site .client-paints .product-open {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+/* Preserve the user's image-left, details-right Roof coating presentation. */
+.home-site .client-paints .single-product > .product-card {
+  gap: clamp(32px, 6vw, 90px);
+  max-width: 1000px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+}
+.home-site .client-paints .single-product .product-photo {
+  background: transparent;
+}
+.home-site .client-paints .single-product .product-caption {
+  text-align: left;
+  gap: 0;
+  padding: 0;
+}
+.home-site .client-paints .single-product .product-caption p {
+  margin-inline: 0;
+}
+.home-site .client-paints .single-product .product-price-action {
+  justify-content: flex-start;
+  padding-left: 0;
+}
+.home-site .client-paints .single-product .home-price-line {
+  justify-content: flex-start;
+}
+.home-site .client-paints :is(.product-photo, .product-open, .product-tabs > button, h3 > button, h3 > a):focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: 5px;
+}
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .home-site .client-paints .product-photo:hover > .client-product-art {
+    transform: translateY(-5px);
+  }
+}
+@media (max-width: 1000px) {
+  .home-site #home-product-grid:not(.single-product) {
+    grid-template-columns: none;
+    grid-auto-flow: column;
+    grid-auto-columns: 220px;
+    justify-content: safe center;
+    max-width: 100%;
+    gap: 0 20px;
+    padding: 8px 8px 12px;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: 8px;
+    scrollbar-width: thin;
+  }
+  .home-site #home-product-grid:not(.single-product) > .product-card {
+    scroll-snap-align: start;
+  }
+}
+@media (max-width: 800px) {
+  .home-site .client-paints .product-tabs { gap: 4px 32px; }
+  .home-site .client-paints .product-tabs > button { font-size: 13px; }
+  .home-site .client-paints .product-toolbar { margin-bottom: 24px; }
+  .home-site .client-paints .product-photo,
+  .home-site .client-paints .single-product .product-photo { height: 310px; padding-inline: 12px; }
+  .home-site .client-paints .product-caption h3,
+  .home-site.typography-refined .client-paints .product-caption h3 { font-size: 22px; }
+}
+@media (max-width: 600px) {
+  .home-site .client-paints { padding-top: 36px; padding-bottom: 36px; }
+  .home-site .client-paints .product-section-heading { margin-bottom: 18px; }
+  .home-site .client-paints .product-tabs { gap: 4px 28px; }
+  .home-site .client-paints .product-tabs > button { font-size: 12px; }
+  .home-site .client-paints .product-grid { row-gap: 38px; }
+  .home-site .client-paints .product-photo,
+  .home-site .client-paints .single-product .product-photo { height: 320px; }
+  .home-site .client-paints .single-product .product-caption { padding-top: 20px; text-align: center; }
+  .home-site .client-paints .single-product .product-caption p { margin-inline: auto; }
+  .home-site .client-paints .single-product .product-price-action { justify-content: center; padding-left: 50px; }
+  .home-site .client-paints .single-product .home-price-line { justify-content: center; }
+  .home-site #home-product-grid:not(.single-product) {
+    grid-auto-columns: min(68vw, 220px);
+    justify-content: start;
+    gap: 0 16px;
+  }
+  .home-site #home-product-grid:not(.single-product) .product-photo { height: 205px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .home-site .client-paints .product-photo > .client-product-art { transition: none; }
+}

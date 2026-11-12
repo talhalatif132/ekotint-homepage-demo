@@ -7,7 +7,7 @@ Created 12 November 2026 with the built-in `image_gen.imagegen` tool (edit mode)
 - Web asset: `public/images/premium-exterior-gold.webp`.
 - Page reference: the existing exterior feature in `src/app/page.tsx`; no layout or CSS changes.
 - User requested a local gold/yellow variation inspired by the Eko Shade packaging, with white top/roof edges. This is illustrative imagery, not confirmation of available Eko Shade coating colours.
-- Public version 15 is unchanged; no publication authorized for this image edit.
+- This first warm-gold variation is preserved locally; the cooler revision 2 was later approved and published as part of homepage version 16.
 
 ## Exact generation prompt
 
