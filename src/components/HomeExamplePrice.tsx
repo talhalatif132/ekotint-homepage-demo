@@ -1,12 +1,12 @@
 import { homeExamplePrices } from "@/lib/homepage-content";
 
-export default function HomeExamplePrice({ productId }: { productId: string }) {
+export default function HomeExamplePrice({ productId, showPackNote = true }: { productId: string; showPackNote?: boolean }) {
   const amount = homeExamplePrices[productId];
   if (amount === undefined) return null;
   return (
     <span className="home-example-price">
       <span className="home-price-line"><strong>PKR {amount.toLocaleString("en-PK")}</strong></span>
-      <small>Pack size to be confirmed</small>
+      {showPackNote && <small>Pack size to be confirmed</small>}
     </span>
   );
 }

@@ -1,0 +1,81 @@
+.content {
+  min-width: 0;
+}
+
+.empty {
+  padding: 22px 24px;
+  border: 1px solid #e7dfea;
+  border-radius: 5px;
+  background: #fcfafd;
+}
+
+.empty > p:first-child {
+  margin-top: 0;
+}
+
+.empty > button {
+  margin-top: 12px;
+  text-align: left;
+}
+
+.list {
+  display: grid;
+  gap: 24px;
+}
+
+.review {
+  margin: 0;
+  padding-bottom: 24px;
+  border-bottom: 1px solid #e7dfea;
+}
+
+.review:last-child {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+.review > blockquote {
+  margin: 0;
+}
+
+.review > blockquote > p:first-child {
+  margin-top: 0;
+}
+
+.review > figcaption {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: 17px;
+  color: #5c4567;
+  font-size: 13px;
+  line-height: 1.8;
+  overflow-wrap: anywhere;
+}
+
+.review > figcaption > strong {
+  color: #3e294b;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+@media (max-width: 650px) {
+  .tabs[role="tablist"] {
+    justify-content: flex-start;
+    gap: 24px;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scrollbar-width: thin;
+    scrollbar-color: #c7b7d0 transparent;
+  }
+
+  .tabs[role="tablist"] > button {
+    flex-shrink: 0;
+    white-space: nowrap;
+  }
+
+  .empty {
+    padding: 19px 20px;
+  }
+}

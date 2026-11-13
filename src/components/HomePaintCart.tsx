@@ -4,18 +4,21 @@ import { createContext, useContext, useEffect, useRef, useState, type ReactNode 
 import Icon from "@/components/Icon";
 import type { HomeColourIdea } from "@/components/HomeColourStudio";
 import { homeExamplePrices, homePaints } from "@/lib/homepage-content";
+import { isHomePackSize, type HomePackSize } from "@/lib/home-pack-sizes";
 import "@/app/products/home-product.css";
 
-type CartItem = { productId: string; colour: HomeColourIdea; quantity: number };
+type CartItem = { productId: string; colour: HomeColourIdea; quantity: number; packSize?: HomePackSize };
 type CartResult = { ok: boolean; message: string };
 type CartContext = {
-  addItem: (productId: string, colour: HomeColourIdea, quantity: number) => CartResult;
+  addItem: (productId: string, colour: HomeColourIdea, quantity: number, packSize: HomePackSize) => CartResult;
   count: number;
   openCart: () => void;
 };
 const HomePaintCartContext = createContext<CartContext | null>(null);
 const cartKey = "ekotint-demo-cart-v1";
 const money = (amount: number) => `PKR ${amount.toLocaleString("en-PK")}`;
+const itemKey = (item: Pick<CartItem, "productId" | "colour" | "packSize">) => `${item.productId}:${item.colour.hex}:${item.packSize ?? "unselected"}`;
+const packLabel = (packSize?: HomePackSize) => packSize === undefined ? "Pack not selected" : `${packSize} L`;
 
 function readCart(value: unknown): CartItem[] {
   if (!Array.isArray(value)) return [];
@@ -24,10 +27,12 @@ function readCart(value: unknown): CartItem[] {
     if (!item || typeof item !== "object" || !homePaints.some((paint) => paint.id === item.productId) ||
       !Number.isInteger(item.quantity) || item.quantity < 1 || item.quantity > 99 || !item.colour ||
       typeof item.colour.hex !== "string" || !/^#[0-9a-f]{6}$/i.test(item.colour.hex) || typeof item.colour.name !== "string") continue;
+    if ("packSize" in item && !isHomePackSize(item.packSize)) continue;
     const colour = { hex: item.colour.hex.toUpperCase(), name: item.colour.name.trim().slice(0, 80) || "Custom colour" };
-    const key = `${item.productId}:${colour.hex}`;
+    const packSize = item.packSize as HomePackSize | undefined;
+    const key = itemKey({ productId: item.productId, colour, packSize });
     const existing = items.get(key);
-    items.set(key, { productId: item.productId, colour, quantity: Math.min(99, item.quantity + (existing?.quantity ?? 0)) });
+    items.set(key, { productId: item.productId, colour, packSize, quantity: Math.min(99, item.quantity + (existing?.quantity ?? 0)) });
   }
   return [...items.values()];
 }
@@ -87,29 +92,30 @@ export function HomePaintCartProvider({ children }: { children: ReactNode }) {
     try { sessionStorage.setItem(cartKey, JSON.stringify(next)); } catch { /* Keep the current visit's in-memory selection. */ }
   }
 
-  function addItem(productId: string, idea: HomeColourIdea, quantity: number): CartResult {
+  function addItem(productId: string, idea: HomeColourIdea, quantity: number, packSize: HomePackSize): CartResult {
     loadCart();
     const paint = homePaints.find((candidate) => candidate.id === productId);
-    if (!paint || !Number.isInteger(quantity) || quantity < 1 || quantity > 99 ||
+    if (!paint || !isHomePackSize(packSize) || !Number.isInteger(quantity) || quantity < 1 || quantity > 99 ||
       typeof idea?.hex !== "string" || !/^#[0-9a-f]{6}$/i.test(idea.hex) || typeof idea.name !== "string") {
-      return { ok: false, message: "Choose a colour and a whole quantity from 1 to 99." };
+      return { ok: false, message: "Choose a pack size, a colour and a whole quantity from 1 to 99." };
     }
     const colour = { hex: idea.hex.toUpperCase(), name: idea.name.trim().slice(0, 80) || "Custom colour" };
-    const existing = cartRef.current.find((item) => item.productId === productId && item.colour.hex === colour.hex);
+    const key = itemKey({ productId, colour, packSize });
+    const existing = cartRef.current.find((item) => itemKey(item) === key);
     if ((existing?.quantity ?? 0) + quantity > 99) {
-      return { ok: false, message: "This demo allows up to 99 of each paint and colour. Review your cart to adjust it." };
+      return { ok: false, message: "This demo allows up to 99 of each paint, colour and pack size. Review your cart to adjust it." };
     }
     const next = existing
       ? cartRef.current.map((item) => item === existing ? { ...item, quantity: item.quantity + quantity } : item)
-      : [...cartRef.current, { productId, colour, quantity }];
+      : [...cartRef.current, { productId, colour, quantity, packSize }];
     updateCart(next);
-    return { ok: true, message: `${quantity} × ${paint.name} in ${colour.name} added to your demo cart.` };
+    return { ok: true, message: `${quantity} × ${paint.name}, ${packLabel(packSize)}, in ${colour.name} added to your demo cart.` };
   }
 
   function removeItem(item: CartItem) {
-    updateCart(cartRef.current.filter((candidate) => candidate.productId !== item.productId || candidate.colour.hex !== item.colour.hex));
+    updateCart(cartRef.current.filter((candidate) => itemKey(candidate) !== itemKey(item)));
     const paint = homePaints.find((candidate) => candidate.id === item.productId);
-    setStatus(`${paint?.name ?? "Paint"} removed from your demo cart.`);
+    setStatus(`${paint?.name ?? "Paint"}, ${packLabel(item.packSize)}, in ${item.colour.name} removed from your demo cart.`);
   }
 
   function openCart() { loadCart(); setStatus(""); setOpen(true); }
@@ -125,10 +131,12 @@ export function HomePaintCartProvider({ children }: { children: ReactNode }) {
           {cart.length === 0 ? <p className="hpd-empty-cart">Your cart is ready for a little colour.</p> : <>
             <ul className="hpd-cart-items">{cart.map((item) => {
               const paint = homePaints.find((candidate) => candidate.id === item.productId)!;
-              return <li key={`${item.productId}:${item.colour.hex}`}>
+              const productQuery = new URLSearchParams({ colour: item.colour.hex.slice(1), colourName: item.colour.name });
+              if (item.packSize !== undefined) productQuery.set("pack", String(item.packSize));
+              return <li key={itemKey(item)}>
                 <span className="hpd-cart-chip" style={{ background: item.colour.hex }} />
-                <div><a href={`/products/${paint.id}/?${new URLSearchParams({ colour: item.colour.hex.slice(1), colourName: item.colour.name })}`} onClick={() => setOpen(false)}>{paint.name}</a><small>{paint.series} · {item.colour.name} · {item.colour.hex}</small><span>{item.quantity} × {money(homeExamplePrices[paint.id] ?? 0)}</span></div>
-                <button type="button" aria-label={`Remove ${paint.name} in ${item.colour.name}`} onClick={() => removeItem(item)}><Icon name="close" size={18} /></button>
+                <div><a href={`/products/${paint.id}/?${productQuery}`} onClick={() => setOpen(false)}>{paint.name}</a><small>{paint.series} · {item.colour.name} · {item.colour.hex} · {packLabel(item.packSize)}</small><span>{item.quantity} × {money(homeExamplePrices[paint.id] ?? 0)}</span></div>
+                <button type="button" aria-label={`Remove ${paint.name}, ${packLabel(item.packSize)}, in ${item.colour.name}`} onClick={() => removeItem(item)}><Icon name="close" size={18} /></button>
               </li>;
             })}</ul>
             <div className="hpd-cart-total"><span>Demo subtotal</span><strong>{money(total)}</strong></div>

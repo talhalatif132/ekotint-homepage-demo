@@ -1,5 +1,7 @@
 # Sol handoff — minimal full-bleed hero/header
 
+**Hero mix/controls superseded on 13 November:** use `HERO-APPLICATIONS-REFERENCES.md` and `SOL-HERO-APPLICATIONS-HANDOFF.md`: five images (3 interior/2 exterior), purplish first, no visible controls. Preserve unchanged header/viewport checks below.
+
 13 November 2026. Read `AGENTS.md`, `EKOTINT-PROJECT-HANDOVER.md`, `CEO-FEEDBACK-STATUS.md`, `HERO-MINIMAL-REFERENCES.md`, `image-prompts/hero-wide-minimal.md` and relevant installed Next.js guides. Preserve local changes. No push, Site upload or publication; public version 16 remains unchanged.
 
 The latest user request keeps the full-bleed minimal hero/clean main navigation, **restores the original phone/email utility strip**, and makes **lavender bedroom (picture 2 of the three new wide previews) first**. Final order: lavender bedroom → purple living room → blue dining → magenta reading. This supersedes earlier utility-removal/dark-first checks. Do not restore the split copy/large hero colour card/scene peek/captions/large header project CTA.

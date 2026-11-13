@@ -2,6 +2,8 @@
 
 import { useEffect, useId, useState } from "react";
 import Icon from "@/components/Icon";
+import HomeRoomPhotoUpload from "@/components/HomeRoomPhotoUpload";
+import { homeVanillaColourIdea } from "@/lib/homepage-content";
 
 export type HomeColourIdea = { name: string; hex: string };
 export const homeColourIdeas: HomeColourIdea[] = [
@@ -13,9 +15,10 @@ export const homeColourIdeas: HomeColourIdea[] = [
   { name: "Chalk White", hex: "#EEEAE1" },
   { name: "Still Sage", hex: "#A6AF98" },
   { name: "Terracotta", hex: "#BA7C63" },
+  homeVanillaColourIdea,
 ];
 
-type HomeColourStudioProps = { colour: HomeColourIdea; productName?: string; idPrefix?: string };
+type HomeColourStudioProps = { colour: HomeColourIdea; productName?: string; idPrefix?: string; variant?: "full" | "backdrop"; layout?: "standard" | "product" };
 
 function wallPaintTransferTables(hex: string) {
   const referenceLuma = 0.30;
@@ -34,18 +37,17 @@ function wallPaintTransferTables(hex: string) {
 }
 
 // A controlled visual only; the product page owns its single set of colour inputs.
-export default function HomeColourStudio({ colour, productName, idPrefix = "paint-room" }: HomeColourStudioProps) {
+export default function HomeColourStudio({ colour, productName, idPrefix = "paint-room", variant = "full", layout = "standard" }: HomeColourStudioProps) {
   const uniqueId = useId().replace(/:/g, "");
   const prefix = `${idPrefix}-${uniqueId}`;
   const [before, setBefore] = useState(false);
   const [paintRed, paintGreen, paintBlue] = wallPaintTransferTables(colour.hex);
   useEffect(() => { setBefore(false); }, [colour.hex]);
 
-  return <section className="home-colour-studio" aria-label={`Prepared room colour inspiration${productName ? ` while considering ${productName}` : ""}`}>
-    <div className="hcs-toolbar">
-      <span><Icon name="home" size={18} /><span><small>COLOUR PREVIEW</small><strong>Prepared living room</strong></span></span>
-      <button type="button" className="hcs-upload" disabled><Icon name="upload" size={17} /><span>Upload your photo</span><small>Coming soon</small></button>
-    </div>
+  return <section className={`home-colour-studio${variant === "backdrop" ? " hcs-backdrop" : ""}${variant === "full" && layout === "product" ? " hcs-product" : ""}`} aria-label={`Prepared room colour inspiration${productName ? ` while considering ${productName}` : ""}`}>
+    {variant === "full" && layout === "standard" && <div className="hcs-toolbar">
+      <span><Icon name="home" size={18} /><span><small>COLOUR PREVIEW</small><strong>Sample living room</strong></span></span>
+    </div>}
     <div className="hcs-scene">
       <svg viewBox="0 0 1536 1024" preserveAspectRatio="xMidYMid slice" role="img" aria-label={`${before ? "Original olive wall" : `${colour.name} wall colour`} in the prepared interior living room`}>
         <defs>
@@ -58,9 +60,11 @@ export default function HomeColourStudio({ colour, productName, idPrefix = "pain
         <image href="/images/hero-room.webp" width="1536" height="1024" />
         <image data-painted-wall="true" data-paint-colour={colour.hex} href="/images/hero-room.webp" width="1536" height="1024" clipPath={`url(#${prefix}-wall)`} filter={`url(#${prefix}-paint)`} opacity={before ? 0 : 1} />
       </svg>
-      <button className="hcs-before" type="button" aria-pressed={before} onClick={() => setBefore((value) => !value)}>{before ? "See your colour" : "View before"}<Icon name="layers" size={17} /></button>
-      <span className="hcs-scene-label"><i style={{ background: before ? "#777D5D" : colour.hex }} />{before ? "Original room" : colour.name}</span>
+      {variant === "full" && layout === "product" && <span className="hcs-sample-tag">Sample living room</span>}
+      {variant === "full" && <button className="hcs-before" type="button" aria-pressed={before} onClick={() => setBefore((value) => !value)}>{before ? "See your colour" : "View before"}<Icon name="layers" size={17} /></button>}
+      {variant === "full" && <span className="hcs-scene-label"><i style={{ background: before ? "#777D5D" : colour.hex }} />{before ? "Original room" : colour.name}</span>}
     </div>
-    <p className="hcs-note">Prepared interior with simulated lighting. Confirm your physical shade and product suitability with Ekotint.</p>
+    {variant === "full" && layout === "standard" && <p className="hcs-note">Sample room with simulated lighting. Confirm your physical shade and product suitability with Ekotint.</p>}
+    {variant === "full" && layout === "standard" && <HomeRoomPhotoUpload idPrefix={prefix} />}
   </section>;
 }

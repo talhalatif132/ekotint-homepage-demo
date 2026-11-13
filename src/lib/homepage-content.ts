@@ -34,7 +34,7 @@ export const homePaints: HomePaint[] = [
 
 export const homePaintFilters = ["Featured", "Interior", "Exterior", "Wood & metal", "Roof coating", "Preparation"];
 export const featuredHomePaints = homePaints.filter((paint) =>
-  ["water-matt", "clima-shield", "epoxy", "eko-shade", "primer-emulsion"].includes(paint.id)
+  ["water-matt", "clima-shield", "epoxy", "eko-shade", "eko-gleam", "primer-emulsion"].includes(paint.id)
 );
 export const homeTechnicalGuide = "/documents/ekotint-technical-data-sheets.pdf";
 // UI examples authorized on 12 November 2026. These are NOT client prices,
@@ -56,8 +56,8 @@ export type HomeCustomerReview = {
   sourceLabel: string;
   sourceUrl?: string;
 };
-// Add only genuine, client-approved quotes with permission and a recorded source.
-// Empty by design: no customer testimonials were supplied with the CEO feedback.
+// Legacy empty export retained for compatibility. New approved company/product
+// review records belong in home-reviews.ts, with scope and publication evidence.
 export const homeCustomerReviews: HomeCustomerReview[] = [];
 
 export const homeContact = {
@@ -68,3 +68,14 @@ export const homeContact = {
   emailHref: "mailto:support@ekotintpaints.com",
   address: "E-9, Sector 31D, P&T Society, Industrial Area Korangi, Karachi",
 };
+
+// Hidden homepage sections remain in source for the client’s later review.
+export const homeSectionVisibility = {
+  advice: false,
+  manufacturer: false,
+  exteriorFeature: false,
+  featuredFinishes: false,
+};
+
+// Screen-colour inspiration only; not an approved manufacturer shade/code.
+export const homeVanillaColourIdea = { name: "Soft Vanilla", hex: "#FCEEDE" };

@@ -1,5 +1,7 @@
 # Product presentation — discussion and references
 
+**Latest superseding CEO sections 3–4, 13 November:** product arrows are now present when a row overflows, Roof Coating uses the same compact card, hover brings the pack forward and the main row uses one current-prices/pack-size contact note rather than repeated pack-size placeholders. Current implementation/primary-source review: `CEO-STRIP-PRODUCT-REFINEMENTS.md`; current Sol handoff: `SOL-STRIP-PRODUCT-REFINEMENTS-HANDOFF.md`. Older no-arrows/roof-split/card-note instructions below are historical. Original HD pack artwork remains unchanged. Local only; no publication approval.
+
 13 November 2026, Asia/Karachi. Local UI/asset implementation and source review only; no publication approval.
 
 ## User and CEO direction

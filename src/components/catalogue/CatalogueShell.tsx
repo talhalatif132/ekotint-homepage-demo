@@ -3,7 +3,8 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import HomePaintShell from "@/components/HomePaintShell";
-import { homePaints } from "@/lib/homepage-content";
+import HomeSiteFooter from "@/components/HomeSiteFooter";
+import { homePaints, homeSectionVisibility } from "@/lib/homepage-content";
 import { createContext, useContext, useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import Icon from "@/components/Icon";
@@ -95,14 +96,14 @@ export function CatalogueShell({ children }: { children: React.ReactNode }) {
   return <IdeasContext.Provider value={{ saved, toggle, plan, notify: setToast }}>
     <div className="paint-site">
       <a className="skip-link" href="#main">Skip to content</a>
-      <div className="utility-bar"><span>THE PERFECT CHEMISTRY. A WORLD OF POSSIBILITY.</span><div><Link href="/#advice">Paint advice</Link><a href="https://ekotintpaint.com/contact-us/" target="_blank" rel="noreferrer">Contact Ekotint ↗</a></div></div>
+      <div className="utility-bar"><span>THE PERFECT CHEMISTRY. A WORLD OF POSSIBILITY.</span><div>{homeSectionVisibility.advice && <Link href="/#advice">Paint advice</Link>}<a href="https://ekotintpaint.com/contact-us/" target="_blank" rel="noreferrer">Contact Ekotint ↗</a></div></div>
       <header className="site-header paint-header">
         <Link className="brand" href="/" aria-label="Ekotint Paints home"><img src="/images/ekotint-logo.png" width="153" height="62" alt="Ekotint Paints — The Perfect Chemistry" /></Link>
         <nav className="desktop-nav" aria-label="Main navigation"><Link href="/#colours">Explore colours</Link><Link href="/products/" className="paint-nav-active" aria-current="page">Our paints</Link><Link href="/#paints">Try colour with a paint <span className="new-dot" /></Link></nav>
         <div className="header-actions"><button className="icon-button" aria-label="Search paints" onClick={() => { setSearch(""); setDialog("search"); }}><Icon name="search" /></button><button className="icon-button saved-button" aria-label={`Saved ideas, ${saved.length + colours.length} saved`} onClick={() => setDialog("saved")}><Icon name="heart" />{saved.length + colours.length > 0 && <span className="saved-count">{saved.length + colours.length}</span>}</button><button className="header-consult" onClick={() => plan()}>Plan your project <Icon name="arrow" size={18} /></button><button className="icon-button mobile-menu-button" aria-label="Open menu" onClick={() => setDialog("menu")}><Icon name="menu" size={25} /></button></div>
       </header>
       {children}
-      <footer className="site-footer paint-footer"><div className="footer-top"><Link className="footer-logo" href="/" aria-label="Ekotint Paints home"><img src="/images/ekotint-logo.png" width="181" height="73" alt="Ekotint Paints" /></Link><p>A world of colour.<br /><em>Made personal.</em></p><a className="back-top" href="#main" aria-label="Back to top"><Icon name="arrow" size={24} /></a></div><div className="footer-links"><div><h3>Explore Ekotint</h3><Link href="/products/">Our paint collection</Link><Link href="/#colours">Explore colours</Link><Link href="/#paints">Try colour with a paint</Link></div><div><h3>Your next project</h3><button onClick={() => plan()}>Plan your space</button><button onClick={() => setDialog("saved")}>Your saved ideas</button><Link href="/#paints">Choose a paint for your colour</Link><Link href="/#advice">Paint advice</Link></div><div><h3>Let’s talk colour</h3><a href="https://ekotintpaint.com/contact-us/" target="_blank" rel="noreferrer">Contact Ekotint ↗</a><p>Bring your ideas, shade choices<br />and project brief to an adviser.</p><button className="footer-project" onClick={() => plan()}>Start with an idea <Icon name="arrow" size={18} /></button></div></div><div className="footer-bottom"><span>© {new Date().getFullYear()} Ekotint Paints</span><p>Design preview · Original AI room imagery · Illustrative palettes</p><span>The perfect chemistry.</span></div></footer>
+      <HomeSiteFooter onPlan={() => plan()} />
       {toast && <div className="paint-toast" role="status"><Icon name="check" size={18} />{toast}</div>}
       {dialog && typeof document !== "undefined" && createPortal(<div className="paint-overlay" onMouseDown={(e) => { if (e.currentTarget === e.target) setDialog(null); }}><div className={`paint-dialog ${dialog === "menu" ? "paint-menu-dialog" : ""}`} ref={panel} role="dialog" aria-modal="true" aria-labelledby="paint-dialog-title" tabIndex={-1}><button className="paint-dialog-close" aria-label="Close dialog" onClick={() => setDialog(null)}><Icon name="close" size={23} /></button>
         {dialog === "menu" && <><p className="pc-kicker">A WORLD OF POSSIBILITY</p><h2 id="paint-dialog-title">Find your next idea.</h2><nav className="paint-mobile-links" aria-label="Mobile navigation"><Link href="/" onClick={() => setDialog(null)}>Home <Icon name="arrow" /></Link><Link href="/products/" onClick={() => setDialog(null)}>Our paints <Icon name="arrow" /></Link><Link href="/#colours">Explore colours <Icon name="arrow" /></Link><Link href="/#paints" onClick={() => setDialog(null)}>Try colour with a paint <Icon name="arrow" /></Link></nav><button className="pc-button" onClick={() => plan()}>Plan your project <Icon name="arrow" /></button></>}

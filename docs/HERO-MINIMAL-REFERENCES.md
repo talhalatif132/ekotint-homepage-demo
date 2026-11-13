@@ -1,5 +1,7 @@
 # Minimal hero/header — discussion and references
 
+**Hero mix/controls superseded on 13 November:** use `HERO-APPLICATIONS-REFERENCES.md` and `SOL-HERO-APPLICATIONS-HANDOFF.md`: five images (3 interior/2 exterior), purplish first, no visible controls. Preserve unchanged header/viewport checks below.
+
 13 November 2026, Asia/Karachi. Local UI refinement only; no publication approval.
 
 ## Latest direction and earlier CEO context

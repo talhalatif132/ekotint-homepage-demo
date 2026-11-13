@@ -2,6 +2,7 @@ node_modules/
 .next/
 out/
 .sites-runtime/
+.vercel/
 .DS_Store
 *.tsbuildinfo
 .env*

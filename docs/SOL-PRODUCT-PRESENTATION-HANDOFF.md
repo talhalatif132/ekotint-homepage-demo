@@ -1,5 +1,7 @@
 # Sol handoff — product images and centred presentation
 
+**SUPERSEDED FOR NEW CEO SECTIONS 3–4:** follow `SOL-STRIP-PRODUCT-REFINEMENTS-HANDOFF.md` for current work. Product arrows are now required when a row overflows, Roof Coating now uses the same compact card, and the main row has one current-prices/pack-size contact note rather than repeated pack placeholders. The older no-arrows/split-roof/retain-card-note requirements below are historical. Preserve source assets and local-only publishing rules; current Vercel release history is in the main handover.
+
 13 November 2026. Read `AGENTS.md`, `EKOTINT-PROJECT-HANDOVER.md`, `PRODUCT-PRESENTATION-REFERENCES.md`, `CEO-FEEDBACK-STATUS.md` and relevant installed Next.js guides. Preserve local changes. No push, Site upload or publication; public version 16 remains unchanged.
 
 The user requested sharper supplied packs, transparent floating artwork without coloured panels, a short centred heading and centred filters. CEO **02:21:47 / 02:26:59 / 02:32:55 / 02:46:37** support clear product/category/price presentation; exact visual treatment follows the current user request/screenshot. Brighto text-reference limits and source mapping are recorded in the reference doc.

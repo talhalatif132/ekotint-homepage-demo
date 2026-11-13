@@ -1,0 +1,28 @@
+# Hero applications and controls — latest direction
+
+**Latest order correction — 14 November 2026:** the user supplied `Screenshot 2026-11-14 at 04.00.18.png` (filename timestamp04:00:18; message timestamp not supplied) and explicitly asked to move the pictured courtyard from fifth to fourth. Current order is **lavender bedroom → lavender/blue house exterior → purple living room → lavender/blue courtyard v4 → blue dining room**. This overrides the courtyard-last note below. Only two complete array records were swapped; no photo editing, recolouring, layout, first-slide, copy or motion changes. The assistant read the supplied CEO/user discussion; the latest user order takes precedence.
+
+[Brighto homepage](https://brightopaints.com/) was rechecked through official text extraction on14 November: its image-led slider and application categories remain relevant background to the retained hero. No rendered motion/order audit was performed, and no competitor ordering was adopted. This exact reorder comes solely from the user's supplied image/instruction. Sol source verification and whitespace check passed; browser/typecheck/build were not rerun for the data-only swap. No input blocks it. Keep local.
+
+
+13 November 2026, Asia/Karachi. Latest local changes only; do not publish without fresh approval.
+
+**Latest superseding order/palette:** user now puts the courtyard fifth/last and, after rejecting lighter yellow, requests matching the other four slides. Current order is bedroom → lavender/blue exterior → purple living → blue dining → lavender/blue courtyard v4. The first/third/fourth are interiors; second/fifth exteriors. White text remains, with no image overlays. Original/rejected yellow variants are historical only. Exact current built-in edit and dated reference limits: `image-prompts/hero-courtyard-palette-v4.md`; latest Sol checks: `SOL-HERO-MOTION-HANDOFF.md`. Older order/overlay prose below is historical and must not be restored.
+
+The supplied CEO voice-message translation, Part 1 (no recording timestamp supplied), accepts the top strip/header and improved hero, questions its visible controls, and requests relevant interior/exterior uses in the brand theme. The user then explicitly rejected the assistant's pause-button recommendation: follow the CEO, no controls. The user specified **3 interior and 2 exterior scenes**, with the **purplish picture first**, approved the new lavender/blue exterior, rejected the rooftop including its skyline-free revision, and chose the existing yellow-house image widened for the hero. These explicit directions supersede previous four-image/control-cluster and rooftop proposals. The assistant read the supplied discussion and did not participate in the original CEO conversation. Earlier CEO 02:35:00 supports automatic advancement and branding; the exact new mix/control choice follows the latest user messages.
+
+Current order: lavender bedroom → approved lavender/blue exterior → purple living room → widened yellow-house exterior → blue dining room. The first, third and fifth scenes are interiors. The second and fourth are exteriors. A five-second cycle remains. All visible slider controls and their handlers/state/CSS are removed; focus/overlay/hidden-document/reduced-motion guards and next-image preloading remain. Reduced-motion users retain the initial still. The product CTA, full-bleed layout and accepted contact strip/header stay. New exterior scenes use a stronger left-side overlay for white-copy legibility; mobile positions retain the doorway. Mobile CTA placement no longer reserves space for removed controls.
+
+## Reference review and limits
+
+- [Brighto homepage](https://brightopaints.com/) and [Benjamin Moore homepage](https://www.benjaminmoore.com/en-us), rechecked 13 November through text extraction: image-led product-brand presentation and interior/exterior product categories. No current browser/CSS/mobile/animation-control audit is claimed. The user's screenshots and exact messages direct the composition; no competitor assets or slogans copied.
+- [W3C carousel animation guidance](https://www.w3.org/WAI/tutorials/carousels/animations/) was checked and informed the initial pause recommendation. The user explicitly declined it. Record this choice; do not claim a completed accessibility audit or restore visible controls during unrelated QA. OS reduced-motion/focus/background guards are preserved.
+
+## Image record
+
+Builtin image generation created the approved lavender/blue facade and edited the user-selected yellow-house source into a wider composition. Both runtime WebPs are **1672 × 941**, quality 94 without resizing: `public/images/hero-exterior-lavender-v1.webp` (426,234 bytes), `public/images/hero-exterior-yellow-wide-v1.webp` (452,366 bytes). Corresponding PNG masters remain in `output/imagegen/`. Exact prompts/inputs/provenance and rejected terrace history are in [image-prompts/hero-applications.md](image-prompts/hero-applications.md). Original client/source/exterior assets remain untouched. These are illustrative scenes, not actual Ekotint customer sites or coating performance proof.
+
+Source/image inspection only; app/browser/typecheck/build remain unrun for this latest revision and assigned to Sol. Existing published release history in the main handover remains historical evidence; it does not approve publishing this new hero.
+
+
+Local preview restored on port 3023 after its sandboxed listener was denied; the approved listener is ready and served the homepage/product route successfully. This is preview readiness only; no browser visual QA, typecheck or production build was run for the new hero.

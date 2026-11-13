@@ -27,3 +27,9 @@ Two initial harness assertions were corrected: the homepage has surface filters 
 The full source also generates three older-only detail directories: `gloss-enamel`, `semi-plastic-emulsion-2`, `wall-putty-2`. Root should exclude these from the release copy, plus the five catalogue-index files directly under `out/products/`: `index.html`, `index.txt`, `__next._full.txt`, `__next._tree.txt`, `__next.products.__PAGE__.txt`. Preserve all files within the 16 current product directories, including `index.html`, `index.txt`, `__next._full.txt`, `__next._tree.txt`, `__next.products.$d$slug.__PAGE__.txt`.
 
 Owned preview PID 41087 on 127.0.0.1:3023 was stopped for the build to avoid `.next` conflicts, then `npm run dev` was restarted in tool session 81868, listener PID 70678. Unrelated port 3000 was untouched. Root owns publication and live verification.
+
+## Live hosting smoke — 13 November 2026
+
+After root published the approved artifact, one Chrome/Puppeteer smoke passed on [the public demo](https://ekotint-paints-demo.vercel.app/). Homepage returned 200; clicking the Featured Epoxy artwork from `/#paints` navigated to `/products/epoxy/` with the correct product title and prepared room. Entering `#123456` updated the wall preview immediately, Add to cart changed the header count to one, and the header cart modal contained that same HEX. At 390px there was no horizontal page overflow. No page errors or failed network requests occurred during this smoke. This checks live hosting/assets/client navigation and the representative interaction; it does not repeat the full local matrix or establish real order/enquiry/upload services.
+
+Evidence: `/private/tmp/ekotint-live-smoke.json`, `/private/tmp/ekotint-live-smoke-390.png`. No code, deployment or settings changes were made by this QA follow-up.
