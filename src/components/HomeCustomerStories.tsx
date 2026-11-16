@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState, type CSSProperties } from "react";
 import Icon from "@/components/Icon";
 import HomeReviewAvatar from "@/components/HomeReviewAvatar";
-import { homeContact, homeTechnicalGuide, type HomeCustomerReview } from "@/lib/homepage-content";
+import type { HomeCustomerReview } from "@/lib/homepage-content";
 import { getPublishedCompanyReviews } from "@/lib/home-reviews";
 import "@/app/customer-stories.css";
 
@@ -145,11 +145,6 @@ export default function HomeCustomerStories() {
             </figure>
           </div>
         ))}
-      </div>
-      <div className="customer-trust-links">
-        <a href={homeTechnicalGuide} target="_blank" rel="noreferrer"><Icon name="document" size={21} /><span><strong>Know your finish</strong><small>Product & application guidance</small></span><Icon name="arrow" size={17} /></a>
-        <a href={homeContact.phoneHref}><Icon name="phone" size={21} /><span><strong>Talk to the team</strong><small>{homeContact.phone}</small></span><Icon name="arrow" size={17} /></a>
-        <a href="#contact"><Icon name="pin" size={21} /><span><strong>Find Ekotint in Karachi</strong><small>Address & contact details</small></span><Icon name="arrow" size={17} /></a>
       </div>
     </section>
   );

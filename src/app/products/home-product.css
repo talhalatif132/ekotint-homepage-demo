@@ -67,7 +67,7 @@
 .home-paint-detail .hpd-enquire-link { align-self: flex-start; margin-top: auto; padding-top: 18px; font-size: 14px; font-weight: 600; }
 .home-paint-detail .hpd-sr-only { position: absolute; width: 1px; height: 1px; padding: 0; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
 
-/* The prepared sofa image is controlled by the one chooser in the product panel. */
+/* Category scenes share the product panel's single set of colour controls. */
 .home-paint-detail .home-colour-studio { min-width: 0; padding: 0; }
 .home-colour-studio .hcs-toolbar { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 0 0 16px; color: #533661; }
 .home-colour-studio .hcs-toolbar > span { display: flex; align-items: center; gap: 9px; }

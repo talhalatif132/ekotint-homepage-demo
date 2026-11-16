@@ -1,5 +1,7 @@
 # Full CEO chat audit — 14 November 2026
 
+**Later user correction, same date:** the user explicitly asked to hide the product Reviews tab after questioning why it was added. The shared current-product template now retains three visible information tabs and keeps the product-review renderer/data hidden in source; homepage reviews are unchanged. The user also requested eased related-paint navigation. See `PRODUCT-TABS-NAVIGATION-REFERENCES.md` and the newest handover/status entry. The matrix below records the implementation as it stood at the audit and is superseded on product-tab visibility by this later direction.
+
 ## Scope and conclusion
 
 The user supplied the complete translated Part 1 and Part 2 and asked whether anything was missed or could improve further. Compared both attachments with current application source, the latest handover, later user corrections and existing focused QA reports. Three independent source reviews covered Part 1, Part 2 and data/services/readiness. This is an audit and recommendation task: no application/UI changes, new runtime tests, build, deployment or old-domain security/status checks were performed.

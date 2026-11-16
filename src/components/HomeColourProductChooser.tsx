@@ -12,11 +12,10 @@ type Props = {
   surface: HomePaintSurface;
   saved: boolean;
   onSave: () => void;
-  onClose: () => void;
   onEnquiry: () => void;
 };
 
-export default function HomeColourProductChooser({ colour, surface, saved, onSave, onClose, onEnquiry }: Props) {
+export default function HomeColourProductChooser({ colour, surface, saved, onSave, onEnquiry }: Props) {
   const { confirmed, products } = homePaintsForShade(colour.hex, surface);
 
   return <div className="colour-product-chooser">
@@ -38,7 +37,7 @@ export default function HomeColourProductChooser({ colour, surface, saved, onSav
       <div className="chooser-results-heading"><h3>{confirmed ? "Available in this shade" : "Paints to explore"}</h3><span>{products.length} {products.length === 1 ? "paint" : "paints"}</span></div>
       {products.length > 0 ? <ul className="chooser-paints" aria-label={confirmed ? `Paints available in ${colour.name}` : `${surface} paints to explore with ${colour.name}`}>
         {products.map((product) => <li key={product.id}>
-          <Link className="chooser-paint-card" href={`/products/${product.id}/?${new URLSearchParams({ colour: colour.hex.replace(/^#/, ""), colourName: colour.name })}`} onClick={onClose}>
+          <Link className="chooser-paint-card" href={`/products/${product.id}/?${new URLSearchParams({ colour: colour.hex.replace(/^#/, ""), colourName: colour.name })}`}>
             <HomeProductArtwork product={product} />
             <span className="chooser-paint-description"><strong>{products.some((other) => other.id !== product.id && other.name === product.name) ? `${product.series.replace(/ Series$/, "")} ${product.name}` : product.name}</strong><small>{product.finish}</small><span>View paint <Icon name="arrow" size={15} /></span></span>
           </Link>

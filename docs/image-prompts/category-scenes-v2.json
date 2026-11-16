@@ -1,0 +1,33 @@
+{
+  "date": "2026-11-15",
+  "mode": "built-in image_gen",
+  "reference": "public/images/hero-exterior-lavender-courtyard-v4.webp",
+  "referenceRole": "Style/mood reference only, not an edit target; original hero untouched.",
+  "assets": {
+    "roof": {
+      "prompt": "Use case: photorealistic-natural. Image 1 is a STYLE AND MOOD REFERENCE ONLY, not an edit target. Create a new architectural photograph for a premium roof-coating product preview, 1536x1024 landscape. Match image1's beautiful inviting lavender contemporary house, rich green leaves, clear blue sky, warm sunlight and elegant editorial realism. An elevated viewpoint looking across the flat roof of a sophisticated private home, a generous smooth muted dusty-lilac seamless coated ROOF surface occupying the lower 60 percent, clearly a roof not a tiled patio. Elegant low white/lavender parapets frame the plane. At the FAR rear edge only, a beautiful small rooftop pavilion with walnut door, one large olive tree in a terracotta pot, a slim timber pergola with climbing greenery. Crisp architectural details and warm afternoon light, luxurious but believable Karachi villa, delicate tree shadows at edges. Roof's flat surface large, clean, straight visible edges, unobstructed across centre for colour preview; no furniture or plants in central foreground. Buildings below cropped out, no neighbouring houses. Avoid bare rough concrete, industrial drains, dirty surfaces, construction sites, generic grey emptiness, sofa indoors, people, logos, captions, buckets, text or UI. Original reference must remain unmodified. High fidelity beautiful lifestyle architecture.",
+      "generatedSource": "/Users/sam/.codex-account2/generated_images/01a1ca63-dc69-7293-bb09-4ac817cb4548/exec-98d5ce0c-1334-4c23-818e-bc6c8b4d7ce4.png",
+      "master": "output/imagegen/category-scenes-v2/roof-v2.png",
+      "runtime": "public/images/previews/roof-v2.webp"
+    },
+    "metal": {
+      "prompt": "Use case: photorealistic-natural. Image1 is a STYLE AND MOOD REFERENCE ONLY; create a different photograph, do not edit the original. Premium architectural lifestyle photograph1536x1024, same beautiful lavender courtyard, warm walnut, blue sky, foliage and rich natural sunlight style. Elegant entrance of a contemporary Pakistani garden home: a well crafted muted blue STEEL double gate centred between dusty lavender stucco pillars, a little ivory coping, sunlit pale limestone path, lush olive and jasmine planting on both extreme sides and overhead dappled light. Gate is recognisably painted metal, refined solid vertical panels with very fine seams, simple bronze pull handles, satin realistic highlights. Camera straight-on, gate rectangular roughly central65 percent width and70 percent height, all metal face clearly visible, plants do not overlap metal. Surrounding courtyard should feel inviting and aspirational, beautifully styled, not a cropped industrial grey slab. No neighbouring houses or cars, no people, text, logos, buckets or UI. Real fine materials, no rough concrete or distress. Attractive coherent composition matching a premium paint brand.",
+      "generatedSource": "/Users/sam/.codex-account2/generated_images/01a1ca63-dc69-7293-bb09-4ac817cb4548/exec-b207856a-45f6-462c-ae1d-5f887f94f83f.png",
+      "master": "output/imagegen/category-scenes-v2/metal-v2.png",
+      "runtime": "public/images/previews/metal-v2.webp"
+    },
+    "wood": {
+      "prompt": "Use case: photorealistic-natural. Image1 is STYLE AND MOOD REFERENCE ONLY; create a distinct new photograph, do not edit the original. Landscape1536x1024. Beautiful contemporary home entrance with large natural warm walnut double door, detailed straight timber grain and soft clear-varnish sheen, dark bronze pull handles. The timber door is in an elegant muted blue recessed opening within dusty lavender stucco facade, sunlit pale limestone step/path and lush olive greenery at both far sides, a small terracotta planter off to one side. Same warmth, elegance, green foliage, quality material texture, architectural atmosphere and blue sky daylight as reference1. Door is the visual focus but a complete inviting entry rather than an isolated wood slab. Natural brown timber remains natural and luxurious, not coloured paint. Frontal slightly broad architectural composition. No people, neighbouring buildings, sofas, captions, logos, paint buckets, rough construction, grey emptiness or UI. Photorealistic high quality editorial home photography.",
+      "generatedSource": "/Users/sam/.codex-account2/generated_images/01a1ca63-dc69-7293-bb09-4ac817cb4548/exec-278389e3-f241-4f02-bbe9-a8d9e3435ccd.png",
+      "master": "output/imagegen/category-scenes-v2/wood-v2.png",
+      "runtime": "public/images/previews/wood-v2.webp"
+    },
+    "exterior": {
+      "prompt": "Use case: photorealistic-natural. Image1 is a STYLE AND MOOD REFERENCE only. Make a new1536x1024 landscape premium home architectural photograph, not an edit of original. Faithfully match the beautiful existing villa reference: dusty lavender stucco with blue recessed entry, warm walnut front door, rich foliage, sunny blue sky, soft elegant tree shadows, pale limestone and an inviting courtyard. Camera frontal, eye-level. A large calm dusty-lavender FEATURE WALL fills the left60 percent (top around20 percent, bottom around80 percent), with straight rectangular boundaries, unbroken except delicate light-and-leaf SHADOWS cast onto it, NOT actual branches or plants in front. Set a tall recessed blue/walnut door entry within the right35 percent of facade, with small olive tree in large terracotta pot ONLY to the far right edge of entry. Limestone paving occupies lower15 percent. Actual greenery frames upper right and rightmost edges only, never overlapping left feature wall. The house should feel architectural and aspirational, not a flat isolated slab: ivory coping, dimensional blue entry reveal, recessed door, window sidelights, sunlit step. No bland grey, unfinished plaster, industrial details, rough construction, neighbouring houses, people, text, logo, paint buckets or UI. High quality detailed photography. Feature wall edges must be straight and clear for in-browser colour masking; composition should still be warm and beautiful like reference1.",
+      "generatedSource": "/Users/sam/.codex-account2/generated_images/01a1ca63-dc69-7293-bb09-4ac817cb4548/exec-45751889-5aa9-4023-99f7-248f06f8f053.png",
+      "master": "output/imagegen/category-scenes-v2/exterior-v2.png",
+      "runtime": "public/images/previews/exterior-v2.webp"
+    }
+  },
+  "rejected": "First grey/rough drafts and flat exterior v1 are not used. User explicitly rejected their look; originals remain in the generator output folder."
+}

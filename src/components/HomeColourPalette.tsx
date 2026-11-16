@@ -12,13 +12,20 @@ type Props = {
   surface: PaletteSurface;
   selectedHex?: string;
   family?: string;
+  paused?: boolean;
   onSurfaceChange: (surface: PaletteSurface) => void;
   onChoose: (colour: PaletteColour) => void;
   onSaved: () => void;
   onClearFamily: () => void;
 };
 
-export default function HomeColourPalette({ colours, surface, selectedHex, family, onSurfaceChange, onChoose, onSaved, onClearFamily }: Props) {
+function twoColourSteps(row: HTMLDivElement) {
+  const item = row.firstElementChild;
+  const step = (item?.getBoundingClientRect().width || row.clientWidth) + (Number.parseFloat(window.getComputedStyle(row).columnGap) || 0);
+  return step * 2;
+}
+
+export default function HomeColourPalette({ colours, surface, selectedHex, family, paused = false, onSurfaceChange, onChoose, onSaved, onClearFamily }: Props) {
   const rowRef = useRef<HTMLDivElement>(null);
   const carouselRef = useRef<HTMLDivElement>(null);
   const [canPrevious, setCanPrevious] = useState(false);
@@ -47,10 +54,76 @@ export default function HomeColourPalette({ colours, surface, selectedHex, famil
     return () => { row.removeEventListener("scroll", update); observer.disconnect(); };
   }, [colourKey, surface]);
 
+  useEffect(() => {
+    const currentRow = rowRef.current;
+    const currentCarousel = carouselRef.current;
+    if (!currentRow || !currentCarousel || paused) return;
+    const row = currentRow;
+    const carousel = currentCarousel;
+
+    const motion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    let timer: number | undefined;
+    let inView = false;
+    let pointerDown = false;
+    let focusPaused = carousel.contains(document.activeElement) && !!document.activeElement?.matches(":focus-visible");
+
+    function clear() { window.clearTimeout(timer); }
+    function schedule() {
+      clear();
+      if (!inView || document.hidden || motion.matches || pointerDown || focusPaused || row.scrollWidth <= row.clientWidth + 3) return;
+      timer = window.setTimeout(() => {
+        const end = row.scrollWidth - row.clientWidth;
+        const wrap = row.scrollLeft >= end - 3;
+        row.scrollTo({ left: wrap ? 0 : Math.min(end, row.scrollLeft + twoColourSteps(row)), behavior: wrap ? "instant" : "smooth" });
+        schedule();
+      }, 1500);
+    }
+    function onFocusIn(event: FocusEvent) {
+      focusPaused = event.target instanceof HTMLElement && event.target.matches(":focus-visible");
+      schedule();
+    }
+    function onFocusOut(event: FocusEvent) {
+      if (!carousel.contains(event.relatedTarget as Node | null)) { focusPaused = false; schedule(); }
+    }
+    function onPointerDown() { pointerDown = true; clear(); }
+    function onPointerUp() { pointerDown = false; schedule(); }
+
+    const intersection = typeof IntersectionObserver !== "undefined" ? new IntersectionObserver(([entry]) => {
+      inView = entry.isIntersecting;
+      schedule();
+    }, { threshold: .15 }) : null;
+    if (intersection) intersection.observe(carousel);
+    else inView = true;
+    const resize = new ResizeObserver(schedule);
+    resize.observe(row);
+    motion.addEventListener("change", schedule);
+    document.addEventListener("visibilitychange", schedule);
+    row.addEventListener("scroll", schedule, { passive: true });
+    carousel.addEventListener("focusin", onFocusIn);
+    carousel.addEventListener("focusout", onFocusOut);
+    carousel.addEventListener("pointerdown", onPointerDown);
+    window.addEventListener("pointerup", onPointerUp);
+    window.addEventListener("pointercancel", onPointerUp);
+    schedule();
+    return () => {
+      clear();
+      intersection?.disconnect();
+      resize.disconnect();
+      motion.removeEventListener("change", schedule);
+      document.removeEventListener("visibilitychange", schedule);
+      row.removeEventListener("scroll", schedule);
+      carousel.removeEventListener("focusin", onFocusIn);
+      carousel.removeEventListener("focusout", onFocusOut);
+      carousel.removeEventListener("pointerdown", onPointerDown);
+      window.removeEventListener("pointerup", onPointerUp);
+      window.removeEventListener("pointercancel", onPointerUp);
+    };
+  }, [colourKey, surface, paused]);
+
   function move(direction: number) {
     const row = rowRef.current;
     if (!row) return;
-    row.scrollBy({ left: direction * row.clientWidth * .8, behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
+    row.scrollBy({ left: direction * twoColourSteps(row), behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
   }
 
   return <section className="colour-circle-section" id="colours" aria-labelledby="colour-palette-heading">

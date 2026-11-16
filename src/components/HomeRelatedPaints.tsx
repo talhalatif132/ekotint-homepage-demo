@@ -5,6 +5,7 @@ import Link from "next/link";
 import HomeProductArtwork from "@/components/HomeProductArtwork";
 import Icon from "@/components/Icon";
 import { homePaints, type HomePaint } from "@/lib/homepage-content";
+import { prepareProductPreviewNavigation } from "@/lib/home-product-navigation";
 import styles from "./HomeRelatedPaints.module.css";
 
 type Props = { product: HomePaint; colour?: { name: string; hex: string } };
@@ -75,7 +76,7 @@ export default function HomeRelatedPaints({ product, colour }: Props) {
     </div>
     <div className={styles.row} id={rowId} ref={rowRef} role="list" aria-label="More Ekotint paints" tabIndex={navigation.overflow ? 0 : undefined} onKeyDown={onRowKey}>
       {paints.map((paint) => <div className={styles.item} key={paint.id} role="listitem">
-        <Link className={styles.card} href={`/products/${paint.id}/${colour ? `?${new URLSearchParams({ colour: colour.hex.replace(/^#/, ""), colourName: colour.name })}` : ""}`} aria-label={`View ${paint.name}, ${paint.series}, details${colour ? " and your colour preview" : ""}`}>
+        <Link className={styles.card} href={`/products/${paint.id}/${colour ? `?${new URLSearchParams({ colour: colour.hex.replace(/^#/, ""), colourName: colour.name })}` : ""}`} scroll={false} onNavigate={() => prepareProductPreviewNavigation(paint.id)} aria-label={`View ${paint.name}, ${paint.series}, details${colour ? " and your colour preview" : ""}`}>
           <span className={styles.artwork}><HomeProductArtwork product={paint} /></span>
           <span className={styles.copy}><small>{paint.series}</small><strong>{paint.name}</strong><span>{paint.finish}</span></span>
           <Icon className={styles.cardArrow} name="arrow" size={20} />
