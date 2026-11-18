@@ -103,6 +103,8 @@
 .current-product-site .current-product-footer-links > a:hover {
   color: var(--brand);
 }
+.current-product-site .current-product-navigation > .current-product-quote-link { color: var(--brand-text); }
+.current-product-site .current-product-navigation > a[aria-current="page"] { text-decoration: underline; text-underline-offset: 7px; text-decoration-color: #b29bc0; }
 .current-product-site .current-product-cart {
   display: inline-flex;
   align-items: center;
@@ -236,4 +238,7 @@
   .current-product-site .current-product-footer-bottom { align-items: flex-start; gap: 10px; font-size: 11px; }
   .current-product-site .current-product-footer-bottom > p,
   .current-product-site .current-product-footer-bottom > address { flex-basis: 100%; }
+}
+@media (max-width: 370px) {
+  .current-product-site .current-product-navigation > a { font-size: 11px; }
 }

@@ -5,7 +5,7 @@ import { HomePaintCartButton, HomePaintCartProvider } from "@/components/HomePai
 import { homeContact, homeSectionVisibility } from "@/lib/homepage-content";
 import "@/app/products/home-paint-shell.css";
 
-export default function HomePaintShell({ children }: { children: ReactNode }) {
+export default function HomePaintShell({ children, activePage }: { children: ReactNode; activePage?: "quote" }) {
   return <HomePaintCartProvider><div className="current-product-site">
     <a className="current-product-skip" href="#main">Skip to content</a>
     <div className="current-product-utility">
@@ -25,6 +25,7 @@ export default function HomePaintShell({ children }: { children: ReactNode }) {
           <a href="/#colours">Explore colours</a>
           {homeSectionVisibility.manufacturer && <a href="/#why-ekotint">About</a>}
           <a href="/#contact">Contact</a>
+          <a className="current-product-quote-link" href="/get-a-quote/" aria-current={activePage === "quote" ? "page" : undefined}>Get a quote</a>
         </nav>
         <HomePaintCartButton />
       </div>

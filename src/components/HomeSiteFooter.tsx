@@ -19,6 +19,7 @@ export default function HomeSiteFooter({ onPlan }: { onPlan?: () => void }) {
           <h2>Explore Ekotint</h2>
           <a href="/#paints">Our paints</a>
           <a href="/#colours">Explore colours</a>
+          <a href="/get-a-quote/">Get a quote <Icon name="arrow" size={15} /></a>
           {homeSectionVisibility.manufacturer && <a href="/#why-ekotint">About Ekotint</a>}
           <a href={homeTechnicalGuide} target="_blank" rel="noreferrer">Technical data sheets <Icon className={styles.diagonal} name="arrow" size={15} /></a>
         </nav>

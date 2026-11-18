@@ -7,12 +7,14 @@ import { homeExamplePrices, homePaints } from "@/lib/homepage-content";
 import { isHomePackSize, type HomePackSize } from "@/lib/home-pack-sizes";
 import "@/app/products/home-product.css";
 
-type CartItem = { productId: string; colour: HomeColourIdea; quantity: number; packSize?: HomePackSize };
+export type CartItem = { productId: string; colour: HomeColourIdea; quantity: number; packSize?: HomePackSize };
 type CartResult = { ok: boolean; message: string };
 type CartContext = {
   addItem: (productId: string, colour: HomeColourIdea, quantity: number, packSize: HomePackSize) => CartResult;
   count: number;
   openCart: () => void;
+  items: CartItem[];
+  hydrated: boolean;
 };
 const HomePaintCartContext = createContext<CartContext | null>(null);
 const cartKey = "ekotint-demo-cart-v1";
@@ -56,6 +58,7 @@ export function HomePaintCartProvider({ children }: { children: ReactNode }) {
   const [cart, setCart] = useState<CartItem[]>([]);
   const [open, setOpen] = useState(false);
   const [status, setStatus] = useState("");
+  const [hydrated, setHydrated] = useState(false);
   const cartRef = useRef<CartItem[]>([]);
   const loadedRef = useRef(false);
   const dialogRef = useRef<HTMLDialogElement>(null);
@@ -69,6 +72,7 @@ export function HomePaintCartProvider({ children }: { children: ReactNode }) {
     cartRef.current = stored;
     loadedRef.current = true;
     setCart(stored);
+    setHydrated(true);
   }
 
   useEffect(() => { loadCart(); }, []);
@@ -120,7 +124,7 @@ export function HomePaintCartProvider({ children }: { children: ReactNode }) {
 
   function openCart() { loadCart(); setStatus(""); setOpen(true); }
 
-  return <HomePaintCartContext.Provider value={{ addItem, count, openCart }}>
+  return <HomePaintCartContext.Provider value={{ addItem, count, openCart, items: cart, hydrated }}>
     {children}
     <div className="home-paint-detail">
       <dialog className="hpd-enquiry-dialog hpd-cart-dialog" ref={dialogRef} aria-labelledby="hpd-cart-heading" onCancel={(event) => { event.preventDefault(); setOpen(false); }} onClose={() => setOpen(false)} onClick={(event) => { if (event.target === event.currentTarget) setOpen(false); }}>
@@ -143,6 +147,7 @@ export function HomePaintCartProvider({ children }: { children: ReactNode }) {
             <p className="hpd-order-note">Illustrative amounts only. Confirm prices, pack sizes and colour compatibility with Ekotint.</p>
           </>}
           <p className="hpd-cart-status" role="status">{status}</p>
+          {cart.length > 0 && <a className="hpd-button hpd-cart-continue" href="/get-a-quote/?from=cart">Get an estimate <Icon name="arrow" size={18} /></a>}
           <button className="hpd-button hpd-cart-continue" type="button" onClick={() => setOpen(false)}>Continue exploring <Icon name="arrow" size={18} /></button>
         </div>
       </dialog>

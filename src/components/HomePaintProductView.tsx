@@ -15,6 +15,7 @@ import { homeTechnicalSheet } from "@/lib/home-technical-sheets";
 import { getPublishedProductReviews } from "@/lib/home-reviews";
 import { consumeProductPreviewNavigation } from "@/lib/home-product-navigation";
 import { homePreviewForProduct, homePreviewScene } from "@/lib/home-preview-scenes";
+import { homeQuoteHref } from "@/lib/home-quote";
 import "@/app/products/home-product.css";
 import reviewStyles from "./HomeProductReviews.module.css";
 
@@ -214,6 +215,7 @@ export default function HomePaintProductView({ product }: { product: HomePaint }
           {!validQuantity && <p className="hpd-input-error" id={`${product.id}-quantity-help`}>Choose a whole quantity from 1 to 99.</p>}
           <p className="hpd-cart-status" role="status">{cartStatus}</p>
           <p className="hpd-order-note">Confirm price and shade availability with Ekotint.</p>
+          <Link className="hpd-text-link hpd-quote-link" href={homeQuoteHref(product.id, packSize, validQuantity ? quantityValue : 1)} onClick={(event) => { if (!validQuantity) event.preventDefault(); }}>Get an estimate for this paint <Icon name="arrow" size={17} /></Link>
           <button className="hpd-text-link hpd-enquire-link" type="button" onClick={() => setEnquiryOpen(true)}>Have a question? Ask Ekotint <Icon name="arrow" size={17} /></button>
           </div>
         </div>
