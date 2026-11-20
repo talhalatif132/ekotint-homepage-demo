@@ -20,6 +20,7 @@
 .colour-product-chooser .chooser-colour > div { display: flex; flex: 1; flex-direction: column; min-width: 0; gap: 5px; }
 .colour-product-chooser .chooser-colour strong { color: #3c2a47; font-size: 15px; font-weight: 600; line-height: 1.4; overflow-wrap: anywhere; }
 .colour-product-chooser .chooser-colour > div > span { color: #685473; font-size: 12px; line-height: 1.5; letter-spacing: .03em; }
+.colour-product-chooser .chooser-colour .chooser-shade-reference { color: #56316b; font-weight: 700; white-space: nowrap; }
 .colour-product-chooser .chooser-save { display: grid; flex-shrink: 0; place-items: center; width: 44px; height: 44px; padding: 0; border: 1px solid #e4d9eb; border-radius: 50%; background: #fff; color: #79528c; }
 .colour-product-chooser .chooser-save:hover, .colour-product-chooser .chooser-save.is-saved { background: #f4edf8; border-color: #c4abcf; }
 .colour-product-chooser .chooser-results-heading { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; margin: 20px 0 12px; }

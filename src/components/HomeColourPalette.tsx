@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Icon from "@/components/Icon";
+import { homeShadeReference } from "@/lib/home-shade-references";
 import "@/app/colour-palette.css";
 
 export type PaletteColour = { name: string; hex: string; family: string; note: string };
@@ -28,6 +29,7 @@ function twoColourSteps(row: HTMLDivElement) {
 export default function HomeColourPalette({ colours, surface, selectedHex, family, paused = false, onSurfaceChange, onChoose, onSaved, onClearFamily }: Props) {
   const rowRef = useRef<HTMLDivElement>(null);
   const carouselRef = useRef<HTMLDivElement>(null);
+  const autoScrolling = useRef(false);
   const [canPrevious, setCanPrevious] = useState(false);
   const [canNext, setCanNext] = useState(false);
   const colourKey = colours.map((colour) => colour.hex).join("|");
@@ -65,15 +67,21 @@ export default function HomeColourPalette({ colours, surface, selectedHex, famil
     let timer: number | undefined;
     let inView = false;
     let pointerDown = false;
+    let hovered = window.matchMedia("(any-hover: hover)").matches && row.matches(":hover");
     let focusPaused = carousel.contains(document.activeElement) && !!document.activeElement?.matches(":focus-visible");
 
     function clear() { window.clearTimeout(timer); }
+    function canAutoPlay() {
+      return inView && !document.hidden && !motion.matches && !hovered && !pointerDown && !focusPaused && row.scrollWidth > row.clientWidth + 3;
+    }
     function schedule() {
       clear();
-      if (!inView || document.hidden || motion.matches || pointerDown || focusPaused || row.scrollWidth <= row.clientWidth + 3) return;
+      if (!canAutoPlay()) return;
       timer = window.setTimeout(() => {
+        if (!canAutoPlay()) return;
         const end = row.scrollWidth - row.clientWidth;
         const wrap = row.scrollLeft >= end - 3;
+        autoScrolling.current = !wrap;
         row.scrollTo({ left: wrap ? 0 : Math.min(end, row.scrollLeft + twoColourSteps(row)), behavior: wrap ? "instant" : "smooth" });
         schedule();
       }, 1500);
@@ -85,7 +93,22 @@ export default function HomeColourPalette({ colours, surface, selectedHex, famil
     function onFocusOut(event: FocusEvent) {
       if (!carousel.contains(event.relatedTarget as Node | null)) { focusPaused = false; schedule(); }
     }
-    function onPointerDown() { pointerDown = true; clear(); }
+    function stopTrackingScroll() { autoScrolling.current = false; }
+    function onPointerEnter(event: PointerEvent) {
+      if (event.pointerType !== "mouse") return;
+      hovered = true;
+      clear();
+      if (autoScrolling.current) {
+        stopTrackingScroll();
+        row.scrollTo({ left: row.scrollLeft, behavior: "instant" });
+      }
+    }
+    function onPointerLeave(event: PointerEvent) {
+      if (event.pointerType !== "mouse") return;
+      hovered = false;
+      schedule();
+    }
+    function onPointerDown() { pointerDown = true; stopTrackingScroll(); clear(); }
     function onPointerUp() { pointerDown = false; schedule(); }
 
     const intersection = typeof IntersectionObserver !== "undefined" ? new IntersectionObserver(([entry]) => {
@@ -99,6 +122,10 @@ export default function HomeColourPalette({ colours, surface, selectedHex, famil
     motion.addEventListener("change", schedule);
     document.addEventListener("visibilitychange", schedule);
     row.addEventListener("scroll", schedule, { passive: true });
+    row.addEventListener("scrollend", stopTrackingScroll);
+    row.addEventListener("wheel", stopTrackingScroll, { passive: true });
+    row.addEventListener("pointerenter", onPointerEnter);
+    row.addEventListener("pointerleave", onPointerLeave);
     carousel.addEventListener("focusin", onFocusIn);
     carousel.addEventListener("focusout", onFocusOut);
     carousel.addEventListener("pointerdown", onPointerDown);
@@ -107,11 +134,16 @@ export default function HomeColourPalette({ colours, surface, selectedHex, famil
     schedule();
     return () => {
       clear();
+      stopTrackingScroll();
       intersection?.disconnect();
       resize.disconnect();
       motion.removeEventListener("change", schedule);
       document.removeEventListener("visibilitychange", schedule);
       row.removeEventListener("scroll", schedule);
+      row.removeEventListener("scrollend", stopTrackingScroll);
+      row.removeEventListener("wheel", stopTrackingScroll);
+      row.removeEventListener("pointerenter", onPointerEnter);
+      row.removeEventListener("pointerleave", onPointerLeave);
       carousel.removeEventListener("focusin", onFocusIn);
       carousel.removeEventListener("focusout", onFocusOut);
       carousel.removeEventListener("pointerdown", onPointerDown);
@@ -123,6 +155,7 @@ export default function HomeColourPalette({ colours, surface, selectedHex, famil
   function move(direction: number) {
     const row = rowRef.current;
     if (!row) return;
+    autoScrolling.current = false;
     row.scrollBy({ left: direction * twoColourSteps(row), behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
   }
 
@@ -140,14 +173,17 @@ export default function HomeColourPalette({ colours, surface, selectedHex, famil
       <div className="colour-circle-carousel" ref={carouselRef} aria-roledescription="carousel" aria-label={`${surface} colour ideas`}>
         <button className="colour-circle-arrow" type="button" aria-label="Previous colour ideas" aria-controls="colour-circle-row" disabled={!canPrevious} onClick={() => move(-1)}><Icon name="back" size={21} /></button>
         <div className="colour-circle-row" id="colour-circle-row" ref={rowRef} role="list">
-          {colours.map((colour) => <div className="colour-circle-item" role="listitem" key={colour.hex}>
-            <button className={`colour-circle-choice${selectedHex === colour.hex ? " is-selected" : ""}`} type="button" aria-label={`Choose a ${surface.toLowerCase()} paint for ${colour.name}, ${colour.hex}`} aria-haspopup="dialog" onClick={() => onChoose(colour)}>
-              <span className="colour-circle-disc" style={{ backgroundColor: colour.hex }} aria-hidden="true" />
-              <strong>{colour.name}</strong>
-              <span className="colour-circle-code">{colour.hex}</span>
-              <span className="colour-circle-action">View paints <Icon name="arrow" size={14} /></span>
-            </button>
-          </div>)}
+          {colours.map((colour) => {
+            const code = homeShadeReference(colour.hex) ?? colour.hex;
+            return <div className="colour-circle-item" role="listitem" key={colour.hex}>
+              <button className={`colour-circle-choice${selectedHex === colour.hex ? " is-selected" : ""}`} type="button" aria-label={`Choose a ${surface.toLowerCase()} paint for ${colour.name}, ${code}`} aria-haspopup="dialog" onClick={() => onChoose(colour)}>
+                <span className="colour-circle-disc" style={{ backgroundColor: colour.hex }} aria-hidden="true" />
+                <strong>{colour.name}</strong>
+                <span className="colour-circle-code">{code}</span>
+                <span className="colour-circle-action">View paints <Icon name="arrow" size={14} /></span>
+              </button>
+            </div>;
+          })}
         </div>
         <button className="colour-circle-arrow" type="button" aria-label="Next colour ideas" aria-controls="colour-circle-row" disabled={!canNext} onClick={() => move(1)}><Icon name="arrow" size={21} /></button>
       </div>

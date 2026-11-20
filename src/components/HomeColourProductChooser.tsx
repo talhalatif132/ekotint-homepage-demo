@@ -5,6 +5,7 @@ import HomeColourStudio from "@/components/HomeColourStudio";
 import HomeProductArtwork from "@/components/HomeProductArtwork";
 import Icon from "@/components/Icon";
 import { homePaintsForShade, type HomePaintSurface } from "@/lib/home-shade-products";
+import { homeShadeReference } from "@/lib/home-shade-references";
 import "@/app/colour-chooser.css";
 
 type Props = {
@@ -17,6 +18,7 @@ type Props = {
 
 export default function HomeColourProductChooser({ colour, surface, saved, onSave, onEnquiry }: Props) {
   const { confirmed, products } = homePaintsForShade(colour.hex, surface);
+  const shadeReference = homeShadeReference(colour.hex);
 
   return <div className="colour-product-chooser">
     <div className="chooser-stage">
@@ -31,7 +33,10 @@ export default function HomeColourProductChooser({ colour, surface, saved, onSav
       <h2 id="dialog-title">Find the paint for your colour.</h2>
       <div className="chooser-colour">
         <span className="chooser-colour-chip" style={{ backgroundColor: colour.hex }} aria-hidden="true" />
-        <div><strong>{colour.name}</strong><span>HEX {colour.hex.toUpperCase()}</span></div>
+        <div>
+          <strong>{colour.name}</strong>
+          <span className={shadeReference ? "chooser-shade-reference" : undefined}>{shadeReference ?? `HEX ${colour.hex.toUpperCase()}`}</span>
+        </div>
         <button type="button" className={saved ? "chooser-save is-saved" : "chooser-save"} onClick={onSave} aria-pressed={saved} aria-label={`${saved ? "Remove" : "Save"} ${colour.name}${saved ? " from saved colours" : ""}`}><Icon name="heart" size={21} fill={saved ? "currentColor" : "none"} /></button>
       </div>
       <div className="chooser-results-heading"><h3>{confirmed ? "Available in this shade" : "Paints to explore"}</h3><span>{products.length} {products.length === 1 ? "paint" : "paints"}</span></div>

@@ -1,12 +1,17 @@
-import { homeExamplePrices } from "@/lib/homepage-content";
+import type { HomePackSize } from "@/lib/home-pack-sizes";
+import { homeDemoLitreRate, homeEstimatedPackPrice } from "@/lib/home-paint-pricing";
 
-export default function HomeExamplePrice({ productId, showPackNote = true }: { productId: string; showPackNote?: boolean }) {
-  const amount = homeExamplePrices[productId];
+export default function HomeExamplePrice({ productId, showPackNote = true, packSize }: {
+  productId: string;
+  showPackNote?: boolean;
+  packSize?: HomePackSize;
+}) {
+  const amount = packSize === undefined ? homeDemoLitreRate(productId) : homeEstimatedPackPrice(productId, packSize);
   if (amount === undefined) return null;
   return (
-    <span className="home-example-price">
+    <span className="home-example-price" aria-live={packSize === undefined ? undefined : "polite"} aria-atomic={packSize === undefined ? undefined : true}>
       <span className="home-price-line"><strong>PKR {amount.toLocaleString("en-PK")}</strong></span>
-      {showPackNote && <small>Pack size to be confirmed</small>}
+      {packSize !== undefined ? <small>Estimate · {packSize} L pack</small> : showPackNote && <small>Pack size to be confirmed</small>}
     </span>
   );
 }

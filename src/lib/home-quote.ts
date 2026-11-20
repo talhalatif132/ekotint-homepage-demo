@@ -1,5 +1,6 @@
-import { homeExamplePrices, homePaints } from "@/lib/homepage-content";
+import { homePaints } from "@/lib/homepage-content";
 import { isHomePackSize, type HomePackSize } from "@/lib/home-pack-sizes";
+import { homeDemoLitreRate } from "@/lib/home-paint-pricing";
 import { homeTechnicalSheet } from "@/lib/home-technical-sheets";
 
 export const quoteCoats = [1, 2] as const;
@@ -12,7 +13,7 @@ export type HomeQuoteLine = {
   litres: string;
   coats: typeof quoteCoats[number];
   area?: string;
-  mode?: "litres" | "area";
+  mode: "litres" | "area";
   extraLitres?: number;
 };
 
@@ -80,12 +81,9 @@ export function quoteCoverage(line: HomeQuoteLine) {
   return `${min}${max !== min ? `–${max}` : ""} sq ft`;
 }
 
-// Frontend illustration only, authorised for the local quote-page preview.
-// Reuse the current example amounts AS PLACEHOLDER PER-LITRE RATES; these are
-// not manufacturer prices or inferred pack prices. Do not use for real offers.
 export function quoteExampleRate(productId: string): number | null {
   if (!homePaints.some((paint) => paint.id === productId)) return null;
-  return homeExamplePrices[productId] ?? null;
+  return homeDemoLitreRate(productId) ?? null;
 }
 
 export function homeQuoteHref(productId: string, packSize: HomePackSize, quantity: number) {
@@ -100,8 +98,9 @@ export function quoteLineFromQuery(query: URLSearchParams): HomeQuoteLine | null
   const quantity = Number(query.get("quantity"));
   const validPack = isHomePackSize(pack);
   const validQuantity = Number.isInteger(quantity) && quantity >= 1 && quantity <= 99;
+  const litres = validPack && validQuantity ? String(pack * quantity) : "";
   return {
     id: "paint-1", productId, coats: 2,
-    litres: validPack && validQuantity ? String(pack * quantity) : "",
+    litres, mode: litres ? "litres" : "area",
   };
 }

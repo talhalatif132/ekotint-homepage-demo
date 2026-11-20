@@ -3,8 +3,9 @@
 import { createContext, useContext, useEffect, useRef, useState, type ReactNode } from "react";
 import Icon from "@/components/Icon";
 import type { HomeColourIdea } from "@/components/HomeColourStudio";
-import { homeExamplePrices, homePaints } from "@/lib/homepage-content";
+import { homePaints } from "@/lib/homepage-content";
 import { isHomePackSize, type HomePackSize } from "@/lib/home-pack-sizes";
+import { homeEstimatedPackPrice } from "@/lib/home-paint-pricing";
 import "@/app/products/home-product.css";
 
 export type CartItem = { productId: string; colour: HomeColourIdea; quantity: number; packSize?: HomePackSize };
@@ -63,7 +64,12 @@ export function HomePaintCartProvider({ children }: { children: ReactNode }) {
   const loadedRef = useRef(false);
   const dialogRef = useRef<HTMLDialogElement>(null);
   const count = cart.reduce((total, item) => total + item.quantity, 0);
-  const total = cart.reduce((amount, item) => amount + (homeExamplePrices[item.productId] ?? 0) * item.quantity, 0);
+  const pricedCart = cart.map((item) => ({
+    item,
+    packPrice: item.packSize === undefined ? undefined : homeEstimatedPackPrice(item.productId, item.packSize),
+  }));
+  const pricedCount = pricedCart.filter(({ packPrice }) => packPrice !== undefined).length;
+  const total = pricedCart.reduce((amount, { item, packPrice }) => amount + (packPrice ?? 0) * item.quantity, 0);
 
   function loadCart() {
     if (loadedRef.current) return;
@@ -133,17 +139,17 @@ export function HomePaintCartProvider({ children }: { children: ReactNode }) {
           <p className="hpd-kicker">YOUR SELECTION</p><h2 id="hpd-cart-heading">Your demo cart.</h2>
           <p className="modal-intro">Kept in this browser tab. This preview does not place an order or take payment.</p>
           {cart.length === 0 ? <p className="hpd-empty-cart">Your cart is ready for a little colour.</p> : <>
-            <ul className="hpd-cart-items">{cart.map((item) => {
+            <ul className="hpd-cart-items">{pricedCart.map(({ item, packPrice }) => {
               const paint = homePaints.find((candidate) => candidate.id === item.productId)!;
               const productQuery = new URLSearchParams({ colour: item.colour.hex.slice(1), colourName: item.colour.name });
               if (item.packSize !== undefined) productQuery.set("pack", String(item.packSize));
               return <li key={itemKey(item)}>
                 <span className="hpd-cart-chip" style={{ background: item.colour.hex }} />
-                <div><a href={`/products/${paint.id}/?${productQuery}`} onClick={() => setOpen(false)}>{paint.name}</a><small>{paint.series} · {item.colour.name} · {item.colour.hex} · {packLabel(item.packSize)}</small><span>{item.quantity} × {money(homeExamplePrices[paint.id] ?? 0)}</span></div>
+                <div><a href={`/products/${paint.id}/?${productQuery}`} onClick={() => setOpen(false)}>{paint.name}</a><small>{paint.series} · {item.colour.name} · {item.colour.hex} · {packLabel(item.packSize)}</small><span>{packPrice === undefined ? "Choose a pack to see its estimate" : `${item.quantity} × ${money(packPrice)}`}</span></div>
                 <button type="button" aria-label={`Remove ${paint.name}, ${packLabel(item.packSize)}, in ${item.colour.name}`} onClick={() => removeItem(item)}><Icon name="close" size={18} /></button>
               </li>;
             })}</ul>
-            <div className="hpd-cart-total"><span>Demo subtotal</span><strong>{money(total)}</strong></div>
+            <div className="hpd-cart-total"><span>{pricedCount === cart.length || pricedCount === 0 ? "Estimated subtotal" : "Subtotal for priced packs"}</span><strong>{pricedCount ? money(total) : "—"}</strong></div>
             <p className="hpd-order-note">Illustrative amounts only. Confirm prices, pack sizes and colour compatibility with Ekotint.</p>
           </>}
           <p className="hpd-cart-status" role="status">{status}</p>

@@ -7,14 +7,24 @@ import HomeProductArtwork from "@/components/HomeProductArtwork";
 import HomeQuoteEnquiry from "@/components/HomeQuoteEnquiry";
 import HomeQuoteMeasure from "@/components/HomeQuoteMeasure";
 import HomeQuotePaintPicker from "@/components/HomeQuotePaintPicker";
+import HomeQuotePicker, { type QuotePickerGroup } from "@/components/HomeQuotePicker";
 import Icon from "@/components/Icon";
 import { homeContact, homePaints } from "@/lib/homepage-content";
 import { quoteArea, quoteCoats, quoteCoverage, quoteExampleRate, quoteLineFromQuery, quoteLitres, quoteLitresBounds, quoteMoney, quoteQuantity, quoteQuantityLabel, quoteRoofProductId, type HomeQuoteLine } from "@/lib/home-quote";
 import styles from "./HomeQuotePage.module.css";
 
-const newLine = (id: string): HomeQuoteLine => ({ id, productId: "", litres: "", coats: 2 });
+const newLine = (id: string): HomeQuoteLine => ({ id, productId: "", litres: "", coats: 2, mode: "area" });
 const coatLabel = (coats: HomeQuoteLine["coats"]) => coats === 1 ? "1 coat" : "2 coats";
 const estimateNote = "Final price and coverage may vary.";
+const calculationModes: QuotePickerGroup<HomeQuoteLine["mode"]>[] = [{ options: [
+  { value: "area", label: "Area to paint" },
+  { value: "litres", label: "Paint quantity (litres)" },
+] }];
+
+function isEmptyEstimate(lines: HomeQuoteLine[]) {
+  const [line] = lines;
+  return lines.length === 1 && !line.productId && !line.litres && !line.area && line.mode === "area" && line.coats === 2;
+}
 
 function LitresField({ id, label, value, onChange, onStep, canIncrease, canDecrease, invalid = false }: {
   id: string;
@@ -33,17 +43,18 @@ function LitresField({ id, label, value, onChange, onStep, canIncrease, canDecre
   return <div className={styles.row}>
     <label htmlFor={id}>{label}</label>
     <div className={`${styles.litresField} ${styles.litresStepperField}`}>
-      <input type="text" inputMode={onChange ? "decimal" : "none"} maxLength={10} id={id} value={value}
-        placeholder="e.g. 10" readOnly={!onChange} aria-invalid={invalid}
-        aria-describedby={invalid ? id + "-error" : undefined}
-        onChange={onChange ? (event) => onChange(event.target.value) : undefined}
-        onKeyDown={(event) => {
-          if (event.altKey || event.ctrlKey || event.metaKey || event.shiftKey) return;
-          if (event.key !== "ArrowUp" && event.key !== "ArrowDown") return;
-          event.preventDefault();
-          step(event.key === "ArrowUp" ? 1 : -1);
-        }} />
-      <span aria-hidden="true">L</span>
+      {onChange ? <>
+        <input type="text" inputMode="decimal" maxLength={10} id={id} value={value}
+          placeholder="e.g. 10" aria-invalid={invalid} aria-describedby={invalid ? id + "-error" : undefined}
+          onChange={(event) => onChange(event.target.value)}
+          onKeyDown={(event) => {
+            if (event.altKey || event.ctrlKey || event.metaKey || event.shiftKey) return;
+            if (event.key !== "ArrowUp" && event.key !== "ArrowDown") return;
+            event.preventDefault();
+            step(event.key === "ArrowUp" ? 1 : -1);
+          }} />
+        <span aria-hidden="true">L</span>
+      </> : <output id={id} aria-live="off">{value} L</output>}
       <div className={styles.litresStepper}>
         <button type="button" aria-label="Increase litres by 1" aria-disabled={!canIncrease} onClick={() => step(1)}>
           <Icon name="chevron" size={15} />
@@ -85,8 +96,8 @@ function PaintInputs({ line, pricedLitres, heading, onChange, onRemove }: {
         <span id={line.id + "-product-label"}>Paint</span>
         <HomeQuotePaintPicker id={line.id + "-product"} value={line.productId} onChange={(productId) => {
           if (productId === line.productId) return;
-          const startRoofMeasurement = productId === quoteRoofProductId && !line.litres.trim() && !line.area?.trim();
-          onChange(startRoofMeasurement ? { productId, mode: "area" } : { productId });
+          const startRoofMeasurement = productId === quoteRoofProductId && byArea && !line.area?.trim();
+          onChange({ productId });
           if (startRoofMeasurement) requestAnimationFrame(() => {
             const measure = document.getElementById(line.id + "-measure");
             if (measure instanceof HTMLDetailsElement) {
@@ -96,12 +107,9 @@ function PaintInputs({ line, pricedLitres, heading, onChange, onRemove }: {
           });
         }} />
       </div>
-      <div className={styles.row} role="group" aria-label="Start with">
-        <span>Start with</span>
-        <div className={styles.modeOptions}>
-          <button type="button" aria-pressed={!byArea} onClick={() => onChange({ mode: "litres" })}>Litres I have</button>
-          <button type="button" aria-pressed={byArea} onClick={() => onChange({ mode: "area" })}>Area to paint</button>
-        </div>
+      <div className={`${styles.row} ${styles.modeRow}`}>
+        <label id={line.id + "-mode-label"} htmlFor={line.id + "-mode"}>Calculate using</label>
+        <HomeQuotePicker id={line.id + "-mode"} value={line.mode} groups={calculationModes} onChange={(mode) => onChange({ mode })} />
       </div>
       {byArea ? <label className={styles.row}>
         <span>{roof ? "Roof area" : "Paintable area"}</span>
@@ -155,15 +163,16 @@ export default function HomeQuotePage() {
     initialized.current = true;
     const direct = quoteLineFromQuery(new URLSearchParams(window.location.search));
     if (direct) {
-      setLines((current) => current.every((line) => !line.productId && !line.litres) ? [direct] : current);
+      setLines((current) => isEmptyEstimate(current) ? [direct] : current);
     } else if (items.length) {
       const selections = items.map((item, index): HomeQuoteLine => ({
         id: "cart-paint-" + (index + 1),
         productId: item.productId,
         litres: item.packSize === undefined ? "" : String(item.packSize * item.quantity),
         coats: 2,
+        mode: item.packSize === undefined ? "area" : "litres",
       }));
-      setLines((current) => current.every((line) => !line.productId && !line.litres) ? selections : current);
+      setLines((current) => isEmptyEstimate(current) ? selections : current);
     }
   }, [hydrated, items]);
 
@@ -184,8 +193,7 @@ export default function HomeQuotePage() {
     ? completed.reduce((sum, { amount }) => sum + (amount ?? 0), 0)
     : null;
   const single = lines.length === 1;
-  const canClear = !single || lines.some((line) =>
-    line.productId || line.litres || line.area || line.mode === "area" || line.coats !== 2);
+  const canClear = !isEmptyEstimate(lines);
   const roofCount = lines.filter(({ productId }) => productId === quoteRoofProductId).length;
   const singleResult = estimates[0];
   const byArea = singleResult.line.mode === "area";

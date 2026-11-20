@@ -13,6 +13,8 @@ npm run dev
 
 Open http://127.0.0.1:3023.
 
+Local quote-page preview: http://127.0.0.1:3023/get-a-quote/ . Choose a paint, litres and colour to calculate a clearly labelled demo estimate. Product/cart selections can prefill the page. Example amounts are used as placeholder per-litre rates, not confirmed product or pack pricing. Optional project/contact details appear only in copied estimate text; no request is transmitted. This new page is local for review and is not part of the 15 November live release. See `docs/SOL-QUOTE-PAGE-HANDOFF.md` for scope and validation.
+
 ## Check and build
 
 ```sh
@@ -33,3 +35,5 @@ The current product artwork uses the supplied client pack images, with earlier a
 Read `AGENTS.md` and `docs/EKOTINT-PROJECT-HANDOVER.md` before continuing work. `docs/CEO-FULL-CHAT-AUDIT-2026-11-14.md` records the latest complete feedback audit; dated QA reports distinguish validated behaviour from deferred inputs/services.
 
 The user authorized a private GitHub source backup on 14 November 2026 and requested an updated backup on 16 November, including the current source/assets/docs through the 15 November release. A source push is separate from deployment: do not connect the backup repository to hosting or publish a new site as part of this backup. Local source/assets/docs and existing Git history are retained. Dependencies, generated builds, environment files and local hosting credentials are ignored; restore dependencies with `npm install` (or `npm ci` when using the committed lockfile). Original client documents outside this project folder are not included automatically.
+
+Latest Vercel publication (21 November 2026): https://ekotint-paints-demo.vercel.app — homepage,16currentproducts,estimator and FAQ. [Release checks and limits](docs/RELEASE-QA-2026-11-21.md).

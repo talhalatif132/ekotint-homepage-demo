@@ -16,6 +16,7 @@ import { getPublishedProductReviews } from "@/lib/home-reviews";
 import { consumeProductPreviewNavigation } from "@/lib/home-product-navigation";
 import { homePreviewForProduct, homePreviewScene } from "@/lib/home-preview-scenes";
 import { homeQuoteHref } from "@/lib/home-quote";
+import { homeShadeReference } from "@/lib/home-shade-references";
 import "@/app/products/home-product.css";
 import reviewStyles from "./HomeProductReviews.module.css";
 
@@ -60,6 +61,8 @@ export default function HomePaintProductView({ product }: { product: HomePaint }
   const dialogRef = useRef<HTMLDialogElement>(null);
   const { addItem } = useHomePaintCart();
   const hexRef = useRef<HTMLInputElement>(null);
+  const shadeReference = homeShadeReference(colour.hex);
+  const shadeIdentifier = shadeReference ?? `HEX ${colour.hex}`;
   const saved = savedColours.some((idea) => idea.hex === colour.hex);
   const quantityValue = Number(quantity);
   const validQuantity = quantity.trim() !== "" && Number.isInteger(quantityValue) && quantityValue >= 1 && quantityValue <= 99;
@@ -181,7 +184,7 @@ export default function HomePaintProductView({ product }: { product: HomePaint }
           <div className="hpd-product-meta">
           <div className="hpd-product-heading">
             <div><p className="hpd-kicker">{product.series}</p><h1 id="paint-product-title" tabIndex={-1}>{product.name}</h1></div>
-            <HomeExamplePrice productId={product.id} showPackNote={false} />
+            <HomeExamplePrice productId={product.id} packSize={packSize} />
           </div>
           <p className="hpd-finish">{product.finish}</p>
           <fieldset className="hpd-pack-sizes">
@@ -195,7 +198,7 @@ export default function HomePaintProductView({ product }: { product: HomePaint }
           <div className="hpd-colours">
             <div className="hpd-colour-heading"><h2 id={`${product.id}-colour-heading`} tabIndex={-1}>{preview.mask ? "Choose your colour" : "Project colour idea"}</h2><button className="hpd-save-colour" type="button" aria-label={`${saved ? "Remove" : "Save"} ${colour.name}${saved ? " from saved colours" : ""}`} aria-pressed={saved} onClick={saveColour}><Icon name="heart" size={17} style={{ fill: saved ? "currentColor" : "none" }} /><span>{saved ? "Saved" : "Save colour"}</span></button></div>
             <div className="hpd-swatches" role="group" aria-label="Colour ideas for your project">{colourIdeas.map((idea) => <button type="button" key={idea.hex} aria-label={`${preview.mask ? "Preview" : "Choose"} ${idea.name}, ${idea.hex}`} title={`${idea.name} · ${idea.hex}`} aria-pressed={colour.hex === idea.hex} onClick={() => chooseColour(idea)}><span style={{ background: idea.hex }} />{colour.hex === idea.hex && <Icon name="check" size={16} />}</button>)}</div>
-            <p className="hpd-selected-colour"><strong>{colour.name}</strong><span>{colour.hex}</span></p>
+            <p className="hpd-selected-colour"><strong>{colour.name}</strong><span className={shadeReference ? "hpd-shade-reference" : undefined}>{shadeIdentifier}</span></p>
             <div className="hpd-custom-colour-section" role="group" aria-labelledby={`${product.id}-custom-heading`} aria-describedby={`${product.id}-hex-help`}>
               <h3 id={`${product.id}-custom-heading`}>{preview.mask ? "Try your own colour" : "Save a colour idea"}</h3>
               <p className="hpd-custom-colour-help" id={`${product.id}-hex-help`}>{preview.help}</p>
@@ -230,7 +233,7 @@ export default function HomePaintProductView({ product }: { product: HomePaint }
         <div className="hpd-tab-panel" role="tabpanel" id={`${product.id}-panel-description`} aria-labelledby={`${product.id}-tab-description`} hidden={activeTab !== "description"} tabIndex={0}><div><h2>About {product.name}</h2><p>{product.description}</p></div><dl className="hpd-product-facts"><div><dt>Collection</dt><dd>{product.series}</dd></div><div><dt>Finish &amp; application</dt><dd>{product.finish}</dd></div><div><dt>Pack sizes</dt><dd>{homePackSizes.map((size) => `${size} L`).join(" · ")}</dd></div></dl></div>
         <div className="hpd-tab-panel" role="tabpanel" id={`${product.id}-panel-shades`} aria-labelledby={`${product.id}-tab-shades`} hidden={activeTab !== "shades"} tabIndex={0}>
           <div><h2>Choosing a shade for {product.name}</h2><p>{preview.mask ? "Try the colour circles or enter a HEX code in the preview above, then save the colour you like." : "Choose and save a project colour idea above. The image is finish inspiration and stays unchanged."}</p><p>The colours are preview ideas. Confirm the available shades for {product.name} with Ekotint and compare a physical sample.</p><button className="hpd-text-link" type="button" onClick={returnToColourPreview}>{preview.mask ? "Change colour in the preview" : "Choose a project colour"} <Icon name="arrow" size={17} /></button></div>
-          <div className="hpd-shade-summary"><span style={{ background: colour.hex }} /><div><small>Your colour idea for {product.name}</small><strong>{colour.name}</strong><span>{colour.hex}</span></div></div>
+          <div className="hpd-shade-summary"><span style={{ background: colour.hex }} /><div><small>Your colour idea for {product.name}</small><strong>{colour.name}</strong><span className={shadeReference ? "hpd-shade-reference" : undefined}>{shadeIdentifier}</span></div></div>
         </div>
         <div className="hpd-tab-panel" role="tabpanel" id={`${product.id}-panel-technical`} aria-labelledby={`${product.id}-tab-technical`} hidden={activeTab !== "technical"} tabIndex={0}>
           <div><h2>{product.name} technical data</h2><p>{technicalSheet ? "Read the supplied technical data sheet for surface preparation, thinning and application guidance." : `Ask Ekotint for the technical data sheet for ${product.name} in the ${product.series}.`}</p></div>
