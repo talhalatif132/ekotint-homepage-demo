@@ -1,7 +1,7 @@
 "use client";
 
 import Icon from "@/components/Icon";
-import { homeContact, homeTechnicalGuide, homeSectionVisibility } from "@/lib/homepage-content";
+import { homeContact, homeTechnicalGuide } from "@/lib/homepage-content";
 import styles from "./HomeSiteFooter.module.css";
 
 export default function HomeSiteFooter({ onPlan }: { onPlan?: () => void }) {
@@ -19,9 +19,11 @@ export default function HomeSiteFooter({ onPlan }: { onPlan?: () => void }) {
           <h2>Explore Ekotint</h2>
           <a href="/#paints">Our paints</a>
           <a href="/#colours">Explore colours</a>
+          <a href="/about/">About Ekotint</a>
+          <a href="/services/">Painting services</a>
+          <a href="/showroom/">Showroom</a>
           <a href="/get-a-quote/">Get a quote <Icon name="arrow" size={15} /></a>
           <a href="/faq/">FAQs</a>
-          {homeSectionVisibility.manufacturer && <a href="/#why-ekotint">About Ekotint</a>}
           <a href={homeTechnicalGuide} target="_blank" rel="noreferrer">Technical data sheets <Icon className={styles.diagonal} name="arrow" size={15} /></a>
         </nav>
         <div className={styles.contact}>
@@ -36,7 +38,6 @@ export default function HomeSiteFooter({ onPlan }: { onPlan?: () => void }) {
       </div>
       <div className={styles.bottom}>
         <span>© {new Date().getFullYear()} Ekotint Paints</span>
-        <p>Room imagery and colours are illustrative.</p>
         <a href="#main">Back to top <Icon className={styles.up} name="arrow" size={17} /></a>
       </div>
     </div>

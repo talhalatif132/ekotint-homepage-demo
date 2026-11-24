@@ -1,0 +1,211 @@
+.page {
+  --about-ink: #302238;
+  --about-muted: #615268;
+  background: #fcfafc;
+  color: var(--about-ink);
+}
+
+.container {
+  width: min(90%, clamp(1140px, calc(50vw + 420px), 1320px));
+  margin-inline: auto;
+  padding-bottom: clamp(40px, 6vw, 80px);
+}
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-block: 23px;
+  color: #4e3b57;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.breadcrumb a:hover { text-decoration: underline; }
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  min-height: 395px;
+  overflow: hidden;
+  border-radius: 12px;
+  background: linear-gradient(130deg, #3c264a 8%, #583b69 100%);
+  color: #fff;
+}
+
+.heroCopy {
+  align-self: center;
+  padding: clamp(28px, 4.4vw, 62px);
+}
+
+.hero h1 {
+  color: #fff;
+  font-size: clamp(2.9rem, 5.3vw, 4.75rem);
+  font-weight: 500;
+  line-height: 0.9;
+  letter-spacing: -0.065em;
+}
+
+.hero h1 em {
+  display: block;
+  color: #f2dbf8;
+  font: normal 400 1.13em/0.94 var(--display);
+  letter-spacing: -0.045em;
+}
+
+.tagline {
+  margin-bottom: 17px;
+  color: #f2dbf8;
+  font-size: 0.875rem;
+  font-weight: 650;
+}
+
+.heroDescription {
+  max-width: 39ch;
+  margin-top: 18px;
+  color: #f7edf8;
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+.heroImage {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  object-fit: cover;
+}
+
+.heroImage { object-position: 63% center; }
+
+.lightButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  padding: 10px 17px;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  font-size: 0.9375rem;
+  font-weight: 700;
+}
+
+.lightButton {
+  background: #fff;
+  color: #4e2c5f;
+}
+
+.lightButton:hover { background: #f1e4f5; }
+.hero .lightButton { margin-top: 22px; }
+
+.companyProfile {
+  width: min(100%, 1080px);
+  margin: clamp(32px, 5.5vw, 76px) auto 0;
+}
+
+.draftNote {
+  margin-top: 12px;
+  color: var(--about-muted);
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.background,
+.ceoMessage {
+  display: grid;
+  grid-template-columns: minmax(0, 0.72fr) minmax(0, 1fr);
+  align-items: start;
+  gap: 20px clamp(28px, 5.5vw, 82px);
+}
+
+.background {
+  padding-bottom: clamp(28px, 4.5vw, 56px);
+  scroll-margin-top: 76px;
+}
+
+.companyProfile h2 {
+  font: normal 500 clamp(2rem, 4vw, 3.6rem)/1.02 var(--display);
+  letter-spacing: -0.035em;
+  text-wrap: balance;
+}
+
+.companyProfile h3 {
+  margin-top: 18px;
+  margin-bottom: 6px;
+  font-size: 1.125rem;
+  font-weight: 650;
+}
+
+.backgroundCopy,
+.direction p,
+.letter {
+  color: var(--about-muted);
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+.backgroundCopy > p:first-child {
+  color: #3e2e47;
+  font-size: 1.125rem;
+}
+
+.direction {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  border-block: 1px solid #e5d9e9;
+}
+
+.direction > section {
+  padding-block: clamp(22px, 3vw, 36px);
+  padding-right: clamp(20px, 5vw, 64px);
+}
+
+.direction > section + section {
+  border-left: 1px solid #e5d9e9;
+  padding-right: 0;
+  padding-left: clamp(20px, 5vw, 64px);
+}
+
+.direction h2 {
+  margin-bottom: 10px;
+  font-size: clamp(1.9rem, 3vw, 2.75rem);
+}
+
+.ceoMessage {
+  margin-top: clamp(28px, 5vw, 60px);
+  padding: clamp(22px, 4vw, 48px);
+  border-radius: 10px;
+  background: #f1e9f4;
+}
+
+.ceoMessage h2 { max-width: 10ch; }
+
+.letter > p:first-child {
+  color: #3e2e47;
+  font-size: clamp(1.05rem, 1.6vw, 1.25rem);
+}
+
+.letter p + p { margin-top: 12px; }
+
+.page a:focus-visible { outline: 2px solid #87539d; outline-offset: 4px; }
+.hero a:focus-visible { outline-color: #fff; }
+
+@media (max-width: 800px) {
+  .hero { min-height: 350px; }
+}
+
+@media (max-width: 650px) {
+  .breadcrumb { padding-block: 15px; }
+  .hero { grid-template-columns: 1fr; min-height: 0; }
+  .heroCopy { padding: 24px 21px; }
+  .hero h1 { font-size: clamp(2.45rem, 8.8vw, 3.55rem); }
+  .tagline { margin-bottom: 12px; }
+  .heroImage { height: clamp(170px, 48vw, 265px); }
+  .background, .ceoMessage, .direction { grid-template-columns: 1fr; }
+  .ceoMessage h2 { max-width: none; }
+  .direction > section,
+  .direction > section + section { padding-inline: 0; }
+  .direction > section + section {
+    border-top: 1px solid #e5d9e9;
+    border-left: 0;
+  }
+}

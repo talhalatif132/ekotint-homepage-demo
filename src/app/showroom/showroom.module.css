@@ -1,0 +1,529 @@
+.page {
+  background: #fcfafc;
+  color: #302238;
+}
+
+.container {
+  width: min(92%, 1360px);
+  margin-inline: auto;
+  padding-bottom: clamp(32px, 4vw, 58px);
+}
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-top: 17px;
+  color: #4e3b57;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.breadcrumb a:hover { text-decoration: underline; }
+
+.intro {
+  margin-block: clamp(16px, 2.1vw, 30px) clamp(18px, 2.1vw, 28px);
+  text-align: center;
+}
+
+.intro h1 {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 550;
+  letter-spacing: -0.055em;
+  line-height: 1.08;
+  text-wrap: balance;
+}
+
+.intro p {
+  max-width: 58ch;
+  margin: 10px auto 0;
+  color: #57485e;
+  font-size: 1rem;
+  line-height: 1.55;
+  text-wrap: balance;
+}
+
+.skipMap {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  clip-path: inset(50%);
+  overflow: hidden;
+}
+
+.skipMap:focus {
+  z-index: 2;
+  width: auto;
+  height: auto;
+  padding: 10px 16px;
+  clip-path: none;
+  border-radius: 4px;
+  background: #fff;
+  color: var(--brand-text);
+}
+
+.mapFrame {
+  position: relative;
+  isolation: isolate;
+  height: clamp(350px, 53svh, 560px);
+  overflow: hidden;
+  border: 1px solid #ddd4e1;
+  border-radius: 9px;
+  background: #eae6e9;
+}
+
+.mapFrame:fullscreen {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  border-radius: 0;
+}
+
+.mapFrame .mapCanvas {
+  position: absolute;
+  inset: 0;
+  background: #ece8e9;
+  font-family: var(--body);
+}
+
+.mapCanvas:focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: -2px;
+}
+
+.mapControls {
+  position: absolute;
+  z-index: 1001;
+  inset: 11px 11px auto;
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  pointer-events: none;
+}
+
+.mapControls button {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  border: 1px solid #dacfe0;
+  border-radius: 5px;
+  background: #fff;
+  color: var(--brand-text);
+  box-shadow: 0 1px 4px #30223814;
+  pointer-events: auto;
+}
+
+.mapControls button:hover { background: var(--brand-soft); }
+
+.reset {
+  padding-inline: 12px;
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
+.fullscreen { width: 44px; }
+
+.mapCanvas :global(.leaflet-control-zoom.leaflet-bar) {
+  margin-right: 11px;
+  border: 1px solid #dacfe0;
+  border-radius: 5px;
+}
+
+.mapCanvas :global(.leaflet-control-zoom.leaflet-bar a) {
+  width: 44px;
+  height: 44px;
+  color: var(--brand-text);
+  line-height: 44px;
+}
+
+.mapCanvas :global(.leaflet-control-zoom.leaflet-bar a.leaflet-disabled) { color: #968b9d; }
+
+.mapFrame .mapCanvas :global(.leaflet-control-attribution) {
+  background: #fff;
+  color: #504959;
+}
+
+.mapFrame .mapCanvas :global(.leaflet-control-attribution a) {
+  color: #493557;
+  text-decoration: underline;
+}
+
+.marker { background: none; }
+
+.marker::before {
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  width: 27px;
+  height: 27px;
+  border: 2px solid #fff;
+  border-radius: 50% 50% 50% 3px;
+  background: var(--brand);
+  box-shadow: 0 2px 6px #30223855;
+  content: "";
+  transform: translateX(-50%) rotate(-45deg);
+}
+
+.marker::after {
+  position: absolute;
+  top: 16px;
+  left: 50%;
+  width: 11px;
+  height: 11px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  content: "";
+  transform: translateX(-50%);
+}
+
+.marker:hover::before,
+.marker:focus-visible::before { background: var(--brand-dark); }
+
+.marker:focus-visible {
+  border-radius: 6px;
+  outline: 2px solid var(--brand-dark);
+  outline-offset: -2px;
+}
+
+.mapCanvas .hoverPopup { margin-bottom: 0; }
+
+.mapCanvas .hoverPopup :global(.leaflet-popup-tip-container) {
+  left: clamp(16px, var(--dealer-card-tip, 50%), calc(100% - 16px));
+}
+
+.mapCanvas .hoverPopup[data-placement="below"] :global(.leaflet-popup-tip-container) {
+  top: 0;
+  transform: translateY(-100%) rotate(180deg);
+}
+
+.mapCanvas .hoverPopup[data-placement="beside"] :global(.leaflet-popup-tip-container) { display: none; }
+
+.mapCanvas .mapPopup :global(.leaflet-popup-content-wrapper) { border-radius: 9px; }
+.mapCanvas .mapPopup :global(.leaflet-popup-content) { margin: 14px; }
+
+.mapCanvas .mapPopup :global(a.leaflet-popup-close-button) {
+  display: grid;
+  width: 44px;
+  height: 44px;
+  place-items: center;
+  color: var(--brand-dark);
+  font-size: 23px;
+}
+
+.dealerDetails h2 {
+  padding-right: 20px;
+  color: #302238;
+  font-size: 1rem;
+  font-weight: 750;
+  line-height: 1.25;
+}
+
+.dealerDetails address {
+  margin-top: 7px;
+  color: #57485e;
+  font-style: normal;
+  line-height: 1.5;
+}
+
+.dealerContact {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px 8px;
+  margin: 8px 0 0;
+  color: #57485e;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+}
+
+.dealerContact dd {
+  margin: 0;
+  color: #302238;
+  font-weight: 700;
+}
+
+.popupPhones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 8px;
+  margin-top: 3px;
+}
+
+.mapPopup .popupPhones a {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  gap: 6px;
+  color: var(--brand-text);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.mapPopup .popupPhones a {
+  font-size: 0.75rem;
+  white-space: nowrap;
+}
+
+.mapPopup .directions {
+  display: flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  padding-inline: 10px;
+  border-radius: 5px;
+  background: var(--brand-text);
+  color: #fff;
+  font-weight: 700;
+}
+
+.mapPopup .directions:hover { background: var(--brand-dark); }
+
+.mapStatus,
+.noScript {
+  position: absolute;
+  z-index: 1000;
+  top: 50%;
+  left: 50%;
+  width: max-content;
+  max-width: calc(100% - 28px);
+  padding: 9px 14px;
+  border-radius: 5px;
+  background: #fff;
+  color: #4e3b57;
+  font-size: 0.875rem;
+  line-height: 1.45;
+  text-align: center;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+}
+
+.mapFrame:has(noscript p) .mapStatus { display: none; }
+
+.directory {
+  margin-top: 13px;
+  border-bottom: 1px solid #e6dce8;
+}
+
+.directory summary {
+  display: flex;
+  min-height: 48px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-inline: 3px;
+  color: var(--brand-text);
+  font-size: 0.9375rem;
+  font-weight: 700;
+  list-style: none;
+  cursor: pointer;
+}
+
+.directory summary::-webkit-details-marker { display: none; }
+.directory summary:focus-visible { outline: 2px solid var(--brand); }
+.directory[open] summary svg { transform: rotate(180deg); }
+
+.directorySearch {
+  display: grid;
+  grid-template-columns: max-content minmax(0, 420px);
+  align-items: center;
+  justify-content: end;
+  column-gap: 14px;
+  margin: 8px 0 16px;
+}
+
+.directorySearch label {
+  color: #38283f;
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
+.searchField {
+  display: flex;
+  align-items: center;
+  min-height: 48px;
+  border: 1px solid #b7a5c1;
+  border-radius: 6px;
+  background: #fff;
+  box-shadow: 0 1px 2px #30223814;
+}
+
+.searchField:hover { border-color: #947ba2; }
+
+.searchField:focus-within {
+  border-color: var(--brand-text);
+  outline: 2px solid var(--brand-text);
+  outline-offset: 2px;
+}
+
+.searchIcon {
+  display: grid;
+  flex: 0 0 44px;
+  align-self: stretch;
+  place-items: center;
+  border-inline-end: 1px solid #e4dbe9;
+  border-radius: 5px 0 0 5px;
+  background: var(--brand-soft);
+  color: var(--brand-text);
+}
+
+.searchField input {
+  flex: 1;
+  width: 0;
+  min-width: 0;
+  min-height: 46px;
+  padding: 8px 12px;
+  appearance: none;
+  border: 0;
+  background: transparent;
+  color: #302238;
+  font: inherit;
+  font-size: 1rem;
+}
+
+.searchField input::placeholder { color: #685a70; }
+.searchField input:focus { outline: none; }
+.searchField input::-webkit-search-cancel-button { display: none; }
+.searchField input::-webkit-search-decoration { display: none; }
+
+.searchClear {
+  display: grid;
+  flex: 0 0 44px;
+  width: 44px;
+  min-height: 44px;
+  place-items: center;
+  padding: 0;
+  border: 0;
+  border-radius: 4px;
+  background: transparent;
+  color: var(--brand-text);
+}
+
+.searchClear:hover { background: var(--brand-soft); }
+.searchClear:focus-visible { outline: 2px solid var(--brand-text); outline-offset: -4px; }
+
+.searchStatus {
+  grid-column: 2;
+  margin: 6px 0 0;
+  color: #57485e;
+  font-size: 0.875rem;
+}
+
+.searchStatus:empty { margin: 0; }
+
+.directoryList {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr));
+  gap: 16px;
+  margin: 4px 0 18px;
+  padding: 0;
+  list-style: none;
+}
+
+.directoryCard {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 16px;
+  padding: clamp(16px, 1.45vw, 22px);
+  border: 1px solid #e4d9e8;
+  border-radius: 12px;
+  background: var(--paper);
+  box-shadow: 0 2px 5px #30223808;
+  overflow-wrap: anywhere;
+}
+
+.directoryCardHeading {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.directoryPin {
+  display: grid;
+  width: 34px;
+  height: 34px;
+  flex: 0 0 auto;
+  place-items: center;
+  border-radius: 8px;
+  background: var(--brand-soft);
+  color: var(--brand-text);
+}
+
+.directoryLocation h2 {
+  color: #302238;
+  font-size: 1.0625rem;
+  font-weight: 750;
+  letter-spacing: -0.015em;
+  line-height: 1.3;
+}
+
+.directoryLocation address {
+  margin-top: 10px;
+  color: #57485e;
+  font-size: 0.875rem;
+  font-style: normal;
+  line-height: 1.55;
+}
+
+.directoryCardActions {
+  margin-top: auto;
+  padding-top: 12px;
+  border-top: 1px solid #efe8f1;
+}
+
+.directoryCardActions .dealerContact {
+  margin: 0;
+}
+
+.directoryPhones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 13px;
+}
+
+.directoryPhones a,
+.directoryDirections {
+  display: flex;
+  min-height: 44px;
+  align-items: center;
+  color: var(--brand-text);
+  font-size: 0.8125rem;
+  font-weight: 700;
+}
+
+.directoryPhones a {
+  gap: 6px;
+  text-decoration: underline;
+  text-decoration-color: #ad96b8;
+  text-underline-offset: 3px;
+  white-space: nowrap;
+}
+
+.directoryPhones a:hover { text-decoration-color: currentColor; }
+
+.directoryDirections {
+  justify-content: space-between;
+  gap: 12px;
+  padding-inline: 12px;
+  border-radius: 6px;
+  background: var(--brand-soft);
+}
+
+.directoryDirections:hover { background: #e9dff0; }
+
+.directoryPhones a:focus-visible,
+.directoryDirections:focus-visible {
+  outline: 2px solid var(--brand-text);
+  outline-offset: 3px;
+}
+
+@media (max-width: 600px) {
+  .mapFrame { height: clamp(320px, 49svh, 415px); }
+  .intro p { font-size: 0.9375rem; }
+  .mapCanvas[data-dealer-open] :global(.leaflet-control-zoom) { visibility: hidden; }
+  .directorySearch { grid-template-columns: minmax(0, 1fr); }
+  .directorySearch label { margin-bottom: 6px; }
+  .searchStatus { grid-column: 1; }
+}

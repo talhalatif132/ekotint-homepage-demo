@@ -2,10 +2,10 @@ import type { ReactNode } from "react";
 import Icon from "@/components/Icon";
 import HomeSiteFooter from "@/components/HomeSiteFooter";
 import { HomePaintCartButton, HomePaintCartProvider } from "@/components/HomePaintCart";
-import { homeContact, homeSectionVisibility } from "@/lib/homepage-content";
+import { homeContact } from "@/lib/homepage-content";
 import "@/app/products/home-paint-shell.css";
 
-export default function HomePaintShell({ children, activePage }: { children: ReactNode; activePage?: "quote" }) {
+export default function HomePaintShell({ children, activePage }: { children: ReactNode; activePage?: "about" | "quote" }) {
   return <HomePaintCartProvider><div className="current-product-site">
     <a className="current-product-skip" href="#main">Skip to content</a>
     <div className="current-product-utility">
@@ -23,7 +23,7 @@ export default function HomePaintShell({ children, activePage }: { children: Rea
         <nav className="current-product-navigation" aria-label="Main navigation">
           <a href="/#paints">Our paints</a>
           <a href="/#colours">Explore colours</a>
-          {homeSectionVisibility.manufacturer && <a href="/#why-ekotint">About</a>}
+          <a href="/about/" aria-current={activePage === "about" ? "page" : undefined}>About</a>
           <a href="/#contact">Contact</a>
           <a className="current-product-quote-link" href="/get-a-quote/" aria-current={activePage === "quote" ? "page" : undefined}>Get a quote</a>
         </nav>

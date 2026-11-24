@@ -1,6 +1,7 @@
-export type IconName = "arrow" | "search" | "heart" | "menu" | "close" | "check" | "plus" | "minus" | "sun" | "home" | "layers" | "spark" | "download" | "upload" | "pause" | "play" | "chevron" | "filter" | "zoom" | "grid" | "back" | "phone" | "pin" | "document" | "mail" | "bag";
+export type IconName = "arrow" | "search" | "heart" | "menu" | "close" | "check" | "plus" | "minus" | "sun" | "home" | "layers" | "spark" | "download" | "upload" | "pause" | "play" | "chevron" | "filter" | "zoom" | "grid" | "back" | "phone" | "pin" | "document" | "mail" | "bag" | "fullscreen";
 export default function Icon({ name, size = 22, ...props }: { name: IconName; size?: number } & React.SVGProps<SVGSVGElement>) {
   const paths: Record<IconName, React.ReactNode> = {
+    fullscreen: <path d="M9 4H4v5m11-5h5v5m0 6v5h-5M4 15v5h5" />,
     bag: <><path d="M5 7h14l1 14H4L5 7Z" /><path d="M9 8V5a3 3 0 0 1 6 0v3" /></>,
     mail: <><rect x="3" y="5" width="18" height="14" rx="1.5" /><path d="m3 6 9 7 9-7" /></>,
     phone: <path d="M7 3H4a1 1 0 0 0-1 1c0 9.4 7.6 17 17 17a1 1 0 0 0 1-1v-3l-5-2-2 2a13 13 0 0 1-7-7l2-2-2-5Z" />,
